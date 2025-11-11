@@ -203,7 +203,7 @@ const Achievements = () => {
         </div>
 
         {/* Stats Section */}
-        <section className="mt-0 py-6">
+        <section className="mt-0 py-5">
           <div className="grid md:grid-cols-4 sm:grid-cols-2 gap-4 text-center">
             {[
               {
