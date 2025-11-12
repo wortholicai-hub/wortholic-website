@@ -1,84 +1,79 @@
 "use client";
 import React from "react";
+import {
+  ShoppingCart,
+  CreditCard,
+  List,
+  Trophy,
+  LogIn,
+  UserPlus,
+  BarChart,
+  Flag,
+} from "lucide-react";
 
-const campaigns = [
+const useCases = [
   {
-    text: "Spend $100 in February and earn 100 points",
-    completed: true,
+    icon: <ShoppingCart className="w-6 h-6 text-white" />,
+    text: "Do 2 transactions of at least $100 each",
   },
   {
-    text: "Run 10 km & get discount on sport shoes",
-    completed: true,
+    icon: <CreditCard className="w-6 h-6 text-white" />,
+    text: "Spend $150 on the product with a given SKU",
   },
   {
-    text: "Refer 5 friends and get $50 cashback",
-    completed: true,
+    icon: <List className="w-6 h-6 text-white" />,
+    text: "Finalize a transaction 4 months in a row",
   },
   {
-    text: "Place 5 products and get free delivery code",
-    completed: false,
+    icon: <Trophy className="w-6 h-6 text-white" />,
+    text: "Track a workout of at least 30 minutes 5 days in a row",
   },
   {
-    text: "Buy 10 ACME products and get special reward",
-    completed: true,
+    icon: <LogIn className="w-6 h-6 text-white" />,
+    text: "Log in to the mobile app 7 days in a row",
+  },
+  {
+    icon: <UserPlus className="w-6 h-6 text-white" />,
+    text: "Refer 5x new customers",
+  },
+  {
+    icon: <BarChart className="w-6 h-6 text-white" />,
+    text: "Purchase 3 ACME products in December",
+  },
+  {
+    icon: <Flag className="w-6 h-6 text-white" />,
+    text: "Leave 3+ product reviews this year",
   },
 ];
 
 const SectionThree: React.FC = () => {
   return (
-    <section className="py-20 bg-white dark:bg-[#0b0f14]">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-          {/* Left Content */}
-          <div>
-            <h4 className="text-sm font-semibold text-purple-600 mb-4">
-              Configuration
-            </h4>
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
-              Configure any shape of achievements, challenges or milestones
-            </h2>
-            <p className="text-gray-600 dark:text-gray-300 text-lg mb-4">
-              Use Open Loyalty's{" "}
-              <span className="underline">gamification software</span> to create
-              achievements that drive your business goals, such as purchase
-              frequency or increasing customer lifetime value.
-            </p>
-            <p className="text-gray-600 dark:text-gray-300 text-lg">
-              Set challenges with goals based on transactional data, customer
-              behavior or activity streaks. Create simple milestones or
-              multi-dimensional achievements composed of several rules.
-            </p>
-          </div>
+    <section className="py-20 bg-gray-50 dark:bg-[#0b0f14]">
+      {/* Section Title */}
+      <div className="text-center mb-12">
+        <h4 className="text-sm font-semibold text-purple-600 mb-2">
+          Use cases
+        </h4>
+        <h2 className="text-3xl md:text-5xl font-bold text-gray-900 dark:text-white">
+          Drive results with achievements
+        </h2>
+      </div>
 
-          {/* Right Content - Achievement Card */}
-          <div className="bg-gray-50 dark:bg-gray-900 rounded-2xl p-8 shadow-sm">
-            <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-6">
-              Achievement-based campaigns
-            </h3>
-            <div className="space-y-4">
-              {campaigns.map((campaign, index) => (
-                <div key={index} className="flex items-start gap-3">
-                  <div
-                    className={`w-5 h-5 rounded-full flex-shrink-0 mt-0.5 ${
-                      campaign.completed
-                        ? "bg-green-500"
-                        : "bg-red-400 opacity-40"
-                    }`}
-                  />
-                  <p
-                    className={`text-base ${
-                      campaign.completed
-                        ? "text-gray-900 dark:text-gray-100"
-                        : "text-gray-400 dark:text-gray-500"
-                    }`}
-                  >
-                    {campaign.text}
-                  </p>
-                </div>
-              ))}
+      {/* Cards Grid */}
+      <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-6 px-6">
+        {useCases.map((item, index) => (
+          <div
+            key={index}
+            className="flex items-center gap-4 bg-white dark:bg-gray-900 shadow-sm rounded-2xl p-6 hover:shadow-md transition-all duration-300"
+          >
+            <div className="flex items-center justify-center bg-purple-600 w-12 h-12 rounded-lg flex-shrink-0">
+              {item.icon}
             </div>
+            <p className="text-gray-800 dark:text-gray-100 text-base font-medium">
+              {item.text}
+            </p>
           </div>
-        </div>
+        ))}
       </div>
     </section>
   );
