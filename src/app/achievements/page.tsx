@@ -9,15 +9,33 @@ import {
   CheckCircle2,
   Star,
 } from "lucide-react";
+import SectionOne from "@/components/Achievments/SectionOne";
+import SectionTwo from "@/components/Achievments/SectionTwo";
+import SectionThree from "@/components/Achievments/SectionThree";
+import SectionFour from "@/components/Achievments/SectionFour";
+import SectionFive from "@/components/Achievments/SectionFive";
+import SectionSix from "@/components/Achievments/SectionSix";
+import SectionSeven from "@/components/Achievments/SectionSeven";
+import SectionEight from "@/components/Achievments/SectionEight";
+import SectionNine from "@/components/Achievments/SectionNine";
 
 const Achievements = () => {
   return (
     <main className="bg-white text-gray-800 dark:bg-[#0b0f14] dark:text-gray-200 transition-colors duration-300 min-h-screen py-20">
+      <SectionOne />
+      <SectionTwo />
+      <SectionThree />
+      <SectionFour />
+      <SectionFive />
+      <SectionSix />
+      <SectionSeven />
+      <SectionEight />
+      <SectionNine />
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
         <div className="text-center mb-40">
           <h1 className="text-4xl md:text-4xl font-bold text-black dark:text-gray-300 mb-4">
-            Company Achievements
+            Milestones of Excellence
           </h1>
           {/* <p className="text-gray-600 dark:text-gray-400 italic">
             This slide shows some business achievements over a period like Most

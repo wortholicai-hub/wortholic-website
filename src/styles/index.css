@@ -2,6 +2,8 @@
 layer(base);
 
 @import "tailwindcss";
+@import "slick-carousel/slick/slick.css";
+@import "slick-carousel/slick/slick-theme.css";
 
 @import "tw-animate-css";
 
