@@ -43,13 +43,15 @@ const AchievementCampaignsList: React.FC = () => {
   ];
 
   return (
-    <div className="bg-white rounded-lg border border-gray-100 shadow-sm p-3">
-      <h4 className="text-xs font-medium text-gray-700 mb-2">
-        Achievement-based campaigns
-      </h4>
-      <div className="divide-y divide-gray-100">
+    <div className="mt-10 bg-white rounded-lg border border-gray-100 shadow-sm">
+      <div className="p-4 border-b border-gray-200">
+        <h4 className="text-base font-semibold text-gray-800">
+          Achievement-based campaigns
+        </h4>
+      </div>
+      <div className="divide-y divide-gray-100 p-4">
         {campaigns.map((item) => (
-          <div key={item.id} className="flex items-start py-1.5">
+          <div key={item.id} className="flex items-start py-2">
             <span
               className={`flex-shrink-0 w-1.5 h-1.5 rounded-full mt-1.5 mr-3 ${item.isCompleted ? "bg-green-500" : "bg-red-500"}`}
               aria-hidden="true"
@@ -84,7 +86,7 @@ const AchievementsChallengesList: React.FC = () => {
   ];
 
   return (
-    <div className="bg-white rounded-lg border border-gray-100 shadow-sm">
+    <div className="mt-6 bg-white rounded-lg border border-gray-100 shadow-sm">
       <div className="p-4 border-b border-gray-200">
         <h4 className="text-base font-semibold text-gray-800">
           Achievements and challenges
@@ -220,8 +222,8 @@ const SectionFour: React.FC = () => {
             </p>
           </div>
           <div className="lg:w-1/2 flex justify-center pt-8">
-            <div className="bg-gray-50 p-6 w-full max-w-lg min-h-[400px] border border-gray-100">
-              <div className="w-full max-w-xs mx-auto">
+            <div className="rounded-lg bg-gray-50 p-6 w-full max-w-lg min-h-[400px] border border-gray-100">
+              <div className="w-full max-w-[400px] mx-auto">
                 <AchievementCampaignsList />
               </div>
             </div>
@@ -233,17 +235,17 @@ const SectionFour: React.FC = () => {
       <section className="container mx-auto py-20 px-6">
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 items-start">
           <div className="lg:w-1/2 flex justify-center lg:justify-end pt-8 order-2 lg:order-1">
-            <div className="bg-gray-50 p-6 w-full max-w-lg min-h-[400px] border border-gray-100 flex items-start justify-center pt-10">
+            <div className="rounded-lg bg-gray-50 p-6 w-full max-w-lg min-h-[400px] border border-gray-100 flex items-start justify-center pt-10">
               <div className="w-full max-w-sm">
                 <AchievementsChallengesList />
               </div>
             </div>
           </div>
           <div className="lg:w-1/2 order-1 lg:order-2">
-            <p className="text-sm font-semibold text-indigo-700 mb-4">
+            <p className="text-sm font-semibold text-[#0E9F9F] mb-4">
               Campaigns
             </p>
-            <h1 className="text-5xl font-extrabold leading-snug text-gray-900 mb-8">
+            <h1 className="text-4xl font-bold leading-snug text-gray-900 mb-8">
               Use achievements to trigger campaigns and reward customers for
               completing them
             </h1>
@@ -272,10 +274,10 @@ const SectionFour: React.FC = () => {
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 items-start">
           {/* Left Content Column */}
           <div className="lg:w-1/2">
-            <p className="text-sm font-semibold text-indigo-700 mb-4">
+            <p className="text-sm font-semibold text-[#0E9F9F] mb-4">
               Achievements analytics
             </p>
-            <h1 className="text-5xl font-extrabold leading-snug text-gray-900 mb-8">
+            <h1 className="text-4xl font-bold leading-snug text-gray-900 mb-8">
               Track progress and results driven by achievements
             </h1>
             <p className="text-lg text-gray-700 mb-6 leading-relaxed">
@@ -288,7 +290,7 @@ const SectionFour: React.FC = () => {
 
           {/* Right Visualization Column (The light gray box) */}
           <div className="lg:w-1/2 flex justify-center pt-8">
-            <div className="bg-gray-50 p-6 w-full max-w-lg min-h-[400px] border border-gray-100 flex items-start justify-center pt-10">
+            <div className="rounded-lg bg-gray-50 p-6 w-full max-w-lg min-h-[400px] border border-gray-100 flex items-start justify-center pt-10">
               <div className="bg-white rounded-lg w-full max-w-sm shadow-xl">
                 <AnalyticsVisualization />
               </div>
