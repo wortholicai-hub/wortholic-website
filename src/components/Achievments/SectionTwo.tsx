@@ -72,15 +72,16 @@ const SectionTwo: React.FC = () => {
   };
 
   return (
-    <section className="py-20 bg-white dark:bg-[#0b0f14] text-gray-900 dark:text-white">
+    <section className="py-6 bg-white dark:bg-[#0b0f14] text-gray-900 dark:text-white">
       <div className="max-w-6xl mx-auto px-6">
         {/* Slider */}
         <div className="testimonial-slider">
           <Slider {...settings}>
             {testimonials.map((item, index) => (
               <div key={index}>
-                <div className="bg-gradient-to-r from-[#3d3567] to-[#4a3f7a] rounded-2xl flex flex-col md:flex-row overflow-hidden shadow-2xl">
-                  {/* Left Side */}
+                {/* CARD */}
+                <div className="bg-gradient-to-r from-[#0E9F9F] to-[#0E9F9F] h-[510px] rounded-2xl flex flex-col md:flex-row overflow-hidden shadow-2xl">
+                  {/* LEFT SIDE */}
                   <div className="flex-1 p-10 md:p-16 text-white flex flex-col justify-center max-w-2xl">
                     <p className="text-lg md:text-xl leading-relaxed mb-8 font-light">{`"${item.quote}"`}</p>
 
@@ -105,13 +106,16 @@ const SectionTwo: React.FC = () => {
                     </div>
                   </div>
 
-                  {/* Right Side */}
+                  {/* RIGHT SIDE IMAGE + OVERLAY */}
                   <div className="flex-1 relative min-h-[300px] md:min-h-[400px]">
                     <img
                       src={item.image}
                       alt="Testimonial"
                       className="absolute inset-0 w-full h-full object-cover"
                     />
+
+                    {/* Updated overlay to match #0E9F9F blend */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-[#0E9F9F]/90 via-[#0E9F9F]/40 to-transparent"></div>
                   </div>
                 </div>
               </div>
@@ -150,7 +154,7 @@ const SectionTwo: React.FC = () => {
         }
 
         .testimonial-slider .slick-dots li.slick-active button:before {
-          color: #3d3567;
+          color: #0e9f9f;
           opacity: 1;
         }
 
@@ -159,7 +163,7 @@ const SectionTwo: React.FC = () => {
         }
 
         .dark .testimonial-slider .slick-dots li.slick-active button:before {
-          color: #a78bfa;
+          color: #0e9f9f;
         }
       `}</style>
     </section>
