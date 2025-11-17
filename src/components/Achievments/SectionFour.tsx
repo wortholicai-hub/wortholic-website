@@ -196,13 +196,13 @@ const SectionFour: React.FC = () => {
   return (
     <div className="bg-white">
       {/* SECTION 1: Configure Achievements (Image 1) */}
-      <section className="container mx-auto py-20 px-6">
+      <section className="container mx-auto py-6 px-6">
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 items-start">
           <div className="lg:w-1/2">
-            <p className="text-sm font-semibold text-indigo-700 mb-4">
+            <p className="text-sm font-semibold text-[#0E9F9F] mb-4">
               Configuration
             </p>
-            <h1 className="text-5xl font-extrabold leading-snug text-gray-900 mb-8">
+            <h1 className="text-4xl font-bold leading-tight text-gray-900 mb-8">
               Configure any shape of achievements, challenges or milestones
             </h1>
             <p className="text-lg text-gray-700 mb-6 leading-relaxed">
