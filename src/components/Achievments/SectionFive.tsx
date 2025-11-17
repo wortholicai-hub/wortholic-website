@@ -56,7 +56,7 @@ const SectionFive: React.FC = () => {
       <div className="max-w-4xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
-          <p className="text-sm font-semibold text-purple-600 uppercase tracking-wider mb-4">
+          <p className="text-sm font-semibold text-[#0E9F9F] uppercase tracking-wider mb-4">
             FAQ
           </p>
           <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white leading-tight">
@@ -82,11 +82,11 @@ const SectionFive: React.FC = () => {
                   {faq.question}
                 </span>
                 <div className="flex-shrink-0">
-                  <div className="w-8 h-8 rounded-full border-2 border-purple-600 flex items-center justify-center">
+                  <div className="w-8 h-8 rounded-full border-2 border-[#0E9F9F] flex items-center justify-center">
                     {openIndex === index ? (
-                      <Minus className="w-4 h-4 text-purple-600" />
+                      <Minus className="w-4 h-4 text-[#0E9F9F]" />
                     ) : (
-                      <Plus className="w-4 h-4 text-purple-600" />
+                      <Plus className="w-4 h-4 text-[#0E9F9F]" />
                     )}
                   </div>
                 </div>
