@@ -1,0 +1,97 @@
+import React from "react";
+import Image from "next/image";
+import Link from "next/link";
+
+// --- Data Configuration with Mentor Details ---
+const mentors = [
+  {
+    id: 1,
+    name: "John Harden",
+    role: "Full-Stack Web Development",
+    avatar:
+      "https://images.pexels.com/photos/3762804/pexels-photo-3762804.jpeg?auto=compress&cs=tinysrgb&w=800",
+  },
+  {
+    id: 2,
+    name: "Emily Johnson",
+    role: "Front-End Web Development",
+    avatar:
+      "https://images.pexels.com/photos/1036620/pexels-photo-1036620.jpeg?auto=compress&cs=tinysrgb&w=800",
+  },
+  {
+    id: 3,
+    name: "Michael Davis",
+    role: "Mobile App Development",
+    avatar:
+      "https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=800",
+  },
+  {
+    id: 4,
+    name: "Sarah Lee",
+    role: "Backend Development and Databases",
+    avatar:
+      "https://images.pexels.com/photos/3771801/pexels-photo-3771801.jpeg?auto=compress&cs=tinysrgb&w=800",
+  },
+];
+
+// --- Main Component ---
+const MeetMentorsSection = () => {
+  return (
+    <section className="bg-black py-20 px-4 md:px-8 font-sans text-white">
+      <div className="max-w-7xl mx-auto">
+        {/* --- Header & CTA Row --- */}
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16">
+          {/* Left: Heading Block */}
+          <div className="space-y-4 mb-8 md:mb-0">
+            <span className="text-[#4ade80] font-medium text-sm tracking-wide uppercase">
+              Meet Professional Mentors
+            </span>
+            <h2 className="text-4xl md:text-5xl font-semibold leading-tight max-w-2xl">
+              Learn from the Experts <br />
+              Behind Your Success
+            </h2>
+          </div>
+
+          {/* Right: CTA Button */}
+          <div>
+            <Link
+              href="#"
+              className="inline-block border border-white hover:bg-white/10 text-white px-6 py-3.5 rounded-xl transition-all duration-300 text-sm font-medium"
+            >
+              View All Mentors
+            </Link>
+          </div>
+        </div>
+
+        {/* --- Mentors Grid --- */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+          {mentors.map((mentor) => (
+            <div key={mentor.id} className="group cursor-pointer">
+              {/* Image Container (Aspect Ratio & Rounded Corners) */}
+              <div className="relative w-full aspect-[3/4] overflow-hidden rounded-2xl mb-4">
+                {/* Using standard img tag for reliable rendering */}
+                <img
+                  src={mentor.avatar}
+                  alt={mentor.name}
+                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+                />
+              </div>
+
+              {/* Text Content */}
+              <div className="text-center md:text-left space-y-1">
+                <h4 className="text-white font-medium text-lg">
+                  {mentor.name}
+                </h4>
+                <p className="text-gray-400 text-xs font-light">
+                  {mentor.role}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default MeetMentorsSection;

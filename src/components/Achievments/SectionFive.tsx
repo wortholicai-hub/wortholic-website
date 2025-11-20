@@ -52,7 +52,7 @@ const SectionFive: React.FC = () => {
   };
 
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white dark:bg-[#0b0f14]">
+    <section className="py-6 px-4 sm:px-6 lg:px-8 bg-white dark:bg-[#0b0f14]">
       <div className="max-w-4xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">

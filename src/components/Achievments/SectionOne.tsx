@@ -5,9 +5,9 @@ const SectionOne: React.FC = () => {
   return (
     <section className="flex flex-col items-center justify-center text-center py-6 px-6 bg-white dark:bg-[#0b0f14]">
       {/* Title */}
-      <h4 className="text-sm font-semibold text-[#0E9F9F] mb-4">
+      {/* <h4 className="text-sm font-semibold text-[#0E9F9F] mb-4">
         Achievements
-      </h4>
+      </h4> */}
 
       {/* Heading */}
       <h1 className="text-4xl sm:text-5xl md:text-5xl font-bold text-gray-900 dark:text-white leading-tight max-w-4xl">

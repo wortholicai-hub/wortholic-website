@@ -134,14 +134,14 @@ const SectionSix: React.FC = () => {
         {/* Navigation Arrows */}
         <button
           onClick={goToPrevious}
-          className="absolute left-6 top-1/2 -translate-y-1/2 p-3 rounded-full bg-white shadow-sm text-purple-600 hover:bg-gray-50 focus:outline-none transition-colors"
+          className="absolute left-6 top-1/2 -translate-y-1/2 p-3 rounded-full bg-white shadow-sm text-[#0E9F9F] hover:bg-gray-200 focus:outline-none transition-colors"
           aria-label="Previous testimonial"
         >
           <ChevronLeft className="w-6 h-6" />
         </button>
         <button
           onClick={goToNext}
-          className="absolute right-6 top-1/2 -translate-y-1/2 p-3 rounded-full bg-white shadow-sm text-purple-600 hover:bg-gray-50 focus:outline-none transition-colors"
+          className="absolute right-6 top-1/2 -translate-y-1/2 p-3 rounded-full bg-white shadow-sm text-[#0E9F9F] hover:bg-gray-200 focus:outline-none transition-colors"
           aria-label="Next testimonial"
         >
           <ChevronRight className="w-6 h-6" />

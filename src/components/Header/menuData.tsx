@@ -1,4 +1,5 @@
 import { Menu } from "@/types/menu";
+import { title } from "process";
 
 const menuData: Menu[] = [
   {
@@ -49,6 +50,14 @@ const menuData: Menu[] = [
     title: "Careers",
     path: "/careers",
     newTab: false,
+    submenu: [
+      {
+        id: 31,
+        title: "Bootcamp",
+        path: "/bootcamp",
+        newTab: false,
+      },
+    ],
   },
   {
     id: 2,
