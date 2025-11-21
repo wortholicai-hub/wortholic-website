@@ -154,7 +154,7 @@ const BootcampsSection = () => {
               : "-translate-y-40 opacity-0"
           }`}
         >
-          <span className="text-green-500 dark:text-green-400 font-semibold text-sm tracking-wide uppercase">
+          <span className="text-[#0E9F9F] dark:text-[#0E9F9F] font-semibold text-sm tracking-wide uppercase">
             What You'll Learn?
           </span>
           <h2 className="text-4xl md:text-5xl font-bold text-black dark:text-white tracking-tight">
@@ -181,7 +181,7 @@ const BootcampsSection = () => {
 
         {/* CTA */}
         <div className="text-center">
-          <button className="bg-green-300 dark:bg-green-700 text-black dark:text-white font-bold text-sm py-4 px-10 rounded-full shadow-[0_0_20px_rgba(197,242,136,0.3)] hover:bg-green-400 dark:hover:bg-green-600 transition-none">
+          <button className="bg-[#0E9F9F] dark:bg-[#0E9F9F] text-black dark:text-white font-bold text-sm py-4 px-10 rounded-full shadow-[0_0_20px_rgba(197,242,136,0.3)] hover:bg-[#0E9F9F] dark:hover:bg-[#0E9F9F] transition-none">
             View All Bootcamps
           </button>
         </div>

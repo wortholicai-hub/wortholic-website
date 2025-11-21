@@ -1,50 +1,50 @@
 import React from "react";
 import { Check } from "lucide-react";
 
-// --- Data Configuration ---
+// --- Data Configuration (FREE Bootcamp Version) ---
 const pricingPlans = [
   {
-    title: "Beginner Plan",
-    price: 199,
+    title: "Beginner Track",
+    price: 0,
     description:
-      "Perfect for beginners who want to learn the fundamentals of programming.",
+      "A perfect starting point for absolute beginners who want to learn the fundamentals of programming — completely free.",
     features: [
       "Basic Web Development (HTML, CSS, JavaScript)",
       "Weekly Live Classes (2x per week)",
-      "Recorded Lessons Access",
-      "Small Project Assignments",
-      "Community Support",
-      "Coding Challenges",
-      "Career Guidance Sessions",
+      "Lifetime Access to Recorded Lessons",
+      "Beginner-Friendly Projects",
+      "Community Support & Discussion Groups",
+      "Coding Challenges for Practice",
+      "Introductory Career Guidance",
     ],
   },
   {
-    title: "Ultimate Plan",
-    price: 899,
+    title: "Ultimate Track",
+    price: 0,
     description:
-      "Best for those who want an immersive bootcamp experience with career support.",
+      "Our most in-depth and supportive free learning experience with advanced guidance and career growth help.",
     features: [
-      "Everything in Pro Plan +",
-      "Personalized Career Coaching",
-      "Exclusive Tech Industry Networking",
+      "All Features in Pro Track +",
+      "Free Personalized Career Mentorship",
+      "Tech Industry Networking Opportunities",
       "Certificate of Completion",
-      "Priority Access to Workshops",
-      "Professional Portfolio Review",
-      "Job Referral Assistance",
+      "Free Access to Exclusive Workshops",
+      "Advanced Portfolio Building",
+      "Career Support & Job Referral Guidance",
     ],
   },
   {
-    title: "Pro Plan",
-    price: 499,
+    title: "Pro Track",
+    price: 0,
     description:
-      "Ideal for those who want a complete curriculum and an intensive learning experience.",
+      "A complete and intensive full-stack learning path designed for students ready to level up — without paying anything.",
     features: [
-      "Everything in Beginner Plan +",
+      "All Features in Beginner Track +",
       "Full-Stack Development (React, Node.js, Database)",
-      "Live Mentorship & 1-on-1 Code Review",
-      "Real-World Projects & Portfolio Building",
-      "Resume & Job Interview Training",
-      "Job Placement Assistance",
+      "Live Mentorship & 1-on-1 Code Reviews",
+      "Real-World Project Experience",
+      "Resume & Interview Preparation",
+      "Job Placement Support",
     ],
   },
 ];
@@ -57,36 +57,41 @@ const PricingCard: React.FC<(typeof pricingPlans)[0]> = ({
   features,
 }) => {
   return (
-    <div className="bg-[#080808] border border-white/5 rounded-2xl p-8 flex flex-col transition-all duration-300 hover:border-[#4ade80]/50 shadow-xl">
+    <div className="bg-white dark:bg-[#080808] border border-black/10 dark:border-white/10 rounded-2xl p-8 flex flex-col hover:border-emerald-400/50 shadow-xl">
       {/* Price Block */}
       <div className="mb-8">
-        <h3 className="text-2xl font-semibold text-white mb-2">{title}</h3>
-        <p className="text-gray-400 text-sm max-w-[200px] mb-6">
+        <h3 className="text-2xl font-semibold text-black dark:text-white mb-2">
+          {title}
+        </h3>
+
+        <p className="text-gray-600 dark:text-gray-400 text-sm max-w-[200px] mb-6">
           {description}
         </p>
 
         <div className="flex items-end">
-          <span className="text-6xl font-bold text-white leading-none tracking-tight">
+          <span className="text-6xl font-bold text-black dark:text-white leading-none tracking-tight">
             ${price}
           </span>
-          <span className="text-xl text-gray-400 font-medium ml-1 mb-1">
+          <span className="text-xl text-gray-600 dark:text-gray-400 font-medium ml-1 mb-1">
             /month
           </span>
         </div>
       </div>
 
       {/* CTA Button */}
-      <button className="w-full border border-white/30 text-white px-6 py-3 rounded-xl transition-all duration-300 hover:bg-white/10 mb-8 text-sm font-medium">
-        Choose Plan
+      <button className="w-full border border-black/20 dark:border-white/30 text-black dark:text-white px-6 py-3 rounded-xl hover:bg-black/5 dark:hover:bg-white/10 mb-8 text-sm font-medium">
+        Join Track
       </button>
 
       {/* Feature List */}
       <ul className="space-y-4">
         {features.map((feature, index) => (
-          <li key={index} className="flex items-start text-white text-sm">
+          <li
+            key={index}
+            className="flex items-start text-black dark:text-white text-sm"
+          >
             <div className="flex-shrink-0 mt-0.5">
-              {/* Custom green bullet point using Lucide Check */}
-              <Check className="w-4 h-4 text-[#4ade80] mr-2" strokeWidth={3} />
+              <Check className="w-4 h-4 text-[#0E9F9F] mr-2" strokeWidth={3} />
             </div>
             <span>{feature}</span>
           </li>
@@ -99,25 +104,26 @@ const PricingCard: React.FC<(typeof pricingPlans)[0]> = ({
 // --- Main Component ---
 const PricingSection = () => {
   return (
-    <section className="bg-black py-24 px-4 md:px-8 font-sans">
+    <section className="bg-white dark:bg-black py-24 px-4 md:px-8 font-sans">
       <div className="max-w-7xl mx-auto text-center">
         {/* --- Header Section --- */}
         <div className="mb-16">
-          <span className="text-[#4ade80] font-medium text-sm tracking-wide uppercase">
-            Pricing Plan
+          <span className="text-[#0E9F9F] font-medium text-sm tracking-wide uppercase">
+            Learning Tracks
           </span>
-          <h2 className="text-4xl md:text-5xl font-semibold text-white tracking-tight mt-3 mb-5">
-            Flexible Pricing Plans for Every Learner
+
+          <h2 className="text-4xl md:text-5xl font-semibold text-black dark:text-white tracking-tight mt-3 mb-5">
+            Three Free Learning Tracks for Every Student
           </h2>
-          <p className="text-gray-400 max-w-3xl mx-auto text-sm md:text-base leading-relaxed">
-            Choose a plan that fits your goals! Whether you're looking for a
-            full-time immersive experience or a self-paced option, we offer
-            flexible pricing to help you invest in your tech career with ease.
+
+          <p className="text-gray-600 dark:text-gray-400 max-w-3xl mx-auto text-sm md:text-base leading-relaxed">
+            Choose a track that matches your learning level. Whether you're a
+            beginner or aiming for advanced skills, every path is completely
+            free with no fees or hidden costs.
           </p>
         </div>
 
         {/* --- Pricing Grid --- */}
-        {/* Note: The structure is set to match the visual order: Beginner, Ultimate, Pro */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
           {pricingPlans.map((plan) => (
             <PricingCard key={plan.title} {...plan} />

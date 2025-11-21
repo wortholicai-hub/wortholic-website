@@ -4,24 +4,24 @@ import React, { useEffect, useState, useRef } from "react";
 function BootcampBenefits() {
   const benefits = [
     {
-      title: "Job Guarantee or Money Back",
+      title: "Completely Free Bootcamp",
       description:
-        "Get 100% job placement support with our hiring partners or your money back, guaranteed!",
+        "Join a high-quality, beginner-friendly learning program at zero cost — no fees, no hidden charges.",
     },
     {
-      title: "Flexible Payment Options",
+      title: "Free Mentorship & Guidance",
       description:
-        "Choose a payment plan that works for you and start learning without financial worries.",
+        "Learn directly from experienced mentors who guide you throughout your journey, absolutely free.",
     },
     {
-      title: "High-Quality Coding Bootcamp",
+      title: "Hands-On Projects & Skill Building",
       description:
-        "Master in-demand coding skills with expert training and hands-on projects for tech careers.",
+        "Work on real-world projects, build strong fundamentals, and prepare for future tech opportunities.",
     },
     {
-      title: "Exclusive Access to Events",
+      title: "Access to Free Workshops & Resources",
       description:
-        "Get free access to workshops, events, and extra courses for students and alumni.",
+        "Get free entry to live workshops, study materials, exclusive sessions, and learning communities.",
     },
   ];
 

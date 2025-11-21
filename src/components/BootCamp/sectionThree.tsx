@@ -38,7 +38,7 @@ function TechCareerPath() {
       title: "Choose a course",
       description: "Select the course that fits your career goals.",
       icon: "🔍",
-      bgColor: "bg-green-200 text-green-800 dark:bg-green-400 dark:text-white",
+      bgColor: "bg-[#0E9F9F] text-[#0E9F9F] dark:bg-[#0E9F9F] dark:text-white",
     },
     {
       number: "02",
@@ -87,7 +87,7 @@ function TechCareerPath() {
             `}
           >
             <div>
-              <p className="text-gray-600 dark:text-gray-400 text-base mb-3">
+              <p className="text-[#0E9F9F] dark:text-[#0E9F9F] text-base mb-3">
                 How It Works?
               </p>
               <h2 className="text-4xl lg:text-5xl font-bold leading-tight mb-6">

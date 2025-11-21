@@ -37,15 +37,16 @@ const mentors = [
 // --- Main Component ---
 const MeetMentorsSection = () => {
   return (
-    <section className="bg-black py-20 px-4 md:px-8 font-sans text-white">
+    <section className="bg-white dark:bg-black py-20 px-4 md:px-8 font-sans text-black dark:text-white">
       <div className="max-w-7xl mx-auto">
         {/* --- Header & CTA Row --- */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16">
           {/* Left: Heading Block */}
           <div className="space-y-4 mb-8 md:mb-0">
-            <span className="text-[#4ade80] font-medium text-sm tracking-wide uppercase">
+            <span className="text-[#0E9F9F] font-medium text-sm tracking-wide uppercase">
               Meet Professional Mentors
             </span>
+
             <h2 className="text-4xl md:text-5xl font-semibold leading-tight max-w-2xl">
               Learn from the Experts <br />
               Behind Your Success
@@ -56,7 +57,7 @@ const MeetMentorsSection = () => {
           <div>
             <Link
               href="#"
-              className="inline-block border border-white hover:bg-white/10 text-white px-6 py-3.5 rounded-xl transition-all duration-300 text-sm font-medium"
+              className="inline-block border border-black dark:border-white hover:bg-black/10 dark:hover:bg-white/10 text-black dark:text-white px-6 py-3.5 rounded-xl text-sm font-medium"
             >
               View All Mentors
             </Link>
@@ -67,22 +68,21 @@ const MeetMentorsSection = () => {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
           {mentors.map((mentor) => (
             <div key={mentor.id} className="group cursor-pointer">
-              {/* Image Container (Aspect Ratio & Rounded Corners) */}
+              {/* Image Container */}
               <div className="relative w-full aspect-[3/4] overflow-hidden rounded-2xl mb-4">
-                {/* Using standard img tag for reliable rendering */}
                 <img
                   src={mentor.avatar}
                   alt={mentor.name}
-                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+                  className="w-full h-full object-cover group-hover:scale-[1.03] duration-200"
                 />
               </div>
 
               {/* Text Content */}
               <div className="text-center md:text-left space-y-1">
-                <h4 className="text-white font-medium text-lg">
+                <h4 className="text-black dark:text-white font-medium text-lg">
                   {mentor.name}
                 </h4>
-                <p className="text-gray-400 text-xs font-light">
+                <p className="text-gray-600 dark:text-gray-400 text-xs font-light">
                   {mentor.role}
                 </p>
               </div>

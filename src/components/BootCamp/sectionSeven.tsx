@@ -1,5 +1,5 @@
-import React from "react";
-import Image from "next/image";
+"use client";
+import React, { useEffect, useRef, useState } from "react";
 
 // --- Data Configuration with Placeholder Avatars ---
 const testimonials = [
@@ -67,17 +67,27 @@ const TestimonialCard: React.FC<(typeof testimonials)[0]> = ({
   avatar,
 }) => {
   return (
-    <div className="relative bg-[#080808] border border-white/5 rounded-xl p-8 shadow-2xl hover:border-[#4ade80]/30 transition-all duration-300 min-h-[300px]">
+    <div
+      className="relative bg-white border border-gray-200 rounded-xl p-8 shadow-lg hover:border-[#0E9F9F] transition-all duration-300 min-h-[300px]
+      dark:bg-black dark:border-gray-700 dark:hover:border-[#0E9F9F]
+    "
+    >
       {/* --- Quote Bubble Icon --- */}
-      <div className="absolute -top-4 -left-4 w-10 h-10 bg-[#4ade80] rounded-full flex items-center justify-center border-2 border-black">
+      <div
+        className="absolute -top-4 -left-4 w-10 h-10 bg-[#0E9F9F] rounded-full flex items-center justify-center border-2 border-white
+        dark:border-black
+      "
+      >
         {/* Simple white quote mark inside the green bubble */}
-        <span className="text-black text-2xl font-bold leading-none select-none">
+        <span className="text-white text-2xl font-bold leading-none select-none">
           ”
         </span>
       </div>
 
       {/* Testimonial Quote */}
-      <p className="text-white text-sm leading-relaxed mb-6 italic">{quote}</p>
+      <p className="text-gray-800 text-sm leading-relaxed mb-6 italic dark:text-gray-300">
+        {quote}
+      </p>
 
       {/* Author/Profile Section */}
       <div className="flex items-center gap-4 mt-auto">
@@ -86,28 +96,54 @@ const TestimonialCard: React.FC<(typeof testimonials)[0]> = ({
           <img src={avatar} alt={name} className="w-full h-full object-cover" />
         </div>
         <div>
-          <h4 className="text-white font-semibold text-base">{name}</h4>
-          <p className="text-gray-400 text-sm">{role}</p>
+          <h4 className="text-gray-900 font-semibold text-base dark:text-gray-100">
+            {name}
+          </h4>
+          <p className="text-gray-500 text-sm dark:text-gray-400">{role}</p>
         </div>
       </div>
     </div>
   );
 };
 
-// --- Main Component ---
+// --- Main Component with slower smooth animation from top ---
 const AlumniSuccessStories = () => {
+  const headerRef = React.useRef<HTMLDivElement>(null);
+  const [isVisible, setIsVisible] = React.useState(false);
+
+  React.useEffect(() => {
+    if (!headerRef.current) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsVisible(entry.isIntersecting);
+      },
+      { threshold: 0.1 }
+    );
+
+    observer.observe(headerRef.current);
+
+    return () => {
+      if (headerRef.current) observer.unobserve(headerRef.current);
+    };
+  }, []);
+
   return (
-    <section className="bg-black py-24 px-4 md:px-8 font-sans">
+    <section className="bg-gray-50 py-24 px-4 md:px-8 font-sans dark:bg-black">
       <div className="max-w-7xl mx-auto">
-        {/* --- Header Section --- */}
-        <div className="text-center mb-16 space-y-4">
-          <span className="text-[#4ade80] font-medium text-sm tracking-wide uppercase">
+        {/* --- Header Section with scroll animation --- */}
+        <div
+          ref={headerRef}
+          className={`text-center mb-16 space-y-4 transform transition-all duration-[2500ms] ease-in-out
+            ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-24"}`}
+        >
+          <span className="text-[#0E9F9F] font-medium text-sm tracking-wide uppercase">
             Success Stories
           </span>
-          <h2 className="text-4xl md:text-5xl font-bold text-white tracking-tight">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 tracking-tight dark:text-gray-100">
             Our Alumni's Success Stories
           </h2>
-          <p className="text-gray-400 max-w-3xl mx-auto text-sm md:text-base leading-relaxed pt-2">
+          <p className="text-gray-600 max-w-3xl mx-auto text-sm md:text-base leading-relaxed pt-2 dark:text-gray-300">
             Discover how our bootcamp has empowered students to achieve their
             career goals through real-life success stories and testimonials.
           </p>

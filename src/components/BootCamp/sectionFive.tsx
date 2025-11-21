@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import React, { useEffect, useState, useRef } from "react";
 import { ShieldCheck, Globe, Search, FileText } from "lucide-react";
 
 const features = [
@@ -6,28 +7,28 @@ const features = [
     icon: ShieldCheck,
     title: "Company Network",
     description:
-      "Choose a payment plan that works for you and start learning without financial worries.",
+      "Connect with partner companies and organizations that support our free learning initiative and help students get visibility.",
     borderEffect: "top-left",
   },
   {
     icon: Globe,
     title: "Alumni Community",
     description:
-      "Join a supportive alumni network where you can collaborate, share experiences, and find job opportunities.",
+      "Join a friendly, helpful community of graduates who collaborate, share knowledge, and guide new learners — all for free.",
     borderEffect: "bottom-right",
   },
   {
     icon: Search,
-    title: "Access to Job Board",
+    title: "Access to Free Job Board",
     description:
-      "Get exclusive access to curated job openings and apply directly to positions that match your skills and expertise.",
+      "Explore our job board with free access to curated opportunities where you can apply directly based on your skills.",
     borderEffect: "bottom-left",
   },
   {
     icon: FileText,
-    title: "Career Mentorship",
+    title: "Free Career Mentorship",
     description:
-      "Receive personalized one-on-one guidance from industry mentors to help you successfully navigate your career path.",
+      "Receive one-on-one guidance from volunteer industry mentors who help you plan and grow your career — at no cost.",
     borderEffect: "bottom-right",
   },
 ];
@@ -150,6 +151,29 @@ const LogoWheat = () => (
 const logos = [LogoSpiral, LogoBars, LogoTarget, LogoMolecule, LogoWheat];
 
 const CareerSupportSection = () => {
+  const leftSideRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!leftSideRef.current) return;
+
+      const rect = leftSideRef.current.getBoundingClientRect();
+
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        setIsVisible(true);
+      } else {
+        setIsVisible(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    // Run once on mount
+    handleScroll();
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <section className="relative bg-white dark:bg-black min-h-screen flex flex-col justify-center py-20 px-6 md:px-12 overflow-hidden font-sans transition-none">
       {/* Background Ambient Light */}
@@ -162,7 +186,18 @@ const CareerSupportSection = () => {
         {/* Top Section */}
         <div className="flex flex-col lg:flex-row gap-16 lg:gap-24 items-start mb-24">
           {/* Left Side */}
-          <div className="lg:w-[35%] flex flex-col space-y-8 pt-8 sticky top-10">
+          <div
+            ref={leftSideRef}
+            className={`lg:w-[35%] flex flex-col space-y-8 pt-8 sticky top-10
+              transition-transform duration-700 ease-out
+              ${
+                isVisible
+                  ? "translate-x-0 opacity-100"
+                  : "-translate-x-full opacity-0"
+              }
+            `}
+            style={{ willChange: "transform, opacity" }}
+          >
             <div className="space-y-4">
               <span className="text-[#0E9F9F] dark:text-[#0E9F9F] text-sm font-medium tracking-wide">
                 Career Support
@@ -189,7 +224,7 @@ const CareerSupportSection = () => {
             </div>
           </div>
 
-          {/* Right Side - Feature Grid */}
+          {/* Right Side */}
           <div className="lg:w-[65%] grid grid-cols-1 md:grid-cols-2 gap-6">
             {features.map((feature, index) => (
               <div
