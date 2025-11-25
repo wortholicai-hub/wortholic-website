@@ -32,14 +32,33 @@ const featureBlocks: FeatureBlock[] = [
 const SectionSeven: React.FC = () => {
   return (
     <div
-      className="py-6 px-4 sm:px-6 lg:px-8"
-      style={{ backgroundColor: "#F9F7F5" }}
+      className="
+        py-6 px-4 sm:px-6 lg:px-8 
+        bg-[#F9F7F5] 
+        dark:bg-[#0a0a0a] 
+        transition-colors duration-0
+      "
     >
       <div className="max-w-7xl mx-auto text-center">
-        <p className="text-sm font-semibold text-[#0E9F9F] tracking-widest mb-2">
+        <p
+          className="
+            text-sm font-semibold tracking-widest mb-2 
+            text-[#0E9F9F] 
+            dark:text-[#4FE3E3] 
+            transition-colors duration-0
+          "
+        >
           Loyalty features
         </p>
-        <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 leading-tight tracking-tight mb-12">
+
+        <h2
+          className="
+            text-3xl sm:text-4xl font-extrabold leading-tight tracking-tight mb-12
+            text-gray-900 
+            dark:text-white 
+            transition-colors duration-0
+          "
+        >
           Building blocks to create business logic of any shape
         </h2>
 
@@ -49,16 +68,34 @@ const SectionSeven: React.FC = () => {
             return (
               <div
                 key={index}
-                className="p-2 bg-white rounded-xl shadow-md transition-shadow duration-300 hover:shadow-lg flex flex-col justify-center items-center"
+                className="
+                  p-2 rounded-xl shadow-md flex flex-col justify-center items-center
+                  bg-white 
+                  dark:bg-[#1a1a1a] 
+                  hover:shadow-lg 
+                  transition-all duration-0
+                "
                 style={{ width: 220 }}
               >
                 <div
-                  className="p-1 rounded-xl mb-2"
-                  style={{ color: "#0E9F9F" }}
+                  className="
+                    p-1 rounded-xl mb-2
+                    text-[#0E9F9F]
+                    dark:text-[#4FE3E3]
+                    transition-colors duration-0
+                  "
                 >
                   <IconComponent className="w-5 h-5" />
                 </div>
-                <p className="text-sm font-semibold text-gray-800">
+
+                <p
+                  className="
+                    text-sm font-semibold 
+                    text-gray-800 
+                    dark:text-white 
+                    transition-colors duration-0
+                  "
+                >
                   {block.title}
                 </p>
               </div>

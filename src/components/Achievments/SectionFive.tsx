@@ -59,6 +59,7 @@ const SectionFive: React.FC = () => {
           <p className="text-sm font-semibold text-[#0E9F9F] uppercase tracking-wider mb-4">
             FAQ
           </p>
+
           <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white leading-tight">
             Loyalty achievement software
             <br />
@@ -71,22 +72,23 @@ const SectionFive: React.FC = () => {
           {faqData.map((faq, index) => (
             <div
               key={index}
-              className="border-b border-gray-200 dark:border-gray-800"
+              className="border-b border-gray-200 dark:border-gray-700"
             >
-              {/* Question Button */}
+              {/* Question */}
               <button
                 onClick={() => toggleFAQ(index)}
-                className="w-full px-0 py-6 flex items-center justify-between text-left hover:opacity-80 transition-opacity duration-200"
+                className="w-full px-0 py-6 flex items-center justify-between text-left hover:opacity-80 transition-opacity duration-150"
               >
                 <span className="text-lg sm:text-xl font-normal text-gray-900 dark:text-white pr-4">
                   {faq.question}
                 </span>
+
                 <div className="flex-shrink-0">
                   <div className="w-8 h-8 rounded-full border-2 border-[#0E9F9F] flex items-center justify-center">
                     {openIndex === index ? (
-                      <Minus className="w-4 h-4 text-[#0E9F9F]" />
+                      <Minus className="w-4 h-4 text-[#0E9F9F] dark:text-white" />
                     ) : (
-                      <Plus className="w-4 h-4 text-[#0E9F9F]" />
+                      <Plus className="w-4 h-4 text-[#0E9F9F] dark:text-white" />
                     )}
                   </div>
                 </div>

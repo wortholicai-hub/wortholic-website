@@ -2,7 +2,6 @@
 import React, { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-// Testimonial data structure
 interface Testimonial {
   id: number;
   logoText: string;
@@ -12,7 +11,6 @@ interface Testimonial {
   authorImage: string;
 }
 
-// Testimonial data (3 testimonials)
 const testimonials: Testimonial[] = [
   {
     id: 1,
@@ -46,103 +44,98 @@ const testimonials: Testimonial[] = [
 const SectionSix: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // Auto-slide effect
+  // Auto slide
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) =>
-        prevIndex === testimonials.length - 1 ? 0 : prevIndex + 1
+    const itv = setInterval(() => {
+      setCurrentIndex((prev) =>
+        prev === testimonials.length - 1 ? 0 : prev + 1
       );
-    }, 5000); // Change slide every 5 seconds
-
-    return () => clearInterval(interval); // Cleanup on unmount
+    }, 5000);
+    return () => clearInterval(itv);
   }, []);
 
   const goToPrevious = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? testimonials.length - 1 : prevIndex - 1
+    setCurrentIndex((prev) =>
+      prev === 0 ? testimonials.length - 1 : prev - 1
     );
   };
 
   const goToNext = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === testimonials.length - 1 ? 0 : prevIndex + 1
+    setCurrentIndex((prev) =>
+      prev === testimonials.length - 1 ? 0 : prev + 1
     );
   };
 
-  const goToSlide = (index: number) => {
-    setCurrentIndex(index);
-  };
-
-  const testimonial = testimonials[currentIndex];
+  const goToSlide = (i: number) => setCurrentIndex(i);
 
   return (
-    <div className="flex justify-center items-center py-20 px-4 bg-gray-50">
-      <div className="relative bg-[#F9F7F5] rounded-3xl shadow-sm px-8 sm:px-16 lg:px-24 py-12 max-w-5xl w-full mx-auto text-center overflow-hidden">
-        {/* Slides Container */}
+    <div className="flex justify-center items-center py-20 px-4 bg-gray-50 dark:bg-[#0b0f14] transition-colors">
+      <div className="relative bg-[#F9F7F5] dark:bg-[#11161d] rounded-3xl shadow-sm px-8 sm:px-16 lg:px-24 py-12 max-w-5xl w-full mx-auto text-center overflow-hidden transition-colors">
+        {/* Slides */}
         <div className="relative min-h-[400px] flex items-center justify-center">
           {testimonials.map((item, index) => (
             <div
               key={item.id}
-              className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${
+              className={`absolute inset-0 transition-opacity duration-700 ${
                 index === currentIndex ? "opacity-100" : "opacity-0"
               }`}
             >
-              {/* Company Logo Text */}
-              <div className="mb-8">
-                <h3 className="text-2xl font-normal tracking-[0.3em] text-gray-800">
-                  {item.logoText}
-                </h3>
-              </div>
+              {/* Logo */}
+              <h3 className="text-2xl font-normal tracking-[0.3em] text-gray-800 dark:text-gray-200 mb-8 transition-colors">
+                {item.logoText}
+              </h3>
 
               {/* Quote */}
-              <p className="text-xl sm:text-2xl lg:text-3xl font-normal text-gray-900 leading-relaxed mb-8 px-4 sm:px-8">
+              <p className="text-xl sm:text-2xl lg:text-3xl font-normal text-gray-900 dark:text-white leading-relaxed mb-8 px-4 sm:px-8 transition-colors">
                 {item.quote}
               </p>
 
               {/* Author Image */}
-              <div className="mb-4">
-                <img
-                  src={item.authorImage}
-                  alt={item.authorName}
-                  className="w-14 h-14 rounded-full mx-auto object-cover"
-                />
-              </div>
+              <img
+                src={item.authorImage}
+                alt={item.authorName}
+                className="w-14 h-14 rounded-full mx-auto object-cover mb-4"
+              />
 
-              {/* Author Name and Title */}
-              <p className="text-base font-semibold text-gray-900 mb-1">
+              {/* Author Name */}
+              <p className="text-base font-semibold text-gray-900 dark:text-white transition-colors">
                 {item.authorName}
               </p>
-              <p className="text-sm text-gray-600">{item.authorTitle}</p>
+
+              {/* Author Title */}
+              <p className="text-sm text-gray-600 dark:text-gray-400 transition-colors">
+                {item.authorTitle}
+              </p>
             </div>
           ))}
         </div>
 
-        {/* Pagination Dots */}
+        {/* Dots */}
         <div className="flex justify-center mt-8 space-x-2">
           {testimonials.map((_, index) => (
             <button
               key={index}
               onClick={() => goToSlide(index)}
               className={`h-2.5 w-2.5 rounded-full transition-colors ${
-                index === currentIndex ? "bg-gray-700" : "bg-gray-300"
+                index === currentIndex
+                  ? "bg-gray-700 dark:bg-white"
+                  : "bg-gray-300 dark:bg-gray-600"
               }`}
-              aria-label={`Go to testimonial ${index + 1}`}
             />
           ))}
         </div>
 
-        {/* Navigation Arrows */}
+        {/* Arrows */}
         <button
           onClick={goToPrevious}
-          className="absolute left-6 top-1/2 -translate-y-1/2 p-3 rounded-full bg-white shadow-sm text-[#0E9F9F] hover:bg-gray-200 focus:outline-none transition-colors"
-          aria-label="Previous testimonial"
+          className="absolute left-6 top-1/2 -translate-y-1/2 p-3 rounded-full bg-white dark:bg-gray-800 text-[#0E9F9F] dark:text-white shadow-sm hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
         >
           <ChevronLeft className="w-6 h-6" />
         </button>
+
         <button
           onClick={goToNext}
-          className="absolute right-6 top-1/2 -translate-y-1/2 p-3 rounded-full bg-white shadow-sm text-[#0E9F9F] hover:bg-gray-200 focus:outline-none transition-colors"
-          aria-label="Next testimonial"
+          className="absolute right-6 top-1/2 -translate-y-1/2 p-3 rounded-full bg-white dark:bg-gray-800 text-[#0E9F9F] dark:text-white shadow-sm hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
         >
           <ChevronRight className="w-6 h-6" />
         </button>
