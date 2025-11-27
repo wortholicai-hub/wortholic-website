@@ -70,30 +70,30 @@ const SixSection: React.FC = () => {
     benefitsList[0].image
   );
 
-  // Define the exact teal color from the image for the tab
   const tealColor = "#20C9AD";
 
   return (
-    <div className="relative py-20 px-4 sm:px-6 lg:px-8 bg-white overflow-hidden">
+    <div className="relative py-20 px-4 sm:px-6 lg:px-8 bg-white dark:bg-black transition-none overflow-hidden">
       <div className="max-w-7xl mx-auto">
         {/* --- Header Section --- */}
-        <p className="text-sm font-semibold uppercase tracking-widest text-gray-600 mb-2">
+        <p className="text-sm font-semibold uppercase tracking-widest text-gray-600 dark:text-gray-300 mb-2 transition-none">
           BENEFITS
         </p>
-        <h2 className="text-4xl sm:text-5xl font-extrabold text-gray-900 leading-tight mb-16 max-w-4xl">
+
+        <h2 className="text-4xl sm:text-5xl font-extrabold text-gray-900 dark:text-white leading-tight mb-16 max-w-4xl transition-none">
           Why Join Us: Unlock Growth, Impact, and Opportunities
         </h2>
 
-        {/* --- Content Grid: Benefits List and Image --- */}
+        {/* --- Content Grid --- */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-start">
           {/* Left Column: Benefits List */}
           <div className="text-2xl space-y-5">
             {benefitsList.map((benefit, index) => (
               <p
                 key={index}
-                className={`text-gray-900 transition-all duration-300 cursor-pointer ${
+                className={`cursor-pointer transition-all duration-300 text-gray-900 dark:text-gray-200 ${
                   hoveredIndex === index
-                    ? "flex items-center text-teal-600 font-semibold"
+                    ? "flex items-center text-teal-600 dark:text-teal-400 font-semibold"
                     : ""
                 }`}
                 style={{ fontFamily: "Poppins, sans-serif" }}
@@ -103,9 +103,8 @@ const SixSection: React.FC = () => {
                 }}
                 onMouseLeave={() => setHoveredIndex(null)}
               >
-                {/* Visual bullet point appears on hover */}
                 {hoveredIndex === index && (
-                  <span className="w-2 h-2 bg-teal-600 rounded-full inline-block mr-3 flex-shrink-0"></span>
+                  <span className="w-2 h-2 bg-teal-600 dark:bg-teal-400 rounded-full inline-block mr-3 flex-shrink-0"></span>
                 )}
                 {benefit.text}
               </p>

@@ -45,10 +45,10 @@ const joiningSteps: Step[] = [
 
 const TwoSection: React.FC = () => {
   return (
-    <div className="relative py-20 px-4 sm:px-6 lg:px-8 bg-white overflow-x-hidden">
+    <div className="relative py-20 px-4 sm:px-6 lg:px-8 bg-white dark:bg-black overflow-x-hidden transition-colors duration-0">
       <div className="max-w-7xl mx-auto text-center">
         {/* --- Header --- */}
-        <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-black leading-tight mb-20">
+        <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black leading-tight mb-20 text-black dark:text-white">
           Your Path to Joining Wortholic
         </h2>
 
@@ -57,8 +57,8 @@ const TwoSection: React.FC = () => {
           {joiningSteps.map((step, index) => (
             <React.Fragment key={step.id}>
               <div className="relative flex flex-col items-center text-center w-full md:flex-1 md:max-w-[200px] lg:max-w-[240px] z-10">
-                {/* Circular Image Container with thick black border */}
-                <div className="relative w-40 h-40 sm:w-44 sm:h-44 lg:w-48 lg:h-48 rounded-full overflow-hidden border-4 sm:border-[5px] lg:border-[6px] border-black shadow-lg mb-6">
+                {/* Circular Image Container */}
+                <div className="relative w-40 h-40 sm:w-44 sm:h-44 lg:w-48 lg:h-48 rounded-full overflow-hidden border-4 sm:border-[5px] lg:border-[6px] shadow-lg mb-6 border-black dark:border-white">
                   <img
                     src={step.imageSrc}
                     alt={step.imageAlt}
@@ -67,18 +67,18 @@ const TwoSection: React.FC = () => {
                 </div>
 
                 {/* Step Number and Title */}
-                <p className="text-xl sm:text-2xl font-bold text-black px-2">
+                <p className="text-xl sm:text-2xl font-bold px-2 text-black dark:text-white">
                   {step.id}. {step.title}
                 </p>
               </div>
 
-              {/* Dotted connector line between steps (desktop only) */}
+              {/* Dotted connector line */}
               {index < joiningSteps.length - 1 && (
                 <div
                   className="hidden md:flex items-center justify-center flex-shrink-0"
                   style={{ marginTop: "80px" }}
                 >
-                  <div className="w-8 lg:w-12 xl:w-16 border-t-2 border-dotted border-gray-400"></div>
+                  <div className="w-8 lg:w-12 xl:w-16 border-t-2 border-dotted border-gray-400 dark:border-gray-600"></div>
                 </div>
               )}
             </React.Fragment>

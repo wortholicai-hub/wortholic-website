@@ -47,43 +47,44 @@ const FourSection: React.FC = () => {
   const tealColor = "#00BFA6";
 
   return (
-    <div className="relative py-20 px-4 sm:px-6 lg:px-8 bg-white overflow-x-hidden">
+    <div className="relative py-20 px-4 sm:px-6 lg:px-8 bg-white dark:bg-black transition-none overflow-x-hidden">
       <div className="max-w-7xl mx-auto text-center">
-        {/* --- Header Section --- */}
+        {/* Header */}
         <p
           className="text-sm font-bold uppercase tracking-wider mb-3"
           style={{ color: tealColor }}
         >
           GLOBAL CAREERS
         </p>
-        <h2 className="text-5xl sm:text-6xl font-black text-black leading-tight mb-4">
+
+        <h2 className="text-5xl sm:text-6xl font-black text-black dark:text-white leading-tight mb-4 transition-none">
           Connecting Talent Across the World
         </h2>
-        <p className="text-lg text-gray-700 mb-16 max-w-5xl mx-auto">
+
+        <p className="text-lg text-gray-700 dark:text-gray-300 mb-16 max-w-5xl mx-auto transition-none">
           At Wortholic, we take pride in our global presence, bringing together
           talented individuals from diverse cultures and regions to create
-          impactful solutions. Here's what makes our global team exceptional
+          impactful solutions. Here's what makes our global team exceptional.
         </p>
 
-        {/* --- Feature Cards Grid --- */}
+        {/* Feature Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-6">
           {globalFeatures.map((feature) => (
             <div
               key={feature.id}
-              className="relative w-full h-[420px] rounded-2xl overflow-hidden shadow-lg group cursor-pointer"
+              className="relative w-full h-[420px] rounded-2xl overflow-hidden shadow-lg group cursor-pointer transition-none"
             >
-              {/* Background Image */}
               <img
                 src={feature.imageSrc}
                 alt={feature.imageAlt}
                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
               />
 
-              {/* Dark Gradient Overlay for Text Readability */}
+              {/* Overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
 
-              {/* Title Text */}
-              <div className="absolute top-8 left-8 text-white text-left z-20">
+              {/* Title */}
+              <div className="absolute top-8 left-8 text-white text-left z-20 transition-none">
                 <h3 className="text-2xl sm:text-3xl font-bold leading-tight">
                   {feature.title.split("\n").map((line, index) => (
                     <React.Fragment key={index}>

@@ -58,16 +58,15 @@ const cultureImagesRow2 = [
 ];
 
 const FiveSection: React.FC = () => {
-  const tealColor = "#00BFA6";
-
   return (
-    <div className="relative py-20 px-0 bg-white overflow-hidden">
+    <div className="relative py-20 px-0 bg-white dark:bg-black transition-none overflow-hidden">
       <div className="max-w-7xl mx-auto text-center px-4 sm:px-6 lg:px-8 mb-12">
         {/* --- Header Section --- */}
-        <h2 className="text-5xl sm:text-6xl font-black text-black leading-tight mb-4">
+        <h2 className="text-5xl sm:text-6xl font-black text-black dark:text-white leading-tight mb-4 transition-none">
           Culture & Lifestyle
         </h2>
-        <p className="text-lg text-gray-700 max-w-5xl mx-auto">
+
+        <p className="text-lg text-gray-700 dark:text-gray-300 max-w-5xl mx-auto transition-none">
           Experience a vibrant work culture that celebrates creativity,
           collaboration, and milestones through unforgettable moments.
         </p>
@@ -76,7 +75,6 @@ const FiveSection: React.FC = () => {
       {/* --- First Row: Scrolling Right to Left --- */}
       <div className="relative mb-4 overflow-hidden">
         <div className="flex animate-scroll-left">
-          {/* Duplicate images for seamless loop */}
           {[
             ...cultureImagesRow1,
             ...cultureImagesRow1,
@@ -99,7 +97,6 @@ const FiveSection: React.FC = () => {
       {/* --- Second Row: Scrolling Left to Right --- */}
       <div className="relative overflow-hidden">
         <div className="flex animate-scroll-right">
-          {/* Duplicate images for seamless loop */}
           {[
             ...cultureImagesRow2,
             ...cultureImagesRow2,

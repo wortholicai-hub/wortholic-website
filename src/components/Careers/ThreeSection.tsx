@@ -50,7 +50,7 @@ const ThreeSection: React.FC = () => {
   const tealColor = "#00BFA6";
 
   return (
-    <div className="relative py-16 px-4 sm:px-6 lg:px-8 bg-white overflow-x-hidden">
+    <div className="relative py-16 px-4 sm:px-6 lg:px-8 bg-white dark:bg-black overflow-x-hidden transition-colors duration-0">
       <div className="max-w-7xl mx-auto">
         {/* --- Header Section --- */}
         <div className="mb-12">
@@ -60,10 +60,12 @@ const ThreeSection: React.FC = () => {
           >
             CAREER PATHWAYS
           </p>
-          <h2 className="text-5xl sm:text-6xl font-black text-black leading-tight mb-4">
+
+          <h2 className="text-5xl sm:text-6xl font-black leading-tight mb-4 text-black dark:text-white">
             Your Growth, Our Priority
           </h2>
-          <p className="text-lg text-gray-700 max-w-4xl">
+
+          <p className="text-lg max-w-4xl text-gray-700 dark:text-gray-300">
             At Wortholic, we provide a clear and rewarding path to help you
             achieve your professional aspirations.
           </p>
@@ -86,7 +88,7 @@ const ThreeSection: React.FC = () => {
               {/* Dark Overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
 
-              {/* Title Text - Positioned at top left */}
+              {/* Title Text */}
               <div className="absolute top-6 left-6 text-white z-20">
                 <h3 className="text-xl font-bold leading-tight">
                   {pathway.title.split("\n").map((line, index) => (
@@ -104,7 +106,7 @@ const ThreeSection: React.FC = () => {
         {/* --- Call to Action Button --- */}
         <div className="mt-12 text-center">
           <button
-            className="inline-flex justify-center py-4 px-10 border-none rounded-full shadow-lg text-base font-bold text-white transition-all duration-300 hover:shadow-xl hover:scale-105 focus:outline-none focus:ring-4 focus:ring-offset-2"
+            className="inline-flex justify-center py-4 px-10 rounded-full shadow-lg text-base font-bold text-white transition-all duration-300 hover:shadow-xl hover:scale-105 focus:outline-none focus:ring-4 focus:ring-offset-2"
             style={{ backgroundColor: tealColor }}
           >
             Explore Opportunities
