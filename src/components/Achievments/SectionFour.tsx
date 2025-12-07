@@ -218,7 +218,7 @@ const SectionFour: React.FC = () => {
             <p className="text-lg text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
               Use Open Loyalty&apos;s{" "}
               <strong className="font-semibold text-indigo-700 dark:text-indigo-400">
-                gamification software
+                Wortholic Software Solutions
               </strong>{" "}
               to create achievements that drive your business goals.
             </p>
