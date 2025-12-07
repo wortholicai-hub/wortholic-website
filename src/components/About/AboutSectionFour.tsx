@@ -49,7 +49,7 @@ const AboutSectionFour = () => {
   return (
     <section className="bg-white flex flex-col justify-items items-center text-center px-6 py-8 md:px-16 dark:bg-black">
       {/* Heading */}
-      <h2 className="mb-6 text-3xl font-bold text-black md:text-4xl dark:text-white">
+      <h2 className="mb-3 text-2xl lg:text-5xl leading-tight font-bold text-gray-900 sm:text-4xl md:text-5xl xl:mb-5 dark:text-white">
         Why Wortholic?
       </h2>
 

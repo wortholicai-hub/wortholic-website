@@ -60,7 +60,7 @@ const SectionFive: React.FC = () => {
             FAQ
           </p>
 
-          <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white leading-tight">
+          <h2 className="mb-3 text-2xl lg:text-5xl leading-tight font-bold text-gray-900 sm:text-4xl md:text-5xl xl:mb-5 dark:text-white">
             Loyalty achievement software
             <br />
             frequently asked questions
@@ -96,9 +96,8 @@ const SectionFive: React.FC = () => {
 
               {/* Answer */}
               <div
-                className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                  openIndex === index ? "max-h-96 pb-6" : "max-h-0"
-                }`}
+                className={`overflow-hidden transition-all duration-300 ease-in-out ${openIndex === index ? "max-h-96 pb-6" : "max-h-0"
+                  }`}
               >
                 <div className="pr-12">
                   <p className="text-base text-gray-600 dark:text-gray-300 leading-relaxed">

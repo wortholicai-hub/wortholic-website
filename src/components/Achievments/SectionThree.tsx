@@ -52,7 +52,7 @@ const SectionThree: React.FC = () => {
       {/* Section Title */}
       <div className="text-center mb-12">
         <h4 className="text-sm font-semibold text-[#0E9F9F] mb-2">Use cases</h4>
-        <h2 className="text-3xl md:text-5xl font-bold text-gray-900 dark:text-white">
+        <h2 className="mb-3 text-2xl lg:text-5xl leading-tight font-bold text-gray-900 sm:text-4xl md:text-5xl xl:mb-5 dark:text-white">
           Drive results with achievements
         </h2>
       </div>

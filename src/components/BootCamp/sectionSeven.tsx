@@ -140,7 +140,7 @@ const AlumniSuccessStories = () => {
           <span className="text-[#0E9F9F] font-medium text-sm tracking-wide uppercase">
             Success Stories
           </span>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 tracking-tight dark:text-gray-100">
+          <h2 className="mb-3 text-2xl lg:text-5xl leading-tight font-bold text-gray-900 sm:text-4xl md:text-5xl xl:mb-5 dark:text-white tracking-tight">
             Our Alumni's Success Stories
           </h2>
           <p className="text-gray-600 max-w-3xl mx-auto text-sm md:text-base leading-relaxed pt-2 dark:text-gray-300">

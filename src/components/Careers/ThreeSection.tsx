@@ -11,43 +11,42 @@ interface CareerPathway {
 const careerPathways: CareerPathway[] = [
   {
     id: 1,
-    title: "Associate\nSoftware Engineer",
+    title: "AI Engineer",
     imageSrc:
-      "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&h=800&fit=crop",
-    imageAlt: "Associate Software Engineer",
+      "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?auto=format&fit=crop&q=80&w=600&h=800",
+    imageAlt: "AI Engineer working on code",
   },
   {
     id: 2,
-    title: "Software Engineer",
+    title: "Full Stack\nDeveloper",
     imageSrc:
-      "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&h=800&fit=crop",
-    imageAlt: "Software Engineer",
+      "https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?auto=format&fit=crop&q=80&w=600&h=800",
+    imageAlt: "Full Stack Developer coding",
   },
   {
     id: 3,
-    title: "Senior Software\nEngineer",
-    imageSrc:
-      "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&h=800&fit=crop",
-    imageAlt: "Senior Software Engineer",
+    title: "UI/UX\nDesigner",
+    imageSrc: "/images/careers/ui-ux-designer.png",
+    imageAlt: "Designer working on wireframes",
   },
   {
     id: 4,
-    title: "Associate Team\nLead",
+    title: "Project\nManager",
     imageSrc:
-      "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=600&h=800&fit=crop",
-    imageAlt: "Associate Team Lead",
+      "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=600&h=800",
+    imageAlt: "Project Manager planning",
   },
   {
     id: 5,
-    title: "Team Lead",
+    title: "QA\nEngineer",
     imageSrc:
-      "https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=600&h=800&fit=crop",
-    imageAlt: "Team Lead",
+      "https://images.unsplash.com/photo-1580894732444-8ecded7900cd?auto=format&fit=crop&q=80&w=600&h=800",
+    imageAlt: "QA Engineer testing software",
   },
 ];
 
 const ThreeSection: React.FC = () => {
-  const tealColor = "#00BFA6";
+  const tealColor = "#0E9F9F";
 
   return (
     <div className="relative py-16 px-4 sm:px-6 lg:px-8 bg-white dark:bg-black overflow-x-hidden transition-colors duration-0">
@@ -61,7 +60,7 @@ const ThreeSection: React.FC = () => {
             CAREER PATHWAYS
           </p>
 
-          <h2 className="text-5xl sm:text-6xl font-black leading-tight mb-4 text-black dark:text-white">
+          <h2 className="mb-3 text-2xl lg:text-5xl leading-tight font-bold text-gray-900 sm:text-4xl md:text-5xl xl:mb-5 dark:text-white">
             Your Growth, Our Priority
           </h2>
 
@@ -106,8 +105,7 @@ const ThreeSection: React.FC = () => {
         {/* --- Call to Action Button --- */}
         <div className="mt-12 text-center">
           <button
-            className="inline-flex justify-center py-4 px-10 rounded-full shadow-lg text-base font-bold text-white transition-all duration-300 hover:shadow-xl hover:scale-105 focus:outline-none focus:ring-4 focus:ring-offset-2"
-            style={{ backgroundColor: tealColor }}
+            className="flex items-center justify-center rounded-[8px] border-1 border-[#0E9F9F] bg-[#0E9F9F] px-4 py-2 font-medium text-white shadow-md transition duration-300 hover:bg-white hover:text-[#0E9F9F] dark:hover:bg-black"
           >
             Explore Opportunities
           </button>

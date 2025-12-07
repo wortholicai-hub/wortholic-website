@@ -167,7 +167,7 @@ const ContactForm = () => {
               <button
                 type="submit"
                 disabled={isLoading}
-                className="mt-4 w-full cursor-pointer rounded-lg border-2 border-black bg-black px-5 py-2 text-white shadow-md transition duration-300 hover:bg-transparent hover:text-black disabled:opacity-50 disabled:cursor-not-allowed dark:border-gray-500 dark:hover:bg-white dark:hover:text-black"
+                className="mt-4 w-full flex items-center justify-center rounded-[8px] border-1 border-[#0E9F9F] bg-[#0E9F9F] px-4 py-2 font-medium text-white shadow-md transition duration-300 hover:bg-white hover:text-[#0E9F9F] disabled:opacity-50 disabled:cursor-not-allowed dark:hover:bg-black"
               >
                 {isLoading ? "Sending..." : "Send Message"}
               </button>
@@ -211,7 +211,7 @@ const ContactForm = () => {
               </p>
               <button
                 onClick={() => setShowSuccess(false)}
-                className="px-6 py-2 bg-[#0E9F9F] text-white rounded-lg hover:bg-[#0c8a8a] transition duration-300"
+                className="flex items-center justify-center rounded-[8px] border-1 border-[#0E9F9F] bg-[#0E9F9F] px-6 py-2 font-medium text-white shadow-md transition duration-300 hover:bg-white hover:text-[#0E9F9F] dark:hover:bg-black"
               >
                 Close
               </button>

@@ -11,35 +11,35 @@ interface Step {
 const joiningSteps: Step[] = [
   {
     id: 1,
-    title: "Submit Application",
+    title: "Application & Review",
     imageSrc:
-      "https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1586281380349-632531db7ed4?auto=format&fit=crop&q=80&w=400&h=400",
     imageAlt:
-      "Hands holding small wooden blocks with person icons, symbolizing application submission.",
+      "Resume review and application processing.",
   },
   {
     id: 2,
-    title: "Expert Evaluation",
+    title: "Technical Assessment",
     imageSrc:
-      "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1555099962-4199c345e5dd?auto=format&fit=crop&q=80&w=400&h=400",
     imageAlt:
-      "Group of professionals in a meeting, smiling and discussing, symbolizing evaluation.",
+      "Code on a screen, representing technical skills evaluation.",
   },
   {
     id: 3,
-    title: "Personal Interview",
+    title: "Culture Fit Interview",
     imageSrc:
-      "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&q=80&w=400&h=400",
     imageAlt:
-      "Person holding a magnifying glass over small person icons, symbolizing an interview process.",
+      "Two people talking in a relaxed office setting.",
   },
   {
     id: 4,
-    title: "Seamless Onboarding",
+    title: "Offer & Onboarding",
     imageSrc:
-      "https://images.unsplash.com/photo-1521791136064-7986c2920216?w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&q=80&w=400&h=400",
     imageAlt:
-      "Two people shaking hands and smiling in an office, symbolizing onboarding.",
+      "Shaking hands and welcoming a new team member.",
   },
 ];
 
@@ -48,7 +48,7 @@ const TwoSection: React.FC = () => {
     <div className="relative py-20 px-4 sm:px-6 lg:px-8 bg-white dark:bg-black overflow-x-hidden transition-colors duration-0">
       <div className="max-w-7xl mx-auto text-center">
         {/* --- Header --- */}
-        <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black leading-tight mb-20 text-black dark:text-white">
+        <h2 className="mb-3 text-2xl lg:text-5xl leading-tight font-bold text-gray-900 sm:text-4xl md:text-5xl xl:mb-5 dark:text-white">
           Your Path to Joining Wortholic
         </h2>
 

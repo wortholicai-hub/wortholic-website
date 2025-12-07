@@ -13,6 +13,7 @@
 }
 
 @keyframes orbPulse {
+
   0%,
   100% {
     box-shadow:
@@ -20,6 +21,7 @@
       0 0 120px rgba(29, 116, 122, 0.2),
       inset 0 0 60px rgba(29, 116, 122, 0.2);
   }
+
   50% {
     box-shadow:
       0 0 100px rgba(29, 116, 122, 0.6),
@@ -33,12 +35,15 @@
     top: 0;
     opacity: 0;
   }
+
   20% {
     opacity: 1;
   }
+
   80% {
     opacity: 1;
   }
+
   100% {
     top: 100%;
     opacity: 0;
@@ -87,19 +92,15 @@
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  background: radial-gradient(
-    circle at 35% 25%,
-    rgba(255, 255, 255, 0.6) 0%,
-    transparent 50%
-  );
+  background: radial-gradient(circle at 35% 25%,
+      rgba(255, 255, 255, 0.6) 0%,
+      transparent 50%);
 }
 
 :global(.dark) .orb::before {
-  background: radial-gradient(
-    circle at 35% 25%,
-    rgba(30, 41, 59, 0.6) 0%,
-    transparent 50%
-  );
+  background: radial-gradient(circle at 35% 25%,
+      rgba(30, 41, 59, 0.6) 0%,
+      transparent 50%);
 }
 
 .orb svg {
@@ -131,20 +132,16 @@
   transform: translateX(-50%);
   width: 1px;
   height: 190px;
-  background: linear-gradient(
-    to bottom,
-    rgba(29, 116, 122, 0.3),
-    rgba(29, 116, 122, 0.1)
-  );
+  background: linear-gradient(to bottom,
+      rgba(29, 116, 122, 0.3),
+      rgba(29, 116, 122, 0.1));
   overflow: hidden;
 }
 
 :global(.dark) .verticalLine {
-  background: linear-gradient(
-    to bottom,
-    rgba(29, 116, 122, 0.5),
-    rgba(29, 116, 122, 0.2)
-  );
+  background: linear-gradient(to bottom,
+      rgba(29, 116, 122, 0.5),
+      rgba(29, 116, 122, 0.2));
 }
 
 .verticalLine1 {
@@ -154,20 +151,16 @@
   transform: translateX(-50%);
   width: 1px;
   height: 97px;
-  background: linear-gradient(
-    to bottom,
-    rgba(29, 116, 122, 0.3),
-    rgba(29, 116, 122, 0.1)
-  );
+  background: linear-gradient(to bottom,
+      rgba(29, 116, 122, 0.3),
+      rgba(29, 116, 122, 0.1));
   overflow: hidden;
 }
 
 :global(.dark) .verticalLine1 {
-  background: linear-gradient(
-    to bottom,
-    rgba(29, 116, 122, 0.5),
-    rgba(29, 116, 122, 0.2)
-  );
+  background: linear-gradient(to bottom,
+      rgba(29, 116, 122, 0.5),
+      rgba(29, 116, 122, 0.2));
 }
 
 .verticalLine2 {
@@ -177,20 +170,16 @@
   transform: translateX(-50%);
   width: 1px;
   height: 97px;
-  background: linear-gradient(
-    to bottom,
-    rgba(29, 116, 122, 0.3),
-    rgba(29, 116, 122, 0.1)
-  );
+  background: linear-gradient(to bottom,
+      rgba(29, 116, 122, 0.3),
+      rgba(29, 116, 122, 0.1));
   overflow: hidden;
 }
 
 :global(.dark) .verticalLine2 {
-  background: linear-gradient(
-    to bottom,
-    rgba(29, 116, 122, 0.5),
-    rgba(29, 116, 122, 0.2)
-  );
+  background: linear-gradient(to bottom,
+      rgba(29, 116, 122, 0.5),
+      rgba(29, 116, 122, 0.2));
 }
 
 .verticalLine::after {
@@ -213,25 +202,21 @@
   width: 585px;
   right: 0;
   height: 1px;
-  background: linear-gradient(
-    to right,
-    transparent 0%,
-    rgba(29, 116, 122, 0.1) 10%,
-    rgba(29, 116, 122, 0.2) 50%,
-    rgba(29, 116, 122, 0.1) 90%,
-    transparent 100%
-  );
+  background: linear-gradient(to right,
+      transparent 0%,
+      rgba(29, 116, 122, 0.1) 10%,
+      rgba(29, 116, 122, 0.2) 50%,
+      rgba(29, 116, 122, 0.1) 90%,
+      transparent 100%);
 }
 
 :global(.dark) .horizontalLine {
-  background: linear-gradient(
-    to right,
-    transparent 0%,
-    rgba(29, 116, 122, 0.2) 10%,
-    rgba(29, 116, 122, 0.4) 50%,
-    rgba(29, 116, 122, 0.2) 90%,
-    transparent 100%
-  );
+  background: linear-gradient(to right,
+      transparent 0%,
+      rgba(29, 116, 122, 0.2) 10%,
+      rgba(29, 116, 122, 0.4) 50%,
+      rgba(29, 116, 122, 0.2) 90%,
+      transparent 100%);
 }
 
 .horizontalLine1 {
@@ -241,25 +226,21 @@
   width: 585px;
   right: 0;
   height: 1px;
-  background: linear-gradient(
-    to right,
-    transparent 0%,
-    rgba(29, 116, 122, 0.1) 10%,
-    rgba(29, 116, 122, 0.2) 50%,
-    rgba(29, 116, 122, 0.1) 90%,
-    transparent 100%
-  );
+  background: linear-gradient(to right,
+      transparent 0%,
+      rgba(29, 116, 122, 0.1) 10%,
+      rgba(29, 116, 122, 0.2) 50%,
+      rgba(29, 116, 122, 0.1) 90%,
+      transparent 100%);
 }
 
 :global(.dark) .horizontalLine1 {
-  background: linear-gradient(
-    to right,
-    transparent 0%,
-    rgba(29, 116, 122, 0.2) 10%,
-    rgba(29, 116, 122, 0.4) 50%,
-    rgba(29, 116, 122, 0.2) 90%,
-    transparent 100%
-  );
+  background: linear-gradient(to right,
+      transparent 0%,
+      rgba(29, 116, 122, 0.2) 10%,
+      rgba(29, 116, 122, 0.4) 50%,
+      rgba(29, 116, 122, 0.2) 90%,
+      transparent 100%);
 }
 
 .branchLine {
@@ -267,19 +248,15 @@
   top: 80px;
   width: 1px;
   height: 100px;
-  background: linear-gradient(
-    to bottom,
-    rgba(29, 116, 122, 0.2),
-    rgba(29, 116, 122, 0.05)
-  );
+  background: linear-gradient(to bottom,
+      rgba(29, 116, 122, 0.2),
+      rgba(29, 116, 122, 0.05));
 }
 
 :global(.dark) .branchLine {
-  background: linear-gradient(
-    to bottom,
-    rgba(29, 116, 122, 0.4),
-    rgba(29, 116, 122, 0.1)
-  );
+  background: linear-gradient(to bottom,
+      rgba(29, 116, 122, 0.4),
+      rgba(29, 116, 122, 0.1));
 }
 
 .branchLeft {
@@ -344,16 +321,17 @@
 }
 
 :global(.dark) .card {
-  border-color: rgba(29, 116, 122, 0.5); /* stronger border */
-  background: linear-gradient(
-    135deg,
-    rgba(29, 116, 122, 0.3) 0%,
-    rgba(19, 85, 90, 0.3) 100%
-  ); /* transparent gradient to match Tailwind's */
+  border-color: rgba(29, 116, 122, 0.5);
+  /* stronger border */
+  background: linear-gradient(135deg,
+      rgba(29, 116, 122, 0.3) 0%,
+      rgba(19, 85, 90, 0.3) 100%);
+  /* transparent gradient to match Tailwind's */
   box-shadow:
     0 8px 32px rgba(29, 116, 122, 0.4),
     inset 0 0 20px rgba(29, 116, 122, 0.1);
-  color: #e0f2f1; /* lighter text */
+  color: #e0f2f1;
+  /* lighter text */
 }
 
 .card::before {
@@ -363,21 +341,17 @@
   left: 0;
   right: 0;
   height: 120px;
-  background: radial-gradient(
-    ellipse at top,
-    rgba(29, 116, 122, 0.08) 0%,
-    transparent 70%
-  );
+  background: radial-gradient(ellipse at top,
+      rgba(29, 116, 122, 0.08) 0%,
+      transparent 70%);
   opacity: 0;
   transition: opacity 0.3s ease;
 }
 
 :global(.dark) .card::before {
-  background: radial-gradient(
-    ellipse at top,
-    rgba(29, 116, 122, 0.15) 0%,
-    transparent 70%
-  );
+  background: radial-gradient(ellipse at top,
+      rgba(29, 116, 122, 0.15) 0%,
+      transparent 70%);
 }
 
 .card:hover {
@@ -407,11 +381,9 @@
   top: -15px;
   margin: 0 auto 28px;
   border-radius: 50%;
-  background: linear-gradient(
-    135deg,
-    rgba(29, 116, 122, 0.12) 0%,
-    rgba(29, 116, 122, 0.08) 100%
-  );
+  background: linear-gradient(135deg,
+      rgba(29, 116, 122, 0.12) 0%,
+      rgba(29, 116, 122, 0.08) 100%);
   border: 1.5px solid rgba(29, 116, 122, 0.25);
   display: flex;
   align-items: center;
@@ -421,30 +393,24 @@
 }
 
 :global(.dark) .iconWrapper {
-  background: linear-gradient(
-    135deg,
-    rgba(29, 116, 122, 0.25) 0%,
-    rgba(29, 116, 122, 0.15) 100%
-  );
+  background: linear-gradient(135deg,
+      rgba(29, 116, 122, 0.25) 0%,
+      rgba(29, 116, 122, 0.15) 100%);
   border-color: rgba(29, 116, 122, 0.4);
 }
 
 .card:hover .iconWrapper {
   border-color: rgba(29, 116, 122, 0.5);
-  background: linear-gradient(
-    135deg,
-    rgba(29, 116, 122, 0.2) 0%,
-    rgba(29, 116, 122, 0.12) 100%
-  );
+  background: linear-gradient(135deg,
+      rgba(29, 116, 122, 0.2) 0%,
+      rgba(29, 116, 122, 0.12) 100%);
 }
 
 :global(.dark) .card:hover .iconWrapper {
   border-color: rgba(29, 116, 122, 0.6);
-  background: linear-gradient(
-    135deg,
-    rgba(29, 116, 122, 0.35) 0%,
-    rgba(29, 116, 122, 0.25) 100%
-  );
+  background: linear-gradient(135deg,
+      rgba(29, 116, 122, 0.35) 0%,
+      rgba(29, 116, 122, 0.25) 100%);
 }
 
 .iconWrapper::before {
@@ -453,11 +419,9 @@
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  background: radial-gradient(
-    circle at 35% 25%,
-    rgba(29, 116, 122, 0.15) 0%,
-    transparent 60%
-  );
+  background: radial-gradient(circle at 35% 25%,
+      rgba(29, 116, 122, 0.15) 0%,
+      transparent 60%);
 }
 
 .iconWrapper svg {
@@ -540,6 +504,7 @@
 
 /* 📱 Mobile & Tablet: 3 cards per row */
 @media (max-width: 1024px) {
+
   .grid,
   .gridBottom,
   .gridBottom1 {
@@ -592,6 +557,7 @@
 
 /* 📱 Small phones (under 600px): still 3 per row, but compact */
 @media (max-width: 600px) {
+
   .grid,
   .gridBottom,
   .gridBottom1 {

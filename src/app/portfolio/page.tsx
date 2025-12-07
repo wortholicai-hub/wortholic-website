@@ -1,12 +1,7 @@
 import Portfolio from "@/components/Portfolio/Portfolio";
-import React from "react";
 
-const page = () => {
-  return (
-    <>
-      <Portfolio />
-    </>
-  );
+const PortfolioPage = () => {
+  return <Portfolio />;
 };
 
-export default page;
+export default PortfolioPage;

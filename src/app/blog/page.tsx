@@ -21,15 +21,14 @@ const Blog = () => {
 
       <section className="pt-[20px] pb-[10px]">
         <div className="flex items-center justify-center mt-10 mb-5">
-          <h1 className="text-3xl font-semibold">Our Latest Blogs</h1>
+          <h1 className="mb-3 text-2xl lg:text-5xl leading-tight font-bold text-gray-900 sm:text-4xl md:text-5xl xl:mb-5 dark:text-white">
+            Our Latest Blogs
+          </h1>
         </div>
         <div className="container">
-          <div className="-mx-4 flex flex-wrap justify-center">
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {blogData.map((blog) => (
-              <div
-                key={blog.id}
-                className="w-full px-4 md:w-2/3 lg:w-1/2 xl:w-1/3"
-              >
+              <div key={blog.id} className="w-full">
                 <SingleBlog blog={blog} />
               </div>
             ))}

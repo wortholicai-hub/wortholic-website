@@ -5,7 +5,7 @@ const AboutSectionSix: React.FC = () => {
   return (
     <section className="bg-gray-100 py-6 transition-colors duration-300 dark:bg-black">
       <div className="container mx-auto px-4">
-        <h2 className="mb-12 text-center text-4xl font-bold text-gray-800 transition-colors duration-300 dark:text-gray-100">
+        <h2 className="mb-3 text-2xl lg:text-5xl leading-tight font-bold text-gray-900 sm:text-4xl md:text-5xl xl:mb-5 dark:text-white text-center">
           Our Core Competencies
         </h2>
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4 text-center">

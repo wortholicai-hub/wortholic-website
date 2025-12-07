@@ -15,7 +15,7 @@ const pricingPlans = [
       "Beginner-Friendly Projects",
       "Community Support & Discussion Groups",
       "Coding Challenges for Practice",
-      "Introductory Career Guidance",
+      "Introductory Learning Path",
     ],
   },
   {
@@ -25,12 +25,12 @@ const pricingPlans = [
       "Our most in-depth and supportive free learning experience with advanced guidance and career growth help.",
     features: [
       "All Features in Pro Track +",
-      "Free Personalized Career Mentorship",
+      "Free Personalized Technical Mentorship",
       "Tech Industry Networking Opportunities",
       "Certificate of Completion",
       "Free Access to Exclusive Workshops",
       "Advanced Portfolio Building",
-      "Career Support & Job Referral Guidance",
+      "Portfolio Review & Guidance",
     ],
   },
   {
@@ -44,7 +44,7 @@ const pricingPlans = [
       "Live Mentorship & 1-on-1 Code Reviews",
       "Real-World Project Experience",
       "Resume & Interview Preparation",
-      "Job Placement Support",
+      "Advanced Project Review",
     ],
   },
 ];
@@ -79,7 +79,7 @@ const PricingCard: React.FC<(typeof pricingPlans)[0]> = ({
       </div>
 
       {/* CTA Button */}
-      <button className="w-full border border-black/20 dark:border-white/30 text-black dark:text-white px-6 py-3 rounded-xl hover:bg-black/5 dark:hover:bg-white/10 mb-8 text-sm font-medium">
+      <button className="w-full flex items-center justify-center rounded-[8px] border-1 border-[#0E9F9F] bg-[#0E9F9F] px-4 py-2 font-medium text-white shadow-md transition duration-300 hover:bg-white hover:text-[#0E9F9F] dark:hover:bg-black mb-8">
         Join Track
       </button>
 
@@ -112,7 +112,7 @@ const PricingSection = () => {
             Learning Tracks
           </span>
 
-          <h2 className="text-4xl md:text-5xl font-semibold text-black dark:text-white tracking-tight mt-3 mb-5">
+          <h2 className="mb-3 text-2xl lg:text-5xl leading-tight font-bold text-gray-900 sm:text-4xl md:text-5xl xl:mb-5 dark:text-white tracking-tight mt-3 mb-5">
             Three Free Learning Tracks for Every Student
           </h2>
 

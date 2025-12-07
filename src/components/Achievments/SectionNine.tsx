@@ -37,10 +37,10 @@ const SectionNine: React.FC = () => {
   return (
     <div className="py-20 px-4 sm:px-6 lg:px-8 bg-white dark:bg-black transition-none">
       <div className="max-w-7xl mx-auto text-center">
-        <p className="text-sm font-semibold text-indigo-600 uppercase tracking-widest mb-2 dark:text-indigo-400 transition-none">
+        <p className="text-sm font-semibold text-[#0E9F9F] uppercase tracking-widest mb-2 dark:text-[#0E9F9F] transition-none">
           Success stories
         </p>
-        <h2 className="text-4xl sm:text-5xl font-extrabold text-gray-900 dark:text-white leading-tight tracking-tight mb-16 transition-none">
+        <h2 className="mb-3 text-2xl lg:text-5xl leading-tight font-bold text-gray-900 sm:text-4xl md:text-5xl xl:mb-5 dark:text-white transition-none">
           See how Open Loyalty helps brands grow their business
         </h2>
 
@@ -75,7 +75,7 @@ const SectionNine: React.FC = () => {
           ))}
         </div>
 
-        <button className="inline-flex justify-center py-3 px-6 border border-transparent rounded-lg shadow-md text-base font-medium text-white bg-purple-600 hover:bg-purple-700 transition-colors dark:bg-purple-700 dark:hover:bg-purple-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500 transition-none">
+        <button className="inline-flex justify-center py-3 px-6 border border-transparent rounded-lg shadow-md text-base font-medium text-white bg-[#0E9F9F] hover:bg-[#0a7a7a] transition-colors dark:bg-[#0E9F9F] dark:hover:bg-[#0a7a7a] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#0E9F9F] transition-none">
           See all success stories
         </button>
       </div>

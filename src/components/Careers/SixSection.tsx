@@ -3,64 +3,64 @@ import React from "react";
 // Data for the benefits list with corresponding images
 const benefitsList = [
   {
-    text: "Fuel Allowance",
+    text: "Competitive Salary",
     image:
-      "https://images.unsplash.com/photo-1628744876497-eb30460be9f6?w=800&q=80",
+      "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?auto=format&fit=crop&q=80&w=800",
   },
   {
-    text: "Outpatient (OPD) & Inpatient (IPD) Benefits",
+    text: "Health & Wellness",
     image:
-      "https://images.unsplash.com/photo-1538108149393-fbbd81895907?w=800&q=80",
+      "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&fit=crop&q=80&w=800",
   },
   {
-    text: "Workation Opportunities",
+    text: "Remote-First Options",
     image:
-      "https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?w=800&q=80",
+      "https://images.unsplash.com/photo-1593642632823-8f78536788c6?auto=format&fit=crop&q=80&w=800",
   },
   {
-    text: "World-Class Gyms",
+    text: "Learning Budget",
     image:
-      "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&q=80",
+      "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&q=80&w=800",
   },
   {
-    text: "Exclusive Salons",
+    text: "Latest Hardware",
     image:
-      "https://images.unsplash.com/photo-1560066984-138dadb4c035?w=800&q=80",
+      "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=800",
   },
   {
-    text: "Work from Home Options",
+    text: "Flexible Hours",
     image:
-      "https://images.unsplash.com/photo-1509475826633-fed577a2c71b?w=800&q=80",
+      "https://images.unsplash.com/photo-1509475826633-fed577a2c71b?auto=format&fit=crop&q=80&w=800",
   },
   {
-    text: "Paid Leaves",
+    text: "Paid Time Off",
     image:
-      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80",
+      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&q=80&w=800",
   },
   {
-    text: "Skill Development Programs",
+    text: "Team Retreats",
     image:
-      "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=800&q=80",
+      "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=800",
   },
   {
     text: "Performance Bonuses",
     image:
-      "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=800&q=80",
+      "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&q=80&w=800",
   },
   {
-    text: "Tech Allowances",
+    text: "Home Office Stipend",
     image:
-      "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=800&q=80",
+      "https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&q=80&w=800",
   },
   {
-    text: "Diverse Work Culture",
+    text: "Diverse Culture",
     image:
-      "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80",
+      "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&q=80&w=800",
   },
   {
-    text: "Health and Wellness Programs",
+    text: "Mentorship Programs",
     image:
-      "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=800&q=80",
+      "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=800",
   },
 ];
 
@@ -70,7 +70,7 @@ const SixSection: React.FC = () => {
     benefitsList[0].image
   );
 
-  const tealColor = "#20C9AD";
+  const tealColor = "#0E9F9F";
 
   return (
     <div className="relative py-20 px-4 sm:px-6 lg:px-8 bg-white dark:bg-black transition-none overflow-hidden">
@@ -80,7 +80,7 @@ const SixSection: React.FC = () => {
           BENEFITS
         </p>
 
-        <h2 className="text-4xl sm:text-5xl font-extrabold text-gray-900 dark:text-white leading-tight mb-16 max-w-4xl transition-none">
+        <h2 className="mb-3 text-2xl lg:text-5xl leading-tight font-bold text-gray-900 sm:text-4xl md:text-5xl xl:mb-5 dark:text-white transition-none">
           Why Join Us: Unlock Growth, Impact, and Opportunities
         </h2>
 
@@ -91,11 +91,10 @@ const SixSection: React.FC = () => {
             {benefitsList.map((benefit, index) => (
               <p
                 key={index}
-                className={`cursor-pointer transition-all duration-300 text-gray-900 dark:text-gray-200 ${
-                  hoveredIndex === index
-                    ? "flex items-center text-teal-600 dark:text-teal-400 font-semibold"
-                    : ""
-                }`}
+                className={`cursor-pointer transition-all duration-300 text-gray-900 dark:text-gray-200 ${hoveredIndex === index
+                  ? "flex items-center text-teal-600 dark:text-teal-400 font-semibold"
+                  : ""
+                  }`}
                 style={{ fontFamily: "Poppins, sans-serif" }}
                 onMouseEnter={() => {
                   setHoveredIndex(index);

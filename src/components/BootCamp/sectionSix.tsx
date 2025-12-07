@@ -80,10 +80,9 @@ const BootcampLocations = () => {
             ref={leftRef}
             className={`flex flex-col gap-12
               transform transition-transform duration-[1500ms] ease-out
-              ${
-                isVisible
-                  ? "translate-x-0 opacity-100"
-                  : "-translate-x-full opacity-0"
+              ${isVisible
+                ? "translate-x-0 opacity-100"
+                : "-translate-x-full opacity-0"
               }
             `}
           >
@@ -92,7 +91,7 @@ const BootcampLocations = () => {
               <h4 className="text-[#0E9F9F] font-medium text-sm tracking-wide mb-3 dark:text-[#0E9F9F]">
                 Bootcamp Locations
               </h4>
-              <h2 className="text-4xl md:text-5xl font-semibold leading-tight">
+              <h2 className="mb-3 text-2xl lg:text-5xl leading-tight font-bold text-gray-900 sm:text-4xl md:text-5xl xl:mb-5 dark:text-white">
                 Join Us at Our Convenient <br />
                 Locations or Online
               </h2>
@@ -107,10 +106,9 @@ const BootcampLocations = () => {
                     key={item.id}
                     onClick={() => setActiveId(item.id)}
                     className={`relative overflow-hidden rounded-3xl border cursor-pointer py-6 px-8 hover:border-gray-400
-                      ${
-                        isActive
-                          ? "bg-gray-50 border-gray-300 shadow-md dark:bg-transparent dark:border-gray-700"
-                          : "bg-white border-gray-200 dark:bg-transparent dark:border-gray-700 dark:hover:border-gray-600"
+                      ${isActive
+                        ? "bg-gray-50 border-gray-300 shadow-md dark:bg-transparent dark:border-gray-700"
+                        : "bg-white border-gray-200 dark:bg-transparent dark:border-gray-700 dark:hover:border-gray-600"
                       }
                     `}
                   >

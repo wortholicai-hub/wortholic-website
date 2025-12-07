@@ -4,56 +4,56 @@ import React from "react";
 const cultureImagesRow1 = [
   {
     id: 1,
-    src: "https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=600&h=400&fit=crop",
-    alt: "Group photo at an event",
+    src: "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&q=80&w=600&h=400",
+    alt: "Team collaboration",
   },
   {
     id: 2,
-    src: "https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=600&h=400&fit=crop",
-    alt: "Two women smiling at event",
+    src: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=600&h=400",
+    alt: "Office meeting",
   },
   {
     id: 3,
-    src: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=600&h=400&fit=crop",
-    alt: "Outdoor event with many people",
+    src: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=600&h=400",
+    alt: "Coding session",
   },
   {
     id: 4,
-    src: "https://images.unsplash.com/photo-1543269865-cbf427effbad?w=600&h=400&fit=crop",
-    alt: "Group celebration with balloons",
+    src: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&q=80&w=600&h=400",
+    alt: "Brainstorming",
   },
   {
     id: 5,
-    src: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=600&h=400&fit=crop",
-    alt: "Outdoor sports activity",
+    src: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=600&h=400",
+    alt: "Team strategy",
   },
 ];
 
 const cultureImagesRow2 = [
   {
     id: 6,
-    src: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=600&h=400&fit=crop",
-    alt: "Women at indoor event",
+    src: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&q=80&w=600&h=400",
+    alt: "Remote work setup",
   },
   {
     id: 7,
-    src: "https://images.unsplash.com/photo-1528605248644-14dd04022da1?w=600&h=400&fit=crop",
-    alt: "Interior event space",
+    src: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&q=80&w=600&h=400",
+    alt: "Tech workshop",
   },
   {
     id: 8,
-    src: "https://images.unsplash.com/photo-1556761175-b413da4baf72?w=600&h=400&fit=crop",
-    alt: "Men in traditional attire at event",
+    src: "https://images.unsplash.com/photo-1531545514256-b1400bc00f31?auto=format&fit=crop&q=80&w=600&h=400",
+    alt: "Design review",
   },
   {
     id: 9,
-    src: "https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=600&h=400&fit=crop",
-    alt: "Women in colorful traditional clothing",
+    src: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=600&h=400",
+    alt: "Team lunch",
   },
   {
     id: 10,
-    src: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=600&h=400&fit=crop",
-    alt: "Group of professionals smiling",
+    src: "https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&q=80&w=600&h=400",
+    alt: "Hackathon",
   },
 ];
 
@@ -62,7 +62,7 @@ const FiveSection: React.FC = () => {
     <div className="relative py-20 px-0 bg-white dark:bg-black transition-none overflow-hidden">
       <div className="max-w-7xl mx-auto text-center px-4 sm:px-6 lg:px-8 mb-12">
         {/* --- Header Section --- */}
-        <h2 className="text-5xl sm:text-6xl font-black text-black dark:text-white leading-tight mb-4 transition-none">
+        <h2 className="mb-3 text-2xl lg:text-5xl leading-tight font-bold text-gray-900 sm:text-4xl md:text-5xl xl:mb-5 dark:text-white transition-none">
           Culture & Lifestyle
         </h2>
 

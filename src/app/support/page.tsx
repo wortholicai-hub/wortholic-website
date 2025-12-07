@@ -6,7 +6,7 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Contact Wortholic | Get in Touch for Software Services",
   description:
-    "Contact Wortholic for premium software services, AI solutions, and web development. Let's discuss your project with our expert team.",
+    "Contact Wortholic for premium software services, AI solutions, and web development. Let&apos;s discuss your project with our expert team.",
   // other metadata
 };
 

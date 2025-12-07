@@ -90,12 +90,12 @@ function TechCareerPath() {
               <p className="text-[#0E9F9F] dark:text-[#0E9F9F] text-base mb-3">
                 How It Works?
               </p>
-              <h2 className="text-4xl lg:text-5xl font-bold leading-tight mb-6">
-                Your Path to a Tech Career Starts Here
+              <h2 className="mb-3 text-2xl lg:text-5xl leading-tight font-bold text-gray-900 sm:text-4xl md:text-5xl xl:mb-5 dark:text-white">
+                Your Path to Tech Mastery Starts Here
               </h2>
               <p className="text-gray-700 dark:text-gray-300 text-lg leading-relaxed">
                 Follow our structured learning process from selecting your
-                course to landing your dream job with expert guidance and
+                course to building a professional portfolio with expert guidance and
                 hands-on experience.
               </p>
             </div>

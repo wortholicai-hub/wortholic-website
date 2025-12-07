@@ -242,7 +242,7 @@ export default function CircularSlider({
               return (
                 <div
                   key={idx}
-                  className="flex items-start gap-3 border-2 border-[#0F5C60] bg-[#0F5C60] rounded-lg p-3 dark:bg-transparent"
+                  className="flex items-start gap-3 border-2 border-[#0E9F9F] bg-[#0E9F9F] rounded-lg p-3 dark:bg-transparent"
                 >
                   <div className="flex-shrink-0">
                     <IconComponent className="w-6 h-6 text-cyan-500" />
@@ -339,7 +339,7 @@ export default function CircularSlider({
                 return (
                   <div
                     key={idx}
-                    className="flex items-start gap-3 border-2 border-[#0F5C60] bg-[#0F5C60] rounded-lg p-3 dark:bg-transparent"
+                    className="flex items-start gap-3 border-2 border-[#0E9F9F] bg-[#0E9F9F] rounded-lg p-3 dark:bg-transparent"
                   >
                     <div className="flex-shrink-0">
                       <IconComponent className="w-6 h-6 text-cyan-500" />
@@ -419,10 +419,10 @@ export default function CircularSlider({
         </div>
       </div>
       <div className="flex flex-row text-[12px] justify-items items-center gap-2 ml-0 lg:ml-[23rem]">
-        <button className="border-2 border-[#0F5C60] rounded-[6px] px-6 py-1.5 dark:bg-transparent">
+        <button className="border-2 border-[#0E9F9F] rounded-[6px] px-6 py-1.5 dark:bg-transparent">
           Learn More
         </button>
-        <button className="border-2 border-[#0F5C60] rounded-[6px] px-6 py-1.5 bg-[#0F5C60] text-white dark:bg-transparent">
+        <button className="border-2 border-[#0E9F9F] rounded-[6px] px-6 py-1.5 bg-[#0E9F9F] text-white dark:bg-transparent">
           Get Started
         </button>
       </div>

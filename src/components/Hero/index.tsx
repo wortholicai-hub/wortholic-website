@@ -77,6 +77,7 @@ const Hero = () => {
                   alt="Consistency"
                   width={140}
                   height={25}
+                  priority
                   className="scale-150 bg-transparent object-contain dark:brightness-200 dark:invert"
                 />
               </div>
@@ -87,6 +88,7 @@ const Hero = () => {
                   alt="Quality"
                   width={140}
                   height={40}
+                  priority
                   className="scale-150 bg-transparent object-contain dark:brightness-200 dark:invert"
                 />
               </div>
@@ -129,7 +131,7 @@ const Hero = () => {
                   href="https://calendar.google.com/calendar/u/0/r/eventedit?text=Meeting%20with%20Wortholic&details=Let's%20discuss%20your%20project%20requirements%20and%20how%20we%20can%20help%20with%20AI-powered%20solutions&add=wortholicai@gmail.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center rounded-[8px] border-1 border-[#1FA6C7] bg-[#1FA6C7] px-4 py-2 font-medium text-white shadow-md transition duration-300 hover:bg-white hover:text-[#1FA6C7] dark:hover:bg-black"
+                  className="flex items-center justify-center rounded-[8px] border-1 border-[#0E9F9F] bg-[#0E9F9F] px-4 py-2 font-medium text-white shadow-md transition duration-300 hover:bg-white hover:text-[#0E9F9F] dark:hover:bg-black"
                 >
                   Schedule a Meeting
                 </a>

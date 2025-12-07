@@ -19,7 +19,7 @@ const Contact = () => {
               className="h-full rounded-lg border border-gray-300 bg-white/30 px-8 py-1 shadow-lg backdrop-blur-md sm:p-[55px] lg:px-8 xl:p-[55px] dark:border-gray-700 dark:bg-black/30"
               data-wow-delay=".15s"
             >
-              <h2 className="mb-3 text-2xl font-bold text-black sm:text-3xl lg:text-2xl xl:text-3xl dark:text-white">
+              <h2 className="mb-3 text-2xl lg:text-5xl leading-tight font-bold text-gray-900 sm:text-4xl md:text-5xl xl:mb-5 dark:text-white">
                 Get A Free Quote
               </h2>
               <p className="text-body-color mb-12 text-base font-medium dark:text-gray-300">
@@ -180,7 +180,7 @@ const Contact = () => {
                   <div className="w-full px-4">
                     <button
                       type="submit"
-                      className="flex cursor-pointer items-center justify-center rounded-xl border-2 border-[#0E9F9F] bg-[#0E9F9F] px-4 py-2 font-medium text-white shadow-md transition duration-300 hover:bg-white hover:text-[#0E9F9F] dark:hover:bg-black"
+                      className="flex cursor-pointer items-center justify-center rounded-[8px] border-1 border-[#0E9F9F] bg-[#0E9F9F] px-4 py-2 font-medium text-white shadow-md transition duration-300 hover:bg-white hover:text-[#0E9F9F] dark:hover:bg-black"
                     >
                       Get Free Quote
                     </button>

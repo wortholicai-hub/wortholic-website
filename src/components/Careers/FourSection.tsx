@@ -11,40 +11,39 @@ interface GlobalFeature {
 const globalFeatures: GlobalFeature[] = [
   {
     id: 1,
-    title: "A Truly Global\nWorkforce",
-    imageSrc:
-      "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=900&fit=crop",
+    title: "Remote-First\nCulture",
+    imageSrc: "/images/careers/remote-work-culture.png",
     imageAlt:
-      "Diverse group of people smiling together, representing a global workforce.",
+      "Person working remotely from a home office.",
   },
   {
     id: 2,
-    title: "Diverse\nPerspectives",
+    title: "Global\nCollaboration",
     imageSrc:
-      "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=800&h=900&fit=crop",
+      "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&q=80&w=800&h=900",
     imageAlt:
-      "A mixed group of people laughing, symbolizing diverse perspectives.",
+      "Team collaborating across different time zones.",
   },
   {
     id: 3,
-    title: "Seamless\nCollaboration",
+    title: "Asynchronous\nCommunication",
     imageSrc:
-      "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&h=900&fit=crop",
+      "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&q=80&w=800&h=900",
     imageAlt:
-      "People collaborating on a couch with laptops, symbolizing teamwork.",
+      "Efficient communication tools on a laptop screen.",
   },
   {
     id: 4,
-    title: "Opportunities\nWithout Limits",
+    title: "Work From\nAnywhere",
     imageSrc:
-      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=900&fit=crop",
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&q=80&w=800&h=900",
     imageAlt:
-      "Person standing on a mountain peak with arms outstretched, looking at the horizon.",
+      "Working from a beautiful location.",
   },
 ];
 
 const FourSection: React.FC = () => {
-  const tealColor = "#00BFA6";
+  const tealColor = "#0E9F9F";
 
   return (
     <div className="relative py-20 px-4 sm:px-6 lg:px-8 bg-white dark:bg-black transition-none overflow-x-hidden">
@@ -57,14 +56,12 @@ const FourSection: React.FC = () => {
           GLOBAL CAREERS
         </p>
 
-        <h2 className="text-5xl sm:text-6xl font-black text-black dark:text-white leading-tight mb-4 transition-none">
+        <h2 className="mb-3 text-2xl lg:text-5xl leading-tight font-bold text-gray-900 sm:text-4xl md:text-5xl xl:mb-5 dark:text-white transition-none">
           Connecting Talent Across the World
         </h2>
 
         <p className="text-lg text-gray-700 dark:text-gray-300 mb-16 max-w-5xl mx-auto transition-none">
-          At Wortholic, we take pride in our global presence, bringing together
-          talented individuals from diverse cultures and regions to create
-          impactful solutions. Here's what makes our global team exceptional.
+          At Wortholic, we embrace a borderless world. Our remote-first approach allows us to bring together the best minds in AI and software development, regardless of where they are located.
         </p>
 
         {/* Feature Grid */}

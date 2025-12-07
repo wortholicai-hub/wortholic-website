@@ -56,7 +56,7 @@ const NewsAndInsightsSection = () => {
             <span className="text-[#0E9F9F] font-medium text-sm tracking-wide uppercase">
               Blog & News
             </span>
-            <h2 className="text-4xl md:text-5xl font-semibold leading-tight">
+            <h2 className="mb-3 text-2xl lg:text-5xl leading-tight font-bold text-gray-900 sm:text-4xl md:text-5xl xl:mb-5 dark:text-white">
               Recode Bootcamp News <br />& Insights
             </h2>
           </div>
@@ -77,10 +77,11 @@ const NewsAndInsightsSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           <div className="bg-gray-50 dark:bg-[#080808] rounded-xl overflow-hidden border border-black/10 dark:border-white/10 hover:border-[#4ade80]/50 transition-none">
             <div className="relative w-full h-64 md:h-80 overflow-hidden">
-              <img
+              <Image
                 src={featuredArticle.image}
                 alt={featuredArticle.title}
-                className="w-full h-full object-cover"
+                fill
+                className="object-cover"
               />
               <span className="absolute top-4 left-4 bg-[#0E9F9F] text-white text-xs font-bold px-3 py-1 rounded-full">
                 {featuredArticle.category}
@@ -107,10 +108,11 @@ const NewsAndInsightsSection = () => {
                 className="flex items-center gap-4 bg-gray-50 dark:bg-[#080808] rounded-xl overflow-hidden border border-black/10 dark:border-white/10 hover:border-[#4ade80]/50 transition-none p-4"
               >
                 <div className="relative w-24 h-24 flex-shrink-0 rounded-lg overflow-hidden">
-                  <img
+                  <Image
                     src={article.image}
                     alt={article.title}
-                    className="w-full h-full object-cover"
+                    fill
+                    className="object-cover"
                   />
                 </div>
 

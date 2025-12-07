@@ -77,7 +77,7 @@ const FAQsSection = () => {
             FAQs
           </span>
 
-          <h2 className="text-4xl md:text-5xl font-semibold leading-tight text-black dark:text-white">
+          <h2 className="mb-3 text-2xl lg:text-5xl leading-tight font-bold text-gray-900 sm:text-4xl md:text-5xl xl:mb-5 dark:text-white">
             Got Questions? We Have Answers!
           </h2>
 
@@ -100,16 +100,14 @@ const FAQsSection = () => {
                 {/* Question Row */}
                 <button
                   onClick={() => toggleFAQ(item.id)}
-                  className={`w-full flex justify-between items-start text-left py-4 md:py-5 px-6 cursor-pointer ${
-                    isActive
+                  className={`w-full flex justify-between items-start text-left py-4 md:py-5 px-6 cursor-pointer ${isActive
                       ? "text-[#0E9F9F] font-medium"
                       : "text-black dark:text-white"
-                  }`}
+                    }`}
                 >
                   <span
-                    className={`text-base md:text-lg pr-4 ${
-                      isActive ? "text-[#0E9F9F]" : "text-black dark:text-white"
-                    }`}
+                    className={`text-base md:text-lg pr-4 ${isActive ? "text-[#0E9F9F]" : "text-black dark:text-white"
+                      }`}
                   >
                     {item.question}
                   </span>
@@ -131,11 +129,10 @@ const FAQsSection = () => {
 
                 {/* Answer */}
                 <div
-                  className={`transition-all duration-500 overflow-hidden ${
-                    isActive
+                  className={`transition-all duration-500 overflow-hidden ${isActive
                       ? "max-h-[300px] opacity-100 pb-6"
                       : "max-h-0 opacity-0"
-                  }`}
+                    }`}
                 >
                   <p className="text-gray-700 dark:text-gray-400 text-sm leading-relaxed px-6">
                     {item.answer}

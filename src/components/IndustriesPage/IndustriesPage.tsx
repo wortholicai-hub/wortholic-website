@@ -9,7 +9,7 @@ const IndustriesPage = () => {
       <section className="px-4 py-8 sm:px-6">
         <div className="mx-auto max-w-6xl text-center">
           {/* Heading */}
-          <h1 className="mb-4 text-2xl lg:text-5xl font-bold text-black sm:text-4xl md:text-5xl dark:text-gray-100">
+          <h1 className="mb-3 text-2xl lg:text-5xl leading-tight font-bold text-gray-900 sm:text-4xl md:text-5xl xl:mb-5 dark:text-white">
             Industries We Serve
           </h1>
 

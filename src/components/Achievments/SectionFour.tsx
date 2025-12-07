@@ -211,12 +211,12 @@ const SectionFour: React.FC = () => {
               Configuration
             </p>
 
-            <h1 className="text-4xl font-bold leading-tight text-gray-900 dark:text-white mb-8">
+            <h1 className="mb-3 text-2xl lg:text-5xl leading-tight font-bold text-gray-900 sm:text-4xl md:text-5xl xl:mb-5 dark:text-white">
               Configure any shape of achievements, challenges or milestones
             </h1>
 
             <p className="text-lg text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
-              Use Open Loyalty's{" "}
+              Use Open Loyalty&apos;s{" "}
               <strong className="font-semibold text-indigo-700 dark:text-indigo-400">
                 gamification software
               </strong>{" "}
@@ -255,7 +255,7 @@ const SectionFour: React.FC = () => {
               Campaigns
             </p>
 
-            <h1 className="text-4xl font-bold leading-snug text-gray-900 dark:text-white mb-8">
+            <h1 className="mb-3 text-2xl lg:text-5xl leading-tight font-bold text-gray-900 sm:text-4xl md:text-5xl xl:mb-5 dark:text-white">
               Use achievements to trigger campaigns and reward customers
             </h1>
 
@@ -285,7 +285,7 @@ const SectionFour: React.FC = () => {
               Achievements analytics
             </p>
 
-            <h1 className="text-4xl font-bold leading-snug text-gray-900 dark:text-white mb-8">
+            <h1 className="mb-3 text-2xl lg:text-5xl leading-tight font-bold text-gray-900 sm:text-4xl md:text-5xl xl:mb-5 dark:text-white">
               Track progress and results driven by achievements
             </h1>
 

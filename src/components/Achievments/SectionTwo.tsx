@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import Image from "next/image";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -156,7 +157,7 @@ const SectionTwo: React.FC = () => {
                         >
                           Read full case study
                         </a>
-                        <img
+                        <Image
                           src={item.companyLogo}
                           alt={item.company}
                           width={80}
@@ -169,10 +170,11 @@ const SectionTwo: React.FC = () => {
 
                   {/* RIGHT SIDE IMAGE + OVERLAY */}
                   <div className="flex-1 relative min-h-[300px] md:min-h-[400px]">
-                    <img
+                    <Image
                       src={item.image}
                       alt="Testimonial"
-                      className="absolute inset-0 w-full h-full object-cover"
+                      fill
+                      className="object-cover"
                     />
 
                     {/* Updated overlay to match #0E9F9F blend */}
@@ -191,7 +193,7 @@ const SectionTwo: React.FC = () => {
               key={i}
               className="opacity-60 hover:opacity-100 transition-opacity duration-300"
             >
-              <img
+              <Image
                 src={logo.src}
                 alt={logo.alt}
                 width={80}

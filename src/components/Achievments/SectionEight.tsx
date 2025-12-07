@@ -30,7 +30,7 @@ const SectionEight: React.FC = () => {
       <div
         className="
           max-w-6xl w-full rounded-3xl p-6 sm:p-10 lg:p-16 flex flex-col lg:flex-row shadow-2xl relative overflow-hidden
-          bg-[#110526] dark:bg-[#0d011d] transition-colors duration-0
+          bg-[#0E9F9F] dark:bg-[#0a7a7a] transition-colors duration-0
         "
       >
         {/* Background Pattern */}
@@ -125,7 +125,7 @@ const SectionEight: React.FC = () => {
                     border-gray-300 dark:border-gray-600
                     bg-transparent text-black dark:text-white
                     placeholder-gray-500 dark:placeholder-gray-400
-                    focus:border-purple-600 focus:ring-0
+                    focus:border-[#0E9F9F] focus:ring-0
                     transition-colors duration-0
                   "
                   required
@@ -206,7 +206,7 @@ const SectionEight: React.FC = () => {
                   bg-white dark:bg-[#1a1a1a]
                   text-black dark:text-white
                   placeholder-gray-500 dark:placeholder-gray-400
-                  focus:border-purple-600 focus:ring-purple-600
+                  focus:border-[#0E9F9F] focus:ring-[#0E9F9F]
                   transition-colors duration-0
                 "
                 required
@@ -239,10 +239,10 @@ const SectionEight: React.FC = () => {
               <input
                 type="checkbox"
                 className="
-                  h-4 w-4 rounded text-purple-600
+                  h-4 w-4 rounded text-[#0E9F9F]
                   border-gray-300 dark:border-gray-600
                   bg-white dark:bg-[#1a1a1a]
-                  focus:ring-purple-500
+                  focus:ring-[#0E9F9F]
                   transition-colors duration-0
                 "
               />
@@ -260,12 +260,12 @@ const SectionEight: React.FC = () => {
               type="submit"
               className="
                 w-full py-3 px-4 rounded-lg text-lg font-medium
-                text-white bg-purple-600 hover:bg-purple-700
-                focus:ring-2 focus:ring-purple-500
+                text-white bg-[#0E9F9F] hover:bg-[#0a7a7a]
+                focus:ring-2 focus:ring-[#0E9F9F]
                 transition-colors duration-0
               "
             >
-              Let's talk
+              Let&apos;s talk
             </button>
           </form>
         </div>

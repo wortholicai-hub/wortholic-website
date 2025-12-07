@@ -172,14 +172,16 @@ const AboutSectionFive: React.FC = () => {
 
   return (
     <div className="bg-gray-100 px-4 py-6 font-sans dark:bg-black">
-      <h1 className="mb-12 text-center text-4xl font-extrabold text-gray-900 dark:text-gray-100">
+      <h1 className="mb-3 text-2xl lg:text-5xl leading-tight font-bold text-gray-900 sm:text-4xl md:text-5xl xl:mb-5 dark:text-white text-center">
         What People Are Saying
       </h1>
 
       {/* Review Section */}
       <section className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="mb-8 flex flex-col items-center justify-between text-gray-800 md:flex-row dark:text-gray-200">
-          <h2 className="text-3xl font-bold">Client&apos;s Reviews</h2>
+          <h2 className="text-3xl font-bold">
+            Client&apos;s Reviews
+          </h2>
           <div className="mt-4 flex items-center md:mt-0">
             <span className="mr-2 text-xl font-semibold">5.0</span>
             <div className="flex text-yellow-500">
@@ -240,11 +242,10 @@ const AboutSectionFive: React.FC = () => {
           {reviews.map((_, i) => (
             <span
               key={i}
-              className={`h-3 w-3 rounded-full transition-colors duration-300 ${
-                i === currentIndex
-                  ? "bg-gray-900 dark:bg-gray-100"
-                  : "bg-gray-300 dark:bg-gray-500"
-              }`}
+              className={`h-3 w-3 rounded-full transition-colors duration-300 ${i === currentIndex
+                ? "bg-gray-900 dark:bg-gray-100"
+                : "bg-gray-300 dark:bg-gray-500"
+                }`}
             />
           ))}
         </div>

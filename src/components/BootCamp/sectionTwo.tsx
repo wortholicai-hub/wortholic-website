@@ -168,7 +168,7 @@ function BootcampBenefits() {
             Why Choose Bootcamp?
           </p>
           <h2
-            className={`text-5xl font-bold ${isVisible ? "slide-animate" : ""}`}
+            className={`mb-3 text-2xl lg:text-5xl leading-tight font-bold text-gray-900 sm:text-4xl md:text-5xl xl:mb-5 dark:text-white ${isVisible ? "slide-animate" : ""}`}
           >
             Benefits from this bootcamp
           </h2>

@@ -19,16 +19,16 @@ const features = [
   },
   {
     icon: Search,
-    title: "Access to Free Job Board",
+    title: "Access to Project Opportunities",
     description:
-      "Explore our job board with free access to curated opportunities where you can apply directly based on your skills.",
+      "Explore our project board with free access to curated opportunities where you can apply your skills directly.",
     borderEffect: "bottom-left",
   },
   {
     icon: FileText,
-    title: "Free Career Mentorship",
+    title: "Free Technical Mentorship",
     description:
-      "Receive one-on-one guidance from volunteer industry mentors who help you plan and grow your career — at no cost.",
+      "Receive one-on-one guidance from volunteer industry mentors who help you master concepts and grow your skills — at no cost.",
     borderEffect: "bottom-right",
   },
 ];
@@ -151,7 +151,7 @@ const LogoWheat = () => (
 const logos = [LogoSpiral, LogoBars, LogoTarget, LogoMolecule, LogoWheat];
 
 const CareerSupportSection = () => {
-  const leftSideRef = useRef(null);
+  const leftSideRef = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -190,36 +190,30 @@ const CareerSupportSection = () => {
             ref={leftSideRef}
             className={`lg:w-[35%] flex flex-col space-y-8 pt-8 sticky top-10
               transition-transform duration-700 ease-out
-              ${
-                isVisible
-                  ? "translate-x-0 opacity-100"
-                  : "-translate-x-full opacity-0"
+              ${isVisible
+                ? "translate-x-0 opacity-100"
+                : "-translate-x-full opacity-0"
               }
             `}
             style={{ willChange: "transform, opacity" }}
           >
             <div className="space-y-4">
               <span className="text-[#0E9F9F] dark:text-[#0E9F9F] text-sm font-medium tracking-wide">
-                Career Support
+                Learning Support
               </span>
-              <h2 className="text-4xl md:text-5xl font-medium text-gray-900 dark:text-white leading-[1.15]">
+              <h2 className="mb-3 text-2xl lg:text-5xl leading-tight font-bold text-gray-900 sm:text-4xl md:text-5xl xl:mb-5 dark:text-white">
                 Recode Bootcamp <br />
-                Career Support
+                Learning Support
               </h2>
             </div>
 
             <div>
               <button
-                className="group relative px-8 py-3.5 rounded-full overflow-hidden bg-transparent border border-gray-700 dark:border-gray-400 text-gray-900 dark:text-white
-                transition-colors duration-0 hover:border-[#0E9F9F] hover:text-[#0E9F9F]"
+                className="flex items-center justify-center rounded-[8px] border-1 border-[#0E9F9F] bg-[#0E9F9F] px-4 py-2 font-medium text-white shadow-md transition duration-300 hover:bg-white hover:text-[#0E9F9F] dark:hover:bg-black group"
               >
                 <span className="relative z-10 text-sm font-medium">
-                  Get Career Support
+                  Get Learning Support
                 </span>
-                <div
-                  className="absolute inset-0 h-full w-full scale-0 rounded-full transition-all duration-300 group-hover:scale-100"
-                  style={{ backgroundColor: "rgba(14, 159, 159, 0.25)" }}
-                />
               </button>
             </div>
           </div>

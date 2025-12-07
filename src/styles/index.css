@@ -1,5 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap")
-layer(base);
+/* Font loaded via Next.js font optimization */
 
 @import "tailwindcss";
 @import "slick-carousel/slick/slick.css";
@@ -23,7 +22,7 @@ layer(base);
   --color-white: #ffffff;
   --color-black: #0f0f0f;
   --color-dark: #1a1a1a;
-  --color-primary: #2cadb5;
+  --color-primary: #0E9F9F;
   --color-secondary: #0f4043;
   --color-yellow: #fbb040;
   --color-bg-color-dark: #0f0f0f;
@@ -78,6 +77,7 @@ layer(base);
   color utility to any element that depends on these defaults.
 */
 @layer base {
+
   *,
   ::after,
   ::before,
@@ -116,13 +116,13 @@ layer(base);
 }
 
 @utility dot {
-  input#togglePlan:checked ~ & {
+  input#togglePlan:checked~& {
     @apply translate-x-full;
   }
 }
 
 @utility box {
-  input#checkboxLabel:checked ~ & span {
+  input#checkboxLabel:checked~& span {
     @apply opacity-100;
   }
 }
@@ -134,7 +134,7 @@ layer(base);
 }
 
 @layer components {
-  input[type="checkbox"]:checked ~ label span svg {
+  input[type="checkbox"]:checked~label span svg {
     @apply inline-flex;
   }
 }
@@ -144,6 +144,7 @@ layer(base);
   0% {
     transform: translateX(0);
   }
+
   100% {
     transform: translateX(-50%);
   }
@@ -153,6 +154,7 @@ layer(base);
   0% {
     transform: translateX(-50%);
   }
+
   100% {
     transform: translateX(0);
   }
@@ -172,6 +174,7 @@ layer(base);
     opacity: 0;
     transform: translateY(30px);
   }
+
   100% {
     opacity: 1;
     transform: translateY(0);
@@ -182,16 +185,19 @@ layer(base);
   0% {
     transform: translateX(-100%);
   }
+
   100% {
     transform: translateX(100%);
   }
 }
 
 @keyframes float {
+
   0%,
   100% {
     transform: translateY(0px);
   }
+
   50% {
     transform: translateY(-10px);
   }
@@ -204,12 +210,10 @@ layer(base);
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.2),
-    transparent
-  );
+  background: linear-gradient(90deg,
+      transparent,
+      rgba(255, 255, 255, 0.2),
+      transparent);
   transition: left 0.5s;
 }
 
@@ -226,6 +230,7 @@ layer(base);
   0% {
     transform: translateX(0);
   }
+
   100% {
     transform: translateX(-50%);
   }
@@ -235,6 +240,7 @@ layer(base);
   0% {
     transform: translateX(-50%);
   }
+
   100% {
     transform: translateX(0);
   }
@@ -262,13 +268,11 @@ layer(base);
   left: 0;
   width: 80px;
   height: 100%;
-  background: linear-gradient(
-    to right,
-    white,
-    rgba(255, 255, 255, 0.8),
-    rgba(255, 255, 255, 0.3),
-    transparent
-  );
+  background: linear-gradient(to right,
+      white,
+      rgba(255, 255, 255, 0.8),
+      rgba(255, 255, 255, 0.3),
+      transparent);
   z-index: 20;
   pointer-events: none;
 }
@@ -280,36 +284,30 @@ layer(base);
   right: 0;
   width: 80px;
   height: 100%;
-  background: linear-gradient(
-    to left,
-    white,
-    rgba(255, 255, 255, 0.8),
-    rgba(255, 255, 255, 0.3),
-    transparent
-  );
+  background: linear-gradient(to left,
+      white,
+      rgba(255, 255, 255, 0.8),
+      rgba(255, 255, 255, 0.3),
+      transparent);
   z-index: 20;
   pointer-events: none;
 }
 
 /* Dark mode blur effects */
 .dark .cards-container::before {
-  background: linear-gradient(
-    to right,
-    #000000,
-    rgba(0, 0, 0, 0.8),
-    rgba(0, 0, 0, 0.3),
-    transparent
-  );
+  background: linear-gradient(to right,
+      #000000,
+      rgba(0, 0, 0, 0.8),
+      rgba(0, 0, 0, 0.3),
+      transparent);
 }
 
 .dark .cards-container::after {
-  background: linear-gradient(
-    to left,
-    #000000,
-    rgba(0, 0, 0, 0.8),
-    rgba(0, 0, 0, 0.3),
-    transparent
-  );
+  background: linear-gradient(to left,
+      #000000,
+      rgba(0, 0, 0, 0.8),
+      rgba(0, 0, 0, 0.3),
+      transparent);
 }
 
 .scrolling-cards {
@@ -343,43 +341,43 @@ a[role="button"] {
 
 /* Beautiful gradient button styles matching Wortholic logo */
 .btn-gradient {
-  background: linear-gradient(180deg, #2cadb5, #0f4043);
+  background: linear-gradient(180deg, #0E9F9F, #0f4043);
   border: none;
   color: white;
 }
 
 /* Primary button with Wortholic gradient */
 .bg-primary {
-  background: linear-gradient(180deg, #2cadb5, #0f4043) !important;
+  background: linear-gradient(180deg, #0E9F9F, #0f4043) !important;
   color: white;
 }
 
 /* Blue buttons with Wortholic gradient */
 .bg-blue-600 {
-  background: linear-gradient(180deg, #2cadb5, #0f4043) !important;
+  background: linear-gradient(180deg, #0E9F9F, #0f4043) !important;
   color: white;
 }
 
 /* Purple buttons with lighter Wortholic accent */
 .bg-purple-600 {
-  background: linear-gradient(180deg, #2cadb5, #1a5a5e) !important;
+  background: linear-gradient(180deg, #0E9F9F, #1a5a5e) !important;
   color: white;
 }
 
 /* Pink buttons with warmer Wortholic variant */
 .bg-pink-600 {
-  background: linear-gradient(180deg, #3cbbc4, #0f4043) !important;
+  background: linear-gradient(180deg, #0E9F9F, #0f4043) !important;
   color: white;
 }
 
 /* Beautiful Wortholic gradient utility classes */
 @utility bg-wortholic-gradient {
-  background: linear-gradient(180deg, #2cadb5, #0f4043);
+  background: linear-gradient(180deg, #0E9F9F, #0f4043);
   color: white;
 }
 
 @utility text-wortholic-primary {
-  color: #2cadb5;
+  color: #0E9F9F;
 }
 
 @utility text-wortholic-secondary {
@@ -387,22 +385,20 @@ a[role="button"] {
 }
 
 @utility border-wortholic {
-  border-color: #2cadb5;
+  border-color: #0E9F9F;
 }
 
 /* Beautiful accent colors for cards and elements */
 .wortholic-card {
-  background: linear-gradient(
-    135deg,
-    rgba(44, 173, 181, 0.05),
-    rgba(15, 64, 67, 0.02)
-  );
+  background: linear-gradient(135deg,
+      rgba(44, 173, 181, 0.05),
+      rgba(15, 64, 67, 0.02));
   border: 1px solid rgba(44, 173, 181, 0.1);
   border-radius: 12px;
 }
 
 .wortholic-text-gradient {
-  background: linear-gradient(180deg, #2cadb5, #0f4043);
+  background: linear-gradient(180deg, #0E9F9F, #0f4043);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -428,15 +424,15 @@ a[role="button"]:hover {
 
 /* Wortholic brand color scheme for light mode */
 :root {
-  --professional-primary: #2cadb5;
+  --professional-primary: #0E9F9F;
   --professional-secondary: #0f4043;
-  --professional-accent: #3cbbc4;
+  --professional-accent: #0E9F9F;
   --professional-text-primary: #0f4043;
   --professional-text-secondary: #6b7280;
   --professional-bg-primary: #ffffff;
   --professional-bg-secondary: #f8fafc;
   --professional-border: #e0f2f3;
-  --wortholic-gradient: linear-gradient(180deg, #2cadb5, #0f4043);
+  --wortholic-gradient: linear-gradient(180deg, #0E9F9F, #0f4043);
   --radius: 0.625rem;
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
@@ -473,15 +469,15 @@ a[role="button"]:hover {
 
 /* Wortholic brand color scheme for dark mode */
 .dark {
-  --professional-primary: #3cbbc4;
-  --professional-secondary: #2cadb5;
-  --professional-accent: #4ecad5;
+  --professional-primary: #0E9F9F;
+  --professional-secondary: #0E9F9F;
+  --professional-accent: #0E9F9F;
   --professional-text-primary: #f9fafb;
   --professional-text-secondary: #d1d5db;
   --professional-bg-primary: #0a2e30;
   --professional-bg-secondary: #0f4043;
   --professional-border: #1a5a5e;
-  --wortholic-gradient: linear-gradient(180deg, #3cbbc4, #0f4043);
+  --wortholic-gradient: linear-gradient(180deg, #0E9F9F, #0f4043);
   --background: oklch(0.145 0 0);
   --foreground: oklch(0.985 0 0);
   --card: oklch(0.205 0 0);
@@ -519,6 +515,7 @@ a[role="button"]:hover {
   0% {
     transform: translateX(0);
   }
+
   100% {
     transform: translateX(-50%);
   }
@@ -579,6 +576,7 @@ a[role="button"]:hover {
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }

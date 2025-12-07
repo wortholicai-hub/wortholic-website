@@ -60,64 +60,64 @@ const BootcampCard: React.FC<
   isVisible,
   index,
 }) => {
-  const slideFromLeftTitles = [
-    "Web Development Fundamentals",
-    "Back-End Development",
-  ];
-  const fromLeft = slideFromLeftTitles.includes(title);
+    const slideFromLeftTitles = [
+      "Web Development Fundamentals",
+      "Back-End Development",
+    ];
+    const fromLeft = slideFromLeftTitles.includes(title);
 
-  const baseClasses =
-    "flex flex-col md:flex-row bg-white dark:bg-black border border-gray-300 dark:border-gray-700 rounded-2xl overflow-hidden w-full max-w-5xl mx-auto group";
+    const baseClasses =
+      "flex flex-col md:flex-row bg-white dark:bg-black border border-gray-300 dark:border-gray-700 rounded-2xl overflow-hidden w-full max-w-5xl mx-auto group";
 
-  const transformClasses = isVisible
-    ? "translate-x-0 opacity-100"
-    : fromLeft
-      ? "translate-x-[-100vw] opacity-0"
-      : "translate-x-[100vw] opacity-0";
+    const transformClasses = isVisible
+      ? "translate-x-0 opacity-100"
+      : fromLeft
+        ? "translate-x-[-100vw] opacity-0"
+        : "translate-x-[100vw] opacity-0";
 
-  return (
-    <div
-      className={`${baseClasses} transform transition-all duration-[1800ms] ease-out ${transformClasses}`}
-      style={{ transitionDelay: isVisible ? `${index * 600}ms` : "0ms" }}
-    >
-      <div className="relative w-full md:w-[45%] h-64 md:h-auto min-h-[300px]">
-        <img
-          src={imageSrc}
-          alt={title}
-          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-        />
-      </div>
-
-      <div className="flex-1 p-8 flex flex-col justify-center">
-        <div className="flex gap-3 mb-5">
-          <span className="px-4 py-1.5 text-xs font-medium text-black dark:text-white border border-gray-400 dark:border-gray-700 rounded-lg">
-            {weeks}
-          </span>
-          <span className="px-4 py-1.5 text-xs font-medium text-black dark:text-white border border-gray-400 dark:border-gray-700 rounded-lg">
-            {sessions}
-          </span>
+    return (
+      <div
+        className={`${baseClasses} transform transition-all duration-[1800ms] ease-out ${transformClasses}`}
+        style={{ transitionDelay: isVisible ? `${index * 600}ms` : "0ms" }}
+      >
+        <div className="relative w-full md:w-[45%] h-64 md:h-auto min-h-[300px]">
+          <img
+            src={imageSrc}
+            alt={title}
+            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+          />
         </div>
 
-        <h3 className="text-2xl md:text-3xl font-bold text-black dark:text-white mb-4">
-          {title}
-        </h3>
+        <div className="flex-1 p-8 flex flex-col justify-center">
+          <div className="flex gap-3 mb-5">
+            <span className="px-4 py-1.5 text-xs font-medium text-black dark:text-white border border-gray-400 dark:border-gray-700 rounded-lg">
+              {weeks}
+            </span>
+            <span className="px-4 py-1.5 text-xs font-medium text-black dark:text-white border border-gray-400 dark:border-gray-700 rounded-lg">
+              {sessions}
+            </span>
+          </div>
 
-        <p className="text-gray-700 dark:text-gray-400 text-sm leading-relaxed mb-8 pr-4">
-          {description}
-        </p>
+          <h3 className="text-2xl md:text-3xl font-bold text-black dark:text-white mb-4">
+            {title}
+          </h3>
 
-        <div>
-          <Link
-            href={link}
-            className="inline-block text-black dark:text-white font-semibold text-sm border-b border-black dark:border-white pb-1 hover:text-gray-700 dark:hover:text-gray-300 hover:border-gray-700 dark:hover:border-gray-300 transition-none"
-          >
-            Learn More
-          </Link>
+          <p className="text-gray-700 dark:text-gray-400 text-sm leading-relaxed mb-8 pr-4">
+            {description}
+          </p>
+
+          <div>
+            <Link
+              href={link}
+              className="inline-block text-black dark:text-white font-semibold text-sm border-b border-black dark:border-white pb-1 hover:text-gray-700 dark:hover:text-gray-300 hover:border-gray-700 dark:hover:border-gray-300 transition-none"
+            >
+              Learn More
+            </Link>
+          </div>
         </div>
       </div>
-    </div>
-  );
-};
+    );
+  };
 
 const BootcampsSection = () => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -148,16 +148,15 @@ const BootcampsSection = () => {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div
-          className={`text-center mb-20 space-y-4 transform transition-all duration-[1200ms] ease-out ${
-            isVisible
-              ? "translate-y-0 opacity-100"
-              : "-translate-y-40 opacity-0"
-          }`}
+          className={`text-center mb-20 space-y-4 transform transition-all duration-[1200ms] ease-out ${isVisible
+            ? "translate-y-0 opacity-100"
+            : "-translate-y-40 opacity-0"
+            }`}
         >
           <span className="text-[#0E9F9F] dark:text-[#0E9F9F] font-semibold text-sm tracking-wide uppercase">
             What You'll Learn?
           </span>
-          <h2 className="text-4xl md:text-5xl font-bold text-black dark:text-white tracking-tight">
+          <h2 className="mb-3 text-2xl lg:text-5xl leading-tight font-bold text-gray-900 sm:text-4xl md:text-5xl xl:mb-5 dark:text-white tracking-tight">
             Our Coding Bootcamps
           </h2>
           <p className="text-gray-700 dark:text-gray-400 max-w-2xl mx-auto text-sm md:text-base leading-relaxed pt-2">
@@ -181,7 +180,7 @@ const BootcampsSection = () => {
 
         {/* CTA */}
         <div className="text-center">
-          <button className="bg-[#0E9F9F] dark:bg-[#0E9F9F] text-black dark:text-white font-bold text-sm py-4 px-10 rounded-full shadow-[0_0_20px_rgba(197,242,136,0.3)] hover:bg-[#0E9F9F] dark:hover:bg-[#0E9F9F] transition-none">
+          <button className="flex items-center justify-center rounded-[8px] border-1 border-[#0E9F9F] bg-[#0E9F9F] px-4 py-2 font-medium text-white shadow-md transition duration-300 hover:bg-white hover:text-[#0E9F9F] dark:hover:bg-black">
             View All Bootcamps
           </button>
         </div>

@@ -20,19 +20,19 @@ const SingleBlog = ({ blog }: { blog: Blog }) => {
         <h3>
           <Link
             href="/blog-details"
-            className="hover:text-primary dark:hover:text-primary mb-2 block text-lg font-semibold text-black dark:text-white"
+            className="hover:text-primary dark:hover:text-primary mb-2 block text-lg font-semibold text-black dark:text-white line-clamp-2 h-[56px]"
           >
             {title}
           </Link>
         </h3>
-        <p className="border-body-color/10 text-body-color mb-4 border-b pb-4 text-sm dark:border-white/10">
+        <p className="border-body-color/10 text-body-color mb-4 border-b pb-4 text-sm dark:border-white/10 line-clamp-3 h-[60px]">
           {paragraph}
         </p>
         <div className="flex items-center">
           <div className="border-body-color/10 mr-3 flex items-center border-r pr-3 dark:border-white/10">
             <div className="mr-2">
               <div className="relative h-8 w-8 overflow-hidden rounded-full">
-                <Image src={author.image} alt="author" fill />
+                <Image src={author.image} alt="author" fill sizes="32px" />
               </div>
             </div>
             <div>

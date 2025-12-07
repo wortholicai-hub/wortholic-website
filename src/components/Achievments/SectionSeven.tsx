@@ -53,9 +53,7 @@ const SectionSeven: React.FC = () => {
 
         <h2
           className="
-            text-3xl sm:text-4xl font-extrabold leading-tight tracking-tight mb-12
-            text-gray-900 
-            dark:text-white 
+            mb-3 text-2xl lg:text-5xl leading-tight font-bold text-gray-900 sm:text-4xl md:text-5xl xl:mb-5 dark:text-white
             transition-colors duration-0
           "
         >

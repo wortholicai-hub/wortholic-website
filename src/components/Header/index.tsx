@@ -25,11 +25,10 @@ const Header = () => {
 
   return (
     <header
-      className={`header top-0 left-0 z-40 w-full ${
-        sticky
-          ? "fixed bg-white shadow-md dark:bg-black"
-          : "absolute bg-white dark:bg-black"
-      }`}
+      className={`header top-0 left-0 z-40 w-full ${sticky
+        ? "fixed z-[9999] bg-white/80 shadow-md backdrop-blur-sm transition-all duration-300 dark:bg-black/80"
+        : "absolute bg-transparent"
+        }`}
     >
       <div className="mx-auto flex w-full max-w-7xl items-center justify-between px-4 lg:px-8">
         {/* Logo */}
@@ -83,9 +82,8 @@ const Header = () => {
 
         {/* Navbar */}
         <nav
-          className={`absolute top-full left-0 z-30 w-full lg:static lg:block lg:w-auto lg:bg-transparent lg:shadow-none ${
-            navbarOpen ? "block bg-white shadow-md dark:bg-black" : "hidden"
-          }`}
+          className={`absolute top-full left-0 z-30 w-full lg:static lg:block lg:w-auto lg:bg-transparent lg:shadow-none ${navbarOpen ? "block bg-white shadow-md dark:bg-black" : "hidden"
+            }`}
         >
           <ul className="flex flex-col gap-2 px-6 py-4 lg:flex-row lg:items-center lg:gap-6 lg:px-0 lg:py-0">
             {menuData.map((menuItem, index) => (
@@ -98,11 +96,10 @@ const Header = () => {
                       {menuItem.path && (
                         <Link
                           href={menuItem.path}
-                          className={`hidden lg:flex items-center py-2 text-base transition-colors duration-150 ${
-                            pathname === menuItem.path
-                              ? "text-blue-600 dark:text-blue-500"
-                              : "text-gray-700 hover:text-blue-600 dark:text-white/70 dark:hover:text-blue-500"
-                          }`}
+                          className={`hidden lg:flex items-center py-2 text-base transition-colors duration-150 ${pathname === menuItem.path
+                            ? "text-blue-600 dark:text-blue-500"
+                            : "text-gray-700 hover:text-blue-600 dark:text-white/70 dark:hover:text-blue-500"
+                            }`}
                         >
                           {menuItem.title}
                           <svg
@@ -122,17 +119,15 @@ const Header = () => {
                       {/* Mobile: Button that toggles dropdown */}
                       <button
                         onClick={() => toggleSubmenu(index)}
-                        className={`flex lg:hidden w-full items-center py-2 text-base transition-colors duration-150 ${
-                          pathname === menuItem.path
-                            ? "text-blue-600 dark:text-blue-500"
-                            : "text-gray-700 hover:text-blue-600 dark:text-white/70 dark:hover:text-blue-500"
-                        }`}
+                        className={`flex lg:hidden w-full items-center py-2 text-base transition-colors duration-150 ${pathname === menuItem.path
+                          ? "text-blue-600 dark:text-blue-500"
+                          : "text-gray-700 hover:text-blue-600 dark:text-white/70 dark:hover:text-blue-500"
+                          }`}
                       >
                         {menuItem.title}
                         <svg
-                          className={`ml-2 h-4 w-4 transform transition-transform duration-200 ${
-                            openIndex === index ? "rotate-180" : ""
-                          }`}
+                          className={`ml-2 h-4 w-4 transform transition-transform duration-200 ${openIndex === index ? "rotate-180" : ""
+                            }`}
                           viewBox="0 0 20 20"
                           fill="currentColor"
                         >
@@ -152,9 +147,8 @@ const Header = () => {
                         >
                           {menuItem.title}
                           <svg
-                            className={`ml-2 h-4 w-4 transform transition-transform duration-200 ${
-                              openIndex === index ? "rotate-180" : ""
-                            } lg:group-hover:rotate-180`}
+                            className={`ml-2 h-4 w-4 transform transition-transform duration-200 ${openIndex === index ? "rotate-180" : ""
+                              } lg:group-hover:rotate-180`}
                             viewBox="0 0 20 20"
                             fill="currentColor"
                           >
@@ -170,19 +164,17 @@ const Header = () => {
 
                     {/* Dropdown menu */}
                     <div
-                      className={`${
-                        openIndex === index ? "block" : "hidden"
-                      } mt-2 w-full lg:w-56 rounded-md bg-white p-3 shadow-md lg:absolute lg:left-0 lg:z-20 lg:mt-0 lg:hidden lg:pt-3 lg:transition-all lg:duration-200 lg:group-hover:block dark:bg-black dark:shadow-lg`}
+                      className={`${openIndex === index ? "block" : "hidden"
+                        } mt-2 w-full lg:w-56 rounded-md bg-white p-3 shadow-md lg:absolute lg:left-0 lg:z-20 lg:mt-0 lg:hidden lg:pt-3 lg:transition-all lg:duration-200 lg:group-hover:block dark:bg-black dark:shadow-lg`}
                     >
                       {menuItem.submenu.map((submenuItem) => (
                         <Link
                           href={submenuItem.path}
                           key={submenuItem.id}
-                          className={`block rounded px-3 py-2 text-sm transition-colors duration-150 ${
-                            pathname === submenuItem.path
-                              ? "text-blue-600 dark:text-blue-500"
-                              : "text-gray-700 hover:text-blue-600 dark:text-white/70 dark:hover:bg-white/5 dark:hover:text-blue-500"
-                          }`}
+                          className={`block rounded px-3 py-2 text-sm transition-colors duration-150 ${pathname === submenuItem.path
+                            ? "text-blue-600 dark:text-blue-500"
+                            : "text-gray-700 hover:text-blue-600 dark:text-white/70 dark:hover:bg-white/5 dark:hover:text-blue-500"
+                            }`}
                         >
                           {submenuItem.title}
                         </Link>
@@ -193,11 +185,10 @@ const Header = () => {
                   /* Regular menu item without submenu */
                   <Link
                     href={menuItem.path || "/"}
-                    className={`block py-2 text-base transition-colors duration-150 ${
-                      pathname === menuItem.path
-                        ? "text-blue-600 dark:text-blue-500"
-                        : "text-gray-700 hover:text-blue-600 dark:text-white/70 dark:hover:text-blue-500"
-                    }`}
+                    className={`block py-2 text-base transition-colors duration-150 ${pathname === menuItem.path
+                      ? "text-blue-600 dark:text-blue-500"
+                      : "text-gray-700 hover:text-blue-600 dark:text-white/70 dark:hover:text-blue-500"
+                      }`}
                   >
                     {menuItem.title}
                   </Link>
@@ -217,6 +208,12 @@ const Header = () => {
           <ThemeToggler />
         </div>
       </div>
+
+      {/* Animated Bottom Border */}
+      <div
+        className={`absolute bottom-0 left-0 h-[1px] w-full bg-gradient-to-r from-transparent via-gray-300 to-transparent transition-opacity duration-300 dark:via-gray-600 ${sticky ? "opacity-100" : "opacity-0"
+          }`}
+      />
     </header>
   );
 };

@@ -47,7 +47,7 @@ const MeetMentorsSection = () => {
               Meet Professional Mentors
             </span>
 
-            <h2 className="text-4xl md:text-5xl font-semibold leading-tight max-w-2xl">
+            <h2 className="mb-3 text-2xl lg:text-5xl leading-tight font-bold text-gray-900 sm:text-4xl md:text-5xl xl:mb-5 dark:text-white">
               Learn from the Experts <br />
               Behind Your Success
             </h2>
@@ -70,10 +70,11 @@ const MeetMentorsSection = () => {
             <div key={mentor.id} className="group cursor-pointer">
               {/* Image Container */}
               <div className="relative w-full aspect-[3/4] overflow-hidden rounded-2xl mb-4">
-                <img
+                <Image
                   src={mentor.avatar}
                   alt={mentor.name}
-                  className="w-full h-full object-cover group-hover:scale-[1.03] duration-200"
+                  fill
+                  className="object-cover group-hover:scale-[1.03] duration-200"
                 />
               </div>
 

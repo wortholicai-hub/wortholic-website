@@ -14,7 +14,7 @@ const AboutSectionSeven = () => {
       <div className="container mx-auto">
         {/* Success Story Title */}
         <div className="mb-12 text-center">
-          <h2 className="text-3xl font-bold text-gray-800 md:text-4xl dark:text-gray-100">
+          <h2 className="mb-3 text-2xl lg:text-5xl leading-tight font-bold text-gray-900 sm:text-4xl md:text-5xl xl:mb-5 dark:text-white">
             Success story{" "}
             <span className="text-[#0E9F9F] dark:text-[#0E9F9F]">
               Our Achievements
@@ -76,8 +76,8 @@ const AboutSectionSeven = () => {
         {/* Talk to Us Section */}
         <div className="rounded-lg bg-gray-100 p-8 shadow-xl transition-colors duration-300 md:p-12 dark:bg-gray-800">
           <div className="mb-6 text-center">
-            <h3 className="text-2xl font-bold text-gray-900 md:text-3xl dark:text-gray-100">
-              TALK TO US ABOUT YOUR PROJECT
+            <h3 className="mb-3 text-2xl lg:text-5xl leading-tight font-bold text-gray-900 sm:text-4xl md:text-5xl xl:mb-5 dark:text-white">
+              Talk to Us About Your Project
             </h3>
             <p className="mt-2 text-sm text-gray-700 md:text-base dark:text-gray-300">
               We are here to build your software project and help you succeed &

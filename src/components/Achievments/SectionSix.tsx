@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
+import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 interface Testimonial {
@@ -76,9 +77,8 @@ const SectionSix: React.FC = () => {
           {testimonials.map((item, index) => (
             <div
               key={item.id}
-              className={`absolute inset-0 transition-opacity duration-700 ${
-                index === currentIndex ? "opacity-100" : "opacity-0"
-              }`}
+              className={`absolute inset-0 transition-opacity duration-700 ${index === currentIndex ? "opacity-100" : "opacity-0"
+                }`}
             >
               {/* Logo */}
               <h3 className="text-2xl font-normal tracking-[0.3em] text-gray-800 dark:text-gray-200 mb-8 transition-colors">
@@ -91,10 +91,12 @@ const SectionSix: React.FC = () => {
               </p>
 
               {/* Author Image */}
-              <img
+              <Image
                 src={item.authorImage}
                 alt={item.authorName}
-                className="w-14 h-14 rounded-full mx-auto object-cover mb-4"
+                width={56}
+                height={56}
+                className="rounded-full mx-auto object-cover mb-4"
               />
 
               {/* Author Name */}
@@ -116,11 +118,10 @@ const SectionSix: React.FC = () => {
             <button
               key={index}
               onClick={() => goToSlide(index)}
-              className={`h-2.5 w-2.5 rounded-full transition-colors ${
-                index === currentIndex
-                  ? "bg-gray-700 dark:bg-white"
-                  : "bg-gray-300 dark:bg-gray-600"
-              }`}
+              className={`h-2.5 w-2.5 rounded-full transition-colors ${index === currentIndex
+                ? "bg-gray-700 dark:bg-white"
+                : "bg-gray-300 dark:bg-gray-600"
+                }`}
             />
           ))}
         </div>

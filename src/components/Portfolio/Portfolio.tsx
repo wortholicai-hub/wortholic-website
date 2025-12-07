@@ -102,7 +102,7 @@ const Portfolio = () => {
       {/* Header */}
       {/* <HeroParallax /> */}
       <div className="mt-30 py-1 text-center">
-        <h1 className=" mb-5 text-3xl font-bold text-gray-900 md:text-4xl dark:text-gray-100">
+        <h1 className="mb-3 text-2xl lg:text-5xl leading-tight font-bold text-gray-900 sm:text-4xl md:text-5xl xl:mb-5 dark:text-white">
           Portfolio
         </h1>
         {/* <p className="mx-auto max-w-6xl px-4 pb-2 text-gray-600 dark:text-gray-300">

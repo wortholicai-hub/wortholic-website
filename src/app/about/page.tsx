@@ -12,7 +12,6 @@ export const metadata: Metadata = {
   title: "About Wortholic | Premium Software Services & AI Solutions",
   description:
     "Learn about Wortholic's team of 100+ experienced developers, engineers, and AI researchers providing cutting-edge software solutions.",
-  // other metadata
 };
 
 const AboutPage = () => {

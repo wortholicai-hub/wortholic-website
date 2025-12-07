@@ -63,7 +63,7 @@ const AboutSectionOne: React.FC = () => {
       <div className="relative z-10 mx-auto max-w-7xl">
         {/* Heading and description (left aligned) */}
         <div className="mb-12 flex flex-col justify-items items-center text-center">
-          <h2 className="mb-4 text-3xl font-bold md:text-4xl">
+          <h2 className="mb-3 text-2xl lg:text-5xl leading-tight font-bold text-gray-900 sm:text-4xl md:text-5xl xl:mb-5 dark:text-white">
             About Wortholic
           </h2>
           <p className="max-w-2xl text-xl text-center text-gray-600 dark:text-gray-300">

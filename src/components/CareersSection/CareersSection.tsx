@@ -110,7 +110,7 @@ export default function WhoWeAre() {
 
       {/* Section Title */}
       <div className="flex flex-col justify-items items-center gap-2 mb-10">
-        <h2 className="text-center text-gray-800 dark:text-gray-100 text-2xl lg:text-5xl md:text-5xl font-bold mb-0">
+        <h2 className="text-center mb-3 text-2xl lg:text-5xl leading-tight font-bold text-gray-900 sm:text-4xl md:text-5xl xl:mb-5 dark:text-white">
           Who we are
         </h2>
         <p className="text-gray-600 text-center dark:text-gray-300">
