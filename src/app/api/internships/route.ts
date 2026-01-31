@@ -5,10 +5,17 @@ import { createClient } from "@supabase/supabase-js";
 
 export const runtime = "nodejs";
 
-// Configure Supabase
-const supabaseUrl = process.env.SUPABASE_URL || "";
-const supabaseKey = process.env.SUPABASE_ANON_KEY || "";
-const supabase = createClient(supabaseUrl, supabaseKey);
+// Create Supabase client only when needed (at runtime, not build time)
+const getSupabaseClient = () => {
+  const supabaseUrl = process.env.SUPABASE_URL;
+  const supabaseKey = process.env.SUPABASE_ANON_KEY;
+  
+  if (!supabaseUrl || !supabaseKey) {
+    throw new Error("Missing Supabase credentials.");
+  }
+  
+  return createClient(supabaseUrl, supabaseKey);
+};
 
 const getAuthClient = () => {
   const clientEmail = process.env.GOOGLE_SHEETS_CLIENT_EMAIL;
@@ -78,6 +85,8 @@ export async function POST(request: NextRequest) {
       const timestamp = Date.now();
       const fileName = `${internship.replace(/[^a-zA-Z0-9]/g, "_")}-${sanitizedName}-${timestamp}${fileExtension}`;
 
+      const supabase = getSupabaseClient();
+      
       const { data, error } = await supabase.storage
         .from("internship-applications")
         .upload(fileName, fileBuffer, {
