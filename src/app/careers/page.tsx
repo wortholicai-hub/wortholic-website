@@ -1,5 +1,6 @@
 "use client";
 
+// Careers page with internship opportunities
 import FiveSection from "@/components/Careers/FiveSection";
 import FourSection from "@/components/Careers/FourSection";
 import InternshipCards from "@/components/Careers/InternshipCards";
