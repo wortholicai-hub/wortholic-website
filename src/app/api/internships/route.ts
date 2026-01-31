@@ -68,23 +68,20 @@ export async function POST(request: NextRequest) {
     // Upload file to Supabase Storage
     let fileUrl = "";
     const attachmentName = attachment.name || "document";
-    
-    // Get file extension from original filename
-    const fileExtension = attachmentName.includes('.') 
-      ? attachmentName.substring(attachmentName.lastIndexOf('.'))
-      : '';
+    const fileExtension = attachmentName.includes(".")
+      ? attachmentName.substring(attachmentName.lastIndexOf("."))
+      : "";
 
     try {
       const fileBuffer = Buffer.from(await attachment.arrayBuffer());
-      
-      // Create unique filename
-      const fileName = `${fullName.replace(/\s+/g, "_")}-${Date.now()}${fileExtension}`;
-      
-      // Upload to Supabase Storage
+      const sanitizedName = fullName.replace(/[^a-zA-Z0-9]/g, "_");
+      const timestamp = Date.now();
+      const fileName = `${internship.replace(/[^a-zA-Z0-9]/g, "_")}-${sanitizedName}-${timestamp}${fileExtension}`;
+
       const { data, error } = await supabase.storage
         .from("internship-applications")
         .upload(fileName, fileBuffer, {
-          contentType: attachment.type,
+          contentType: attachment.type || "application/octet-stream",
           upsert: false,
         });
 
@@ -93,7 +90,6 @@ export async function POST(request: NextRequest) {
         throw new Error(error.message);
       }
 
-      // Get public URL
       const { data: urlData } = supabase.storage
         .from("internship-applications")
         .getPublicUrl(fileName);

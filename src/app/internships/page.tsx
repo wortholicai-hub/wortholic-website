@@ -16,9 +16,9 @@ const cardIcons = [
   <svg key="ai" className="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
   </svg>,
-  // 3D Developer Icon
+  // 3D Designer Icon (Blender/Cube style)
   <svg key="3d" className="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2-1-2 1M4 7l2-1M4 7l2 1M4 7v2.5M12 21l-2-1m2 1l2-1m-2 1v-2.5M6 18l-2-1v-2.5M18 18l2-1v-2.5" />
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 7.5l-9-5.25L3 7.5m18 0l-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9" />
   </svg>,
 ];
 
@@ -69,6 +69,9 @@ const InternshipsPage = () => {
 
               {/* Tags */}
               <div className="mb-6 flex flex-wrap gap-2">
+                <span className="rounded-full bg-amber-500/10 px-3 py-1 text-xs font-medium text-amber-600 dark:text-amber-400">
+                  Internship
+                </span>
                 <span className="rounded-full bg-[#0E9F9F]/10 px-3 py-1 text-xs font-medium text-[#0E9F9F]">
                   {internship.type}
                 </span>
