@@ -26,7 +26,7 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://cdn.sanity.io" />
       </head>
 
-      <body className={`bg-white dark:bg-[#0f0f0f] ${inter.className}`}>
+      <body suppressHydrationWarning className={`bg-white dark:bg-[#0f0f0f] ${inter.className}`}>
         <Providers>
           <Header />
           {children}
