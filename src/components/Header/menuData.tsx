@@ -1,4 +1,3 @@
-import { internshipMenuItems } from "@/data/internships";
 import { Menu } from "@/types/menu";
 
 const menuData: Menu[] = [
@@ -50,7 +49,6 @@ const menuData: Menu[] = [
     title: "Careers",
     path: "/careers",
     newTab: false,
-    submenu: internshipMenuItems,
   },
   {
     id: 2,

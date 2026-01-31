@@ -5,236 +5,109 @@ export type Internship = {
   title: string;
   summary: string;
   description: string;
-  skills: string[];
-  duration: string;
   type: string;
-  outcomes: string[];
+  location: string;
+  responsibilities: string[];
+  requirements: string[];
+  niceToHave: string[];
+  techStack?: string[];
 };
 
 export const internships: Internship[] = [
   {
-    slug: "software-engineering",
-    title: "Software Engineering Internship",
-    summary: "Build real-world software features with modern engineering practices.",
+    slug: "full-stack-engineer",
+    title: "Full-Stack Engineer",
+    summary: "Build and scale full-stack web applications with modern technologies.",
     description:
-      "Join our software engineering team to design, build, and improve production-grade applications. You will collaborate with mentors, follow code reviews, and learn how to deliver reliable features end-to-end.",
-    skills: [
-      "Programming fundamentals (any language)",
-      "Data structures and algorithms basics",
-      "Version control with Git",
-      "Problem solving and debugging",
+      "Join our engineering team to build and scale full-stack web applications. You will work across frontend and backend, integrate third-party services, and collaborate with AI, product, and design teams to deliver automation-friendly and scalable systems.",
+    type: "Full-Time",
+    location: "Remote",
+    responsibilities: [
+      "Build and scale full-stack web applications",
+      "Develop frontend using React.js and Next.js",
+      "Design and maintain backend services using FastAPI",
+      "Integrate third-party services via APIs and webhooks",
+      "Work with AI coding tools to speed up development",
+      "Build automation-friendly and scalable systems",
+      "Collaborate with product, AI, and design teams",
     ],
-    duration: "3 months",
-    type: "Unpaid",
-    outcomes: [
-      "Hands-on experience with agile workflows",
-      "Confidence in building and shipping features",
-      "Understanding of engineering best practices",
-      "Portfolio-ready project contributions",
+    requirements: [
+      "Strong experience with API design and integration (mandatory)",
+      "Proficiency in React, Next.js",
+      "Backend experience with FastAPI and Python",
+      "Experience using AI coding tools (ChatGPT, Copilot, etc.)",
+      "Understanding of authentication, async flows, and databases",
+      "Clean, maintainable coding practices",
     ],
+    niceToHave: [
+      "Experience with automation tools or workflows",
+      "Cloud deployment or DevOps exposure",
+    ],
+    techStack: ["React.js", "Next.js", "FastAPI", "Python", "PostgreSQL", "REST APIs", "TypeScript"],
   },
   {
-    slug: "full-stack-developer",
-    title: "Full Stack Developer Internship",
-    summary: "Work across frontend and backend to deliver complete solutions.",
+    slug: "ai-engineer",
+    title: "AI Engineer",
+    summary: "Design and build AI-powered applications with LLMs and automation.",
     description:
-      "This internship focuses on full stack development, including UI creation, API development, and database integration. You will learn how to connect the entire product flow and deploy features that users can use.",
-    skills: [
-      "HTML, CSS, and JavaScript fundamentals",
-      "Basic understanding of APIs",
-      "Familiarity with databases",
-      "Willingness to learn both frontend and backend",
+      "Work on cutting-edge AI applications, integrating LLMs, building AI backends, and optimizing AI performance. You will collaborate with frontend teams and build automation-ready AI systems that power intelligent products.",
+    type: "Full-Time",
+    location: "Remote",
+    responsibilities: [
+      "Design and build AI-powered applications",
+      "Develop AI backends using FastAPI",
+      "Work on prompt engineering and AI workflows",
+      "Integrate LLMs and AI services via APIs",
+      "Collaborate with frontend teams (React / Next.js)",
+      "Optimize AI performance, reliability, and cost",
+      "Build automation-ready AI systems",
     ],
-    duration: "2-3 months",
-    type: "Unpaid",
-    outcomes: [
-      "Experience building full stack features",
-      "Exposure to deployment workflows",
-      "Ability to debug across the stack",
-      "Confidence in product-level development",
+    requirements: [
+      "Strong API integration skills (mandatory)",
+      "Advanced Python and FastAPI",
+      "Hands-on experience with AI coding and LLMs",
+      "Prompt engineering experience",
+      "Understanding of async systems and data pipelines",
     ],
+    niceToHave: [
+      "RAG pipelines, agents, embeddings",
+      "Experience with AI automation tools",
+    ],
+    techStack: ["Python", "FastAPI", "OpenAI", "LangChain", "Vector Databases", "React", "Next.js"],
   },
   {
-    slug: "front-end-developer",
-    title: "Front-End Developer Internship",
-    summary: "Craft responsive, accessible, and beautiful user interfaces.",
+    slug: "3d-developer",
+    title: "3D Developer",
+    summary: "Build interactive 3D experiences for web applications.",
     description:
-      "Focus on building user-facing experiences with modern frontend frameworks. You will work on UI components, animations, performance, and accessibility best practices.",
-    skills: [
-      "HTML, CSS, and JavaScript",
-      "Responsive design principles",
-      "Basic knowledge of React or similar frameworks",
-      "Attention to detail in UI/UX",
+      "Create stunning interactive 3D experiences for web applications. You will integrate 3D assets into React/Next.js projects, optimize performance for real-time rendering, and implement animations and interactions that captivate users.",
+    type: "Full-Time",
+    location: "Remote",
+    responsibilities: [
+      "Build interactive 3D experiences for web applications",
+      "Integrate 3D assets into React / Next.js projects",
+      "Optimize 3D scenes for performance and real-time rendering",
+      "Work closely with designers and product teams",
+      "Implement animations, interactions, and transitions",
     ],
-    duration: "2-3 months",
-    type: "Unpaid",
-    outcomes: [
-      "Ability to build polished UI components",
-      "Improved knowledge of frontend tooling",
-      "Experience with design systems",
-      "A strong UI portfolio contribution",
+    requirements: [
+      "Strong experience with Three.js and WebGL (mandatory)",
+      "Solid JavaScript / TypeScript skills",
+      "Experience integrating 3D with modern frontend frameworks",
+      "Understanding of performance optimization for 3D",
+      "Ability to collaborate across design and engineering teams",
     ],
-  },
-  {
-    slug: "back-end-developer",
-    title: "Back-End Developer Internship",
-    summary: "Build secure, scalable APIs and services.",
-    description:
-      "Work on server-side logic, API design, and database management. You will learn how to write secure, scalable services and support front-end applications.",
-    skills: [
-      "Any backend language (Node.js, Python, Java, or similar)",
-      "Understanding of REST APIs",
-      "Database basics (SQL or NoSQL)",
-      "Security and performance awareness",
+    niceToHave: [
+      "WebXR / AR / VR experience",
+      "Shader programming (GLSL)",
     ],
-    duration: "3 months",
-    type: "Unpaid",
-    outcomes: [
-      "Experience designing APIs",
-      "Knowledge of server-side best practices",
-      "Exposure to database optimization",
-      "Improved backend debugging skills",
-    ],
-  },
-  {
-    slug: "3d-designing-animation",
-    title: "3D Designing & Animation Internship",
-    summary: "Create 3D models and motion graphics for digital experiences.",
-    description:
-      "Collaborate with creative teams to design 3D assets, animations, and visual concepts. You will work on storytelling, branding visuals, and product-ready assets.",
-    skills: [
-      "3D modeling basics (Blender, Maya, or similar)",
-      "Understanding of animation principles",
-      "Creativity and visual storytelling",
-      "Attention to detail in design",
-    ],
-    duration: "2-3 months",
-    type: "Unpaid",
-    outcomes: [
-      "Experience delivering production-ready visuals",
-      "Improved animation workflow",
-      "Stronger creative collaboration skills",
-      "Portfolio-ready 3D assets",
-    ],
-  },
-  {
-    slug: "social-media-marketing-advertising",
-    title: "Social Media Marketing / Advertising Internship",
-    summary: "Plan and execute campaigns that grow brand awareness.",
-    description:
-      "Work with the marketing team to create social content, manage campaigns, and analyze performance. You will learn how to build strategies that drive engagement.",
-    skills: [
-      "Content creation and copywriting",
-      "Basic marketing analytics",
-      "Social media platform familiarity",
-      "Creative thinking",
-    ],
-    duration: "2-3 months",
-    type: "Unpaid",
-    outcomes: [
-      "Campaign planning and execution experience",
-      "Improved understanding of marketing funnels",
-      "Ability to analyze content performance",
-      "Experience with brand storytelling",
-    ],
-  },
-  {
-    slug: "ui-ux-design",
-    title: "UI/UX Design Internship",
-    summary: "Design intuitive user experiences and modern interfaces.",
-    description:
-      "Collaborate with product and engineering teams to design user-centered interfaces. You will work on wireframes, prototypes, and usability improvements.",
-    skills: [
-      "Design tools (Figma, Adobe XD, or similar)",
-      "UX research basics",
-      "Information architecture",
-      "Visual design principles",
-    ],
-    duration: "3 months",
-    type: "Unpaid",
-    outcomes: [
-      "Experience with real-world product design",
-      "Understanding of design handoff processes",
-      "Improved usability evaluation skills",
-      "Portfolio-ready UX case studies",
-    ],
-  },
-  {
-    slug: "qa-testing",
-    title: "QA & Testing Internship",
-    summary: "Ensure product quality through testing and process improvements.",
-    description:
-      "Learn software testing methodologies and collaborate with engineers to maintain high-quality releases. You will write test cases and report issues effectively.",
-    skills: [
-      "Attention to detail and analytical thinking",
-      "Basic understanding of software development",
-      "Manual testing techniques",
-      "Clear documentation and reporting",
-    ],
-    duration: "2-3 months",
-    type: "Unpaid",
-    outcomes: [
-      "Experience with QA workflows",
-      "Improved bug reporting and tracking skills",
-      "Understanding of release readiness",
-      "Stronger analytical problem solving",
-    ],
-  },
-  {
-    slug: "devops-cloud",
-    title: "DevOps & Cloud Internship",
-    summary: "Support deployment, infrastructure, and automation workflows.",
-    description:
-      "Work on CI/CD pipelines, cloud configurations, and infrastructure monitoring. You will learn how to keep systems reliable, scalable, and secure.",
-    skills: [
-      "Basic Linux and command line knowledge",
-      "Understanding of cloud services",
-      "Interest in automation and tooling",
-      "Problem solving mindset",
-    ],
-    duration: "3 months",
-    type: "Unpaid",
-    outcomes: [
-      "Experience with DevOps workflows",
-      "Exposure to cloud deployment practices",
-      "Understanding of monitoring and uptime",
-      "Improved automation skills",
-    ],
-  },
-  {
-    slug: "data-science-ml",
-    title: "Data Science / ML Internship",
-    summary: "Work with data, build models, and drive insights.",
-    description:
-      "Contribute to data preparation, analysis, and machine learning experimentation. You will work with datasets, build models, and communicate insights clearly.",
-    skills: [
-      "Python basics",
-      "Data analysis fundamentals",
-      "Statistics and probability basics",
-      "Curiosity about data-driven decisions",
-    ],
-    duration: "3 months",
-    type: "Unpaid",
-    outcomes: [
-      "Hands-on experience with data workflows",
-      "Practical understanding of ML pipelines",
-      "Improved analytical storytelling",
-      "Portfolio-ready data project work",
-    ],
+    techStack: ["Three.js", "WebGL", "React Three Fiber", "TypeScript", "Blender", "GLTF", "Draco"],
   },
 ];
 
-export const internshipMenuItems: Menu[] = [
-  {
-    id: 259,
-    title: "All Types",
-    path: "/internships",
-    newTab: false,
-  },
-  ...internships.map((internship, index) => ({
-    id: 260 + index,
-    title: internship.title,
-    path: `/internships/${internship.slug}`,
-    newTab: false,
-  })),
-];
+export const internshipMenuItems: Menu[] = internships.map((internship, index) => ({
+  id: 260 + index,
+  title: internship.title,
+  path: `/internships/${internship.slug}`,
+  newTab: false,
+}));
