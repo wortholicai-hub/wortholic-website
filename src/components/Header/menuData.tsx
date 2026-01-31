@@ -50,20 +50,6 @@ const menuData: Menu[] = [
     title: "Careers",
     path: "/careers",
     newTab: false,
-    submenu: [
-      {
-        id: 31,
-        title: "Bootcamp",
-        path: "/bootcamp",
-        newTab: false,
-      },
-    ],
-  },
-  {
-    id: 26,
-    title: "Internships",
-    path: "/internships",
-    newTab: false,
     submenu: internshipMenuItems,
   },
   {
