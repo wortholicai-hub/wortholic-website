@@ -128,7 +128,13 @@ const InternshipDetail = ({ internship }: InternshipDetailProps) => {
                   <dt className="font-medium text-gray-700 dark:text-gray-200">
                     Location
                   </dt>
-                  <dd className="font-semibold text-purple-600 dark:text-purple-400">{internship.location}</dd>
+                  <dd className="font-semibold text-black dark:text-white">{internship.location}</dd>
+                </div>
+                <div className="flex items-center justify-between">
+                  <dt className="font-medium text-gray-700 dark:text-gray-200">
+                    Employment Type
+                  </dt>
+                  <dd className="font-semibold text-black dark:text-white">{internship.type}</dd>
                 </div>
               </dl>
             </div>
