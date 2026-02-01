@@ -23,12 +23,6 @@ const InternshipDetail = ({ internship }: InternshipDetailProps) => {
               </svg>
               Internship
             </span>
-            <span className="inline-flex items-center gap-1.5 rounded-full bg-[#0E9F9F]/10 px-4 py-1.5 text-sm font-medium text-[#0E9F9F]">
-              <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-              </svg>
-              {internship.type}
-            </span>
             <span className="inline-flex items-center gap-1.5 rounded-full bg-purple-500/10 px-4 py-1.5 text-sm font-medium text-purple-600 dark:text-purple-400">
               <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
@@ -130,12 +124,6 @@ const InternshipDetail = ({ internship }: InternshipDetailProps) => {
                 Position Details
               </h2>
               <dl className="space-y-4 text-sm text-gray-600 dark:text-gray-300">
-                <div className="flex items-center justify-between border-b border-gray-100 pb-3 dark:border-gray-700">
-                  <dt className="font-medium text-gray-700 dark:text-gray-200">
-                    Type
-                  </dt>
-                  <dd className="font-semibold text-[#0E9F9F]">{internship.type}</dd>
-                </div>
                 <div className="flex items-center justify-between">
                   <dt className="font-medium text-gray-700 dark:text-gray-200">
                     Location

@@ -72,9 +72,6 @@ const InternshipsPage = () => {
                 <span className="rounded-full bg-amber-500/10 px-3 py-1 text-xs font-medium text-amber-600 dark:text-amber-400">
                   Internship
                 </span>
-                <span className="rounded-full bg-[#0E9F9F]/10 px-3 py-1 text-xs font-medium text-[#0E9F9F]">
-                  {internship.type}
-                </span>
                 <span className="rounded-full bg-purple-500/10 px-3 py-1 text-xs font-medium text-purple-600 dark:text-purple-400">
                   {internship.location}
                 </span>
