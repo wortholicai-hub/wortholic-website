@@ -79,7 +79,7 @@ const InternshipDetail = ({ internship }: InternshipDetailProps) => {
             {/* Requirements */}
             <div className="rounded-xl border border-gray-200 bg-gradient-to-br from-white to-gray-50 p-6 shadow-lg dark:border-gray-700 dark:from-[#0b0f14] dark:to-[#111827]">
               <h2 className="mb-4 text-xl font-semibold text-black dark:text-white">
-                Requirements
+                Graduate Intern Criteria
               </h2>
               <ul className="space-y-3 text-sm text-gray-600 dark:text-gray-300">
                 {internship.requirements.map((item) => (

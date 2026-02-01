@@ -5,28 +5,34 @@ import Link from "next/link";
 
 const InternshipCards = () => {
   const cardIcons = [
-    // Full-Stack Engineer Icon
+    // Full Stack Developer Icon
     <svg key="fullstack" className="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
     </svg>,
-    // AI Engineer Icon
-    <svg key="ai" className="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    // AI Automation Engineer Icon (Workflow/Gears)
+    <svg key="automation" className="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.384-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+    </svg>,
+    // AI/ML Engineer Icon (Brain/Network)
+    <svg key="ml" className="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
     </svg>,
-    // 3D Designer Icon (Blender/Cube style)
+    // 2D/3D Designer Icon (Blender/Cube style)
     <svg key="3d" className="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 7.5l-9-5.25L3 7.5m18 0l-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9" />
     </svg>,
   ];
 
   const cardGradients = [
-    "from-[#0E9F9F] to-[#0b7c7c]",
-    "from-purple-600 to-purple-800",
-    "from-amber-500 to-orange-600",
+    "from-[#0E9F9F] to-[#0b7c7c]", // Full Stack
+    "from-blue-600 to-indigo-700", // Automation
+    "from-purple-600 to-pink-600", // ML
+    "from-amber-500 to-orange-600", // 3D Design
   ];
 
   const cardBgGradients = [
     "from-[#0E9F9F]/5 to-[#0E9F9F]/10",
+    "from-blue-500/5 to-blue-500/10",
     "from-purple-500/5 to-purple-500/10",
     "from-amber-500/5 to-amber-500/10",
   ];
@@ -42,12 +48,12 @@ const InternshipCards = () => {
             Open Positions
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-300">
-            We&apos;re looking for talented individuals who are passionate about building 
+            We&apos;re looking for talented individuals who are passionate about building
             cutting-edge technology. Explore our current openings below.
           </p>
         </div>
 
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           {internships.map((internship, index) => (
             <Link
               key={internship.slug}
@@ -75,15 +81,15 @@ const InternshipCards = () => {
                   {internship.summary}
                 </p>
 
-              {/* Tags */}
-              <div className="mb-6 flex flex-wrap gap-2">
-                <span className="rounded-full bg-amber-500/10 px-3 py-1 text-xs font-medium text-amber-600 dark:text-amber-400">
-                  Internship
-                </span>
-                <span className="rounded-full bg-purple-500/10 px-3 py-1 text-xs font-medium text-purple-600 dark:text-purple-400">
-                  {internship.location}
-                </span>
-              </div>
+                {/* Tags */}
+                <div className="mb-6 flex flex-wrap gap-2">
+                  <span className="rounded-full bg-amber-500/10 px-3 py-1 text-xs font-medium text-amber-600 dark:text-amber-400">
+                    Internship
+                  </span>
+                  <span className="rounded-full bg-purple-500/10 px-3 py-1 text-xs font-medium text-purple-600 dark:text-purple-400">
+                    {internship.location}
+                  </span>
+                </div>
 
                 {/* Tech Stack Preview */}
                 {internship.techStack && (

@@ -93,7 +93,7 @@ const InternshipApplicationForm = ({
         skills: "",
       });
       setAttachment(null);
-      
+
       // Reset file input
       const fileInput = document.querySelector('input[name="attachment"]') as HTMLInputElement;
       if (fileInput) fileInput.value = "";
@@ -132,7 +132,7 @@ const InternshipApplicationForm = ({
           <h3 className="mb-3 text-2xl font-bold text-green-800 dark:text-green-300">
             Application Submitted Successfully!
           </h3>
-          
+
           <p className="mb-6 text-gray-700 dark:text-gray-300">
             Thank you for applying to the <strong>{internshipTitle}</strong> position at Wortholic.
           </p>
@@ -311,7 +311,7 @@ const InternshipApplicationForm = ({
 
         <div>
           <label className="mb-2 block text-sm font-medium text-gray-700 dark:text-gray-200">
-            Relevant Skills or Experience *
+            Tell us a bit about yourself and your achievements *
           </label>
           <textarea
             name="skills"
@@ -320,7 +320,7 @@ const InternshipApplicationForm = ({
             required
             rows={4}
             className="w-full resize-none rounded-md border border-gray-300 bg-white px-4 py-2 text-sm text-gray-900 focus:border-[#0E9F9F] focus:outline-none dark:border-gray-700 dark:bg-black dark:text-white"
-            placeholder="List relevant skills, tools, or project experience"
+            placeholder="Share your background, key projects, and what makes you a great fit..."
           />
         </div>
 
