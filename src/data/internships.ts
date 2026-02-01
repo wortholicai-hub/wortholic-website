@@ -20,7 +20,7 @@ export const internships: Internship[] = [
     summary: "Build and scale full-stack web applications with modern technologies.",
     description:
       "Launch your career as a Full Stack Developer by joining our engineering team. This internship is designed for recent graduates ready to apply their academic knowledge to real-world challenges. You will work directly on production code, contributing to scalable web applications using Next.js and FastAPI, while collaborating with senior mentors to bridge the gap between theory and professional practice.",
-    type: "Full-Time",
+    type: "Full-Time (6 PM - 3 AM)",
     location: "Remote",
     responsibilities: [
       "Build and scale full-stack web applications in a live production environment",
@@ -52,7 +52,7 @@ export const internships: Internship[] = [
     summary: "Design and build automated workflows using AI and low-code tools.",
     description:
       "Join us as an AI Automation Engineer to revolutionize how we work. This internship is perfect for problem-solvers who love connecting tools and automating repetitive tasks. You will design, build, and deploy intelligent workflows using low-code platforms and custom scripts, collaborating with senior mentors to integrate the latest AI models and boost efficiency across the organization.",
-    type: "Full-Time",
+    type: "Full-Time (6 PM - 3 AM)",
     location: "Remote",
     responsibilities: [
       "Design and implement automated workflows using tools like n8n, Zapier, or Make",
@@ -84,7 +84,7 @@ export const internships: Internship[] = [
     summary: "Build RAG pipelines, fine-tune models, and deploy AI agents.",
     description:
       "Dive deep into the world of Artificial Intelligence as an AI/ML Engineer intern. This role is designed for those passionate about Large Language Models and cutting-edge AI applications. You will work on building RAG pipelines, fine-tuning models, and deploying AI agents that solve real-world user problems, continuously collaborating with senior mentors to refine your approach.",
-    type: "Full-Time",
+    type: "Full-Time (6 PM - 3 AM)",
     location: "Remote",
     responsibilities: [
       "Build and optimize RAG (Retrieval-Augmented Generation) pipelines for domain-specific knowledge",
@@ -116,7 +116,7 @@ export const internships: Internship[] = [
     summary: "Create stunning 3D models, 2D graphics, and animations. Blender expertise is required.",
     description:
       "Start your journey as a 2D/3D Designer by working on live creative projects. This role is ideal for creative graduates looking to make a tangible impact with their art. You will collaborate with senior mentors and product teams to produce stunning visuals, 3D assets, and animations that define our brand and products. This is a practical, immersion-based role where you will refine your skills through real-world application.",
-    type: "Full-Time",
+    type: "Full-Time (6 PM - 3 AM)",
     location: "Remote",
     responsibilities: [
       "Create high-quality 3D models, characters, and environments for actual product use",
