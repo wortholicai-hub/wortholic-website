@@ -105,7 +105,8 @@ export default function WhoWeAre() {
   ];
 
   return (
-    <section className="bg-white dark:bg-black dark:text-gray-100 py-10 px-4 md:px-12 lg:px-1 transition-colors duration-300">
+    <section className="bg-white py-10 transition-colors duration-300 dark:bg-black dark:text-gray-100">
+      <div className="mx-auto w-full max-w-[1500px] px-4 sm:px-6 lg:px-8">
       {/* Theme Toggle */}
 
       {/* Section Title */}
@@ -120,7 +121,7 @@ export default function WhoWeAre() {
       </div>
 
       {/* Grid Layout */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto mb-16">
+      <div className="mx-auto mb-16 grid max-w-full grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
         {cards.map((card) => {
           // Image Card
           if (card.type === "imageCard") {
@@ -239,6 +240,7 @@ export default function WhoWeAre() {
 
           return null;
         })}
+      </div>
       </div>
     </section>
   );

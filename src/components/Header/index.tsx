@@ -6,6 +6,10 @@ import { useEffect, useState } from "react";
 import ThemeToggler from "./ThemeToggler";
 import menuData from "./menuData";
 
+const activeMenuClasses = "text-[#0E9F9F] dark:text-[#5eead4]";
+const inactiveMenuClasses =
+  "text-gray-700 hover:text-[#0E9F9F] dark:text-white/70 dark:hover:text-[#5eead4]";
+
 const Header = () => {
   const [navbarOpen, setNavbarOpen] = useState(false);
   const [sticky, setSticky] = useState(false);
@@ -16,6 +20,10 @@ const Header = () => {
     setOpenIndex(openIndex === index ? -1 : index);
 
   const pathname = usePathname();
+
+  const isMenuItemActive = (menuItem: (typeof menuData)[number]) =>
+    pathname === menuItem.path ||
+    menuItem.submenu?.some((submenuItem) => submenuItem.path === pathname);
 
   useEffect(() => {
     const handleScroll = () => setSticky(window.scrollY >= 80);
@@ -96,10 +104,11 @@ const Header = () => {
                       {menuItem.path && (
                         <Link
                           href={menuItem.path}
-                          className={`hidden lg:flex items-center py-2 text-base transition-colors duration-150 ${pathname === menuItem.path
-                            ? "text-blue-600 dark:text-blue-500"
-                            : "text-gray-700 hover:text-blue-600 dark:text-white/70 dark:hover:text-blue-500"
-                            }`}
+                          className={`hidden lg:flex items-center py-2 text-base transition-colors duration-150 ${
+                            isMenuItemActive(menuItem)
+                              ? activeMenuClasses
+                              : inactiveMenuClasses
+                          }`}
                         >
                           {menuItem.title}
                           <svg
@@ -119,10 +128,11 @@ const Header = () => {
                       {/* Mobile: Button that toggles dropdown */}
                       <button
                         onClick={() => toggleSubmenu(index)}
-                        className={`flex lg:hidden w-full items-center py-2 text-base transition-colors duration-150 ${pathname === menuItem.path
-                          ? "text-blue-600 dark:text-blue-500"
-                          : "text-gray-700 hover:text-blue-600 dark:text-white/70 dark:hover:text-blue-500"
-                          }`}
+                        className={`flex lg:hidden w-full items-center py-2 text-base transition-colors duration-150 ${
+                          isMenuItemActive(menuItem)
+                            ? activeMenuClasses
+                            : inactiveMenuClasses
+                        }`}
                       >
                         {menuItem.title}
                         <svg
@@ -143,7 +153,11 @@ const Header = () => {
                       {!menuItem.path && (
                         <button
                           onClick={() => toggleSubmenu(index)}
-                          className="hidden lg:flex w-full items-center py-2 text-base text-gray-700 transition-colors duration-150 hover:text-blue-600 lg:w-auto dark:text-white/70 dark:hover:text-blue-500"
+                          className={`hidden lg:flex w-full items-center py-2 text-base transition-colors duration-150 lg:w-auto ${
+                            isMenuItemActive(menuItem)
+                              ? activeMenuClasses
+                              : inactiveMenuClasses
+                          }`}
                         >
                           {menuItem.title}
                           <svg
@@ -171,10 +185,11 @@ const Header = () => {
                         <Link
                           href={submenuItem.path}
                           key={submenuItem.id}
-                          className={`block rounded px-3 py-2 text-sm transition-colors duration-150 ${pathname === submenuItem.path
-                            ? "text-blue-600 dark:text-blue-500"
-                            : "text-gray-700 hover:text-blue-600 dark:text-white/70 dark:hover:bg-white/5 dark:hover:text-blue-500"
-                            }`}
+                          className={`block rounded px-3 py-2 text-sm transition-colors duration-150 ${
+                            pathname === submenuItem.path
+                              ? activeMenuClasses
+                              : "text-gray-700 hover:text-[#0E9F9F] dark:text-white/70 dark:hover:bg-white/5 dark:hover:text-[#5eead4]"
+                          }`}
                         >
                           {submenuItem.title}
                         </Link>
@@ -185,10 +200,11 @@ const Header = () => {
                   /* Regular menu item without submenu */
                   <Link
                     href={menuItem.path || "/"}
-                    className={`block py-2 text-base transition-colors duration-150 ${pathname === menuItem.path
-                      ? "text-blue-600 dark:text-blue-500"
-                      : "text-gray-700 hover:text-blue-600 dark:text-white/70 dark:hover:text-blue-500"
-                      }`}
+                    className={`block py-2 text-base transition-colors duration-150 ${
+                      isMenuItemActive(menuItem)
+                        ? activeMenuClasses
+                        : inactiveMenuClasses
+                    }`}
                   >
                     {menuItem.title}
                   </Link>

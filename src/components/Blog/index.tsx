@@ -5,7 +5,7 @@ import blogData from "./blogData";
 const Blog = () => {
   return (
     <section id="blog" className="bg-white py-1 md:py-12 lg:py-2 dark:bg-black">
-      <div className="container">
+      <div className="mx-auto w-full max-w-[1500px] px-4 sm:px-6 lg:px-8">
         <SectionTitle
           title="Our Latest Blogs"
           paragraph="Stay updated with fresh insights, stories, and tips in our latest blogs."

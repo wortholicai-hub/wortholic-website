@@ -103,16 +103,16 @@ const ServiceCards = () => {
   ];
 
   return (
-    <div className="mt-4 w-full px-4 sm:px-6 lg:px-8">
+    <div className="mx-auto mt-4 w-full max-w-[1500px] px-4 sm:px-6 lg:px-8">
       {/* Service Cards */}
-      <div className="mx-auto grid w-full max-w-7xl grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="mx-auto grid w-full grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
         {services.map((service) => (
           <Link
             key={service.id}
             href={service.link}
             className="group block h-full"
           >
-            <div className="relative flex h-full flex-col justify-between overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-4 shadow-md backdrop-blur-xl transition-all duration-500 hover:scale-105 hover:border-[#0E9F9F] hover:shadow-[0_0_20px_rgba(14,159,159,0.7)] dark:bg-black/10 dark:hover:border-[#0E9F9F]">
+            <div className="relative flex h-full flex-col justify-between overflow-hidden rounded-2xl border border-transparent bg-white/5 p-4 shadow-md backdrop-blur-md transition-transform duration-300 ease-out hover:-translate-y-[2px] hover:scale-[1.02] hover:border-black hover:shadow-md dark:bg-white/5 dark:hover:border-white">
               {/* Icon */}
               <div className="relative mb-4">
                 <div className="flex h-16 w-16 items-center justify-center rounded-full text-black shadow-lg dark:text-white">
@@ -153,7 +153,7 @@ const ServiceCards = () => {
 
       {/* Companies Section */}
       <div className="relative mt-10 flex w-full justify-center">
-        <div className="relative w-full max-w-7xl overflow-hidden border-y border-white/20 bg-white/5 shadow-[0_8px_32px_rgba(0,0,0,0.1),inset_0_1px_0_rgba(255,255,255,0.15)] backdrop-blur-[20px] backdrop-saturate-180 dark:border-y dark:border-white/15 dark:bg-black/5 dark:shadow-[0_8px_32px_rgba(0,0,0,0.3),inset_0_1px_0_rgba(255,255,255,0.1)]">
+        <div className="relative w-full overflow-hidden border-y border-white/20 bg-white/5 shadow-[0_8px_32px_rgba(0,0,0,0.1),inset_0_1px_0_rgba(255,255,255,0.15)] backdrop-blur-[20px] backdrop-saturate-180 dark:border-y dark:border-white/15 dark:bg-black/5 dark:shadow-[0_8px_32px_rgba(0,0,0,0.3),inset_0_1px_0_rgba(255,255,255,0.1)]">
           <div className="marquee-wrapper flex w-max items-center gap-12 px-6 py-3">
             {[...companiesImg, ...companiesImg.slice(0, 4)].map(
               (company, i) => (

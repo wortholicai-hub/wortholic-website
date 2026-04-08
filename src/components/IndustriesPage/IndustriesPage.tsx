@@ -6,8 +6,8 @@ const IndustriesPage = () => {
   return (
     <div className="bg-white dark:bg-black">
       {/* Industries We Serve Section */}
-      <section className="px-4 py-8 sm:px-6">
-        <div className="mx-auto max-w-6xl text-center">
+      <section className="px-4 py-8 sm:px-6 lg:px-8">
+        <div className="mx-auto w-full max-w-[1500px] text-center">
           {/* Heading */}
           <h1 className="mb-3 text-2xl lg:text-5xl leading-tight font-bold text-gray-900 sm:text-4xl md:text-5xl xl:mb-5 dark:text-white">
             Industries We Serve

@@ -56,50 +56,51 @@ const ContactForm = () => {
 
   return (
     <>
-      <div id="contact-form" className="mb-3 flex h-auto flex-col md:flex-row">
-        {/* Left Banner Section */}
-        <div className="relative flex w-full items-center border justify-center bg-gray-50 p-8 md:flex md:w-1/2 dark:bg-gray-800 overflow-hidden">
-          {/* Background Logo */}
-          <div
-            className="absolute bg-contain bg-no-repeat opacity-8"
-            style={{
-              backgroundImage: "url('/images/logo/Wortholic.png')",
-              width: "660px",
-              height: "550px",
-              top: "70px",
-              left: "50%",
-              transform: "translateX(-50%)",
-              zIndex: 0,
-            }}
-          ></div>
+      <div className="mx-auto w-full max-w-[1500px] px-4 sm:px-6 lg:px-8">
+        <div id="contact-form" className="mb-3 flex h-auto flex-col md:flex-row">
+          {/* Left Banner Section */}
+          <div className="relative flex w-full items-center border justify-center bg-gray-50 p-8 md:flex md:w-1/2 dark:bg-gray-800 overflow-hidden">
+            {/* Background Logo */}
+            <div
+              className="absolute bg-contain bg-no-repeat opacity-8"
+              style={{
+                backgroundImage: "url('/images/logo/Wortholic.png')",
+                width: "660px",
+                height: "550px",
+                top: "70px",
+                left: "50%",
+                transform: "translateX(-50%)",
+                zIndex: 0,
+              }}
+            ></div>
 
-          {/* Content */}
-          <div className="relative z-10 flex flex-col items-center text-center">
-            <FiMessageSquare className="mb-6 h-16 w-16 text-black md:h-20 md:w-20 dark:text-white" />
-            <p className="text-lg font-normal text-black md:text-xl dark:text-gray-300">
-              Talk To Us
-            </p>
-            <h1 className="mt-2 text-4xl leading-tight font-extrabold text-black md:text-6xl dark:text-white">
-              About Your <br /> Project
-            </h1>
+            {/* Content */}
+            <div className="relative z-10 flex flex-col items-center text-center">
+              <FiMessageSquare className="mb-6 h-16 w-16 text-black md:h-20 md:w-20 dark:text-white" />
+              <p className="text-lg font-normal text-black md:text-xl dark:text-gray-300">
+                Talk To Us
+              </p>
+              <h1 className="mt-2 text-4xl leading-tight font-extrabold text-black md:text-6xl dark:text-white">
+                About Your <br /> Project
+              </h1>
+            </div>
           </div>
-        </div>
 
-        {/* Right Form Section */}
-        <div className="flex w-full items-center justify-center border border-gray-300 bg-white p-6 md:w-1/2 md:p-8 dark:border-0 dark:bg-gray-900">
-          <div className="w-full max-w-lg">
-            <h2 className="mb-6 text-sm text-center leading-relaxed font-normal text-[#333] md:mb-8 md:text-base dark:text-gray-300">
-              We are here to build your software project and help you succeed
-              &amp; grow your business.
-            </h2>
+          {/* Right Form Section */}
+          <div className="flex w-full items-center justify-center border border-gray-300 bg-white p-6 md:w-1/2 md:p-8 dark:border-0 dark:bg-gray-900">
+            <div className="w-full max-w-lg">
+              <h2 className="mb-6 text-sm text-center leading-relaxed font-normal text-[#333] md:mb-8 md:text-base dark:text-gray-300">
+                We are here to build your software project and help you succeed
+                &amp; grow your business.
+              </h2>
 
-            {error && (
-              <div className="mb-4 p-3 bg-red-100 border border-red-400 text-red-700 rounded">
-                {error}
-              </div>
-            )}
+              {error && (
+                <div className="mb-4 p-3 bg-red-100 border border-red-400 text-red-700 rounded">
+                  {error}
+                </div>
+              )}
 
-            <form onSubmit={handleSubmit} className="space-y-4">
+              <form onSubmit={handleSubmit} className="space-y-4">
               {/* Name Input */}
               <div className="relative">
                 <FiUser className="absolute top-1/2 left-3 -translate-y-1/2 text-black dark:text-gray-400" />
@@ -163,15 +164,16 @@ const ContactForm = () => {
                 className="w-full resize-none rounded-md border border-black bg-transparent p-3 text-base text-black placeholder-gray-500 focus:ring-2 focus:ring-black focus:outline-none dark:border-gray-500 dark:text-white"
               ></textarea>
 
-              {/* Submit Button */}
-              <button
-                type="submit"
-                disabled={isLoading}
-                className="mt-4 w-full flex items-center justify-center rounded-[8px] border-1 border-[#0E9F9F] bg-[#0E9F9F] px-4 py-2 font-medium text-white shadow-md transition duration-300 hover:bg-white hover:text-[#0E9F9F] disabled:opacity-50 disabled:cursor-not-allowed dark:hover:bg-black"
-              >
-                {isLoading ? "Sending..." : "Send Message"}
-              </button>
-            </form>
+                {/* Submit Button */}
+                <button
+                  type="submit"
+                  disabled={isLoading}
+                  className="mt-4 w-full flex items-center justify-center rounded-[8px] border-1 border-[#0E9F9F] bg-[#0E9F9F] px-4 py-2 font-medium text-white shadow-md transition duration-300 hover:bg-white hover:text-[#0E9F9F] disabled:opacity-50 disabled:cursor-not-allowed dark:hover:bg-black"
+                >
+                  {isLoading ? "Sending..." : "Send Message"}
+                </button>
+              </form>
+            </div>
           </div>
         </div>
       </div>

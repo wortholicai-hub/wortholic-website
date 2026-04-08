@@ -59,7 +59,7 @@ const Hero = () => {
         }}
       ></div>
 
-      <div className="relative z-10 container mx-auto flex h-full items-center px-4">
+      <div className="relative z-10 mx-auto flex h-full w-full max-w-[1500px] items-center px-4 sm:px-6 lg:px-8">
         <div className="mx-auto w-full max-w-full text-center">
           {/* Heading */}
           <h1 className="mb-3 text-2xl lg:text-5xl leading-tight font-bold text-gray-900 sm:text-4xl md:text-5xl xl:mb-5 dark:text-white">
@@ -122,7 +122,7 @@ const Hero = () => {
               <div className="flex flex-wrap justify-center gap-2">
                 <button
                   onClick={handleScrollToContact}
-                  className="flex cursor-pointer items-center justify-center rounded-[8px] border-1 border-[#0E9F9F] bg-[#0E9F9F] px-4 py-2 font-medium text-white shadow-md transition duration-300 hover:bg-white hover:text-[#0E9F9F] dark:hover:bg-black"
+                  className="flex cursor-pointer items-center justify-center rounded-[8px] border border-black bg-white px-4 py-2 font-medium text-black shadow-md transition duration-300 hover:bg-black hover:text-white dark:border-white dark:bg-white dark:text-black dark:hover:bg-black dark:hover:text-white"
                 >
                   Get Started <ArrowRight className="ml-2 h-4 w-4" />
                 </button>
@@ -167,7 +167,7 @@ const Hero = () => {
             {features.map((item, i) => (
               <li
                 key={i}
-                className="cursor-pointer rounded-lg border border-transparent bg-white/20 p-2 text-center backdrop-blur-md transition-transform duration-300 ease-out hover:translate-y-[-5px] hover:scale-105 hover:border-black hover:shadow-lg md:p-3 dark:bg-white/5 dark:hover:border-white"
+                className="cursor-pointer rounded-lg border border-transparent bg-white/20 p-2 text-center backdrop-blur-md transition-transform duration-300 ease-out hover:translate-y-[-2px] hover:scale-[1.02] hover:border-black hover:shadow-md md:p-3 dark:bg-white/5 dark:hover:border-white"
               >
                 <Image
                   src={item.src}
