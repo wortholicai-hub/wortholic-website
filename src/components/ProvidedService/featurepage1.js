@@ -1,4 +1,4 @@
-// featureData.js
+﻿// featureData.js
 
 export const featuredWork1 = {
   topBgColor: "none",
@@ -110,7 +110,7 @@ export const featuredWork7 = {
   featuredNumber: "",
   titleText: "Fully Operational & Production-Ready",
   descriptionText:
-    "Our systems are fully operational and production-ready, designed to deliver real-world performance, reliability, and scalability from the very first deployment. Every solution we build undergoes rigorous testing and optimization to ensure seamless integration into live business environments. With enterprise-grade security, robust architecture, and automated monitoring, our technology is built for 24/7 stability and efficiency. We follow industry best practices in DevOps, CI/CD, and cloud infrastructure to guarantee consistent performance and scalability as your needs grow. Being production-ready means our solutions are secure, stable, and optimized — ready to handle real users, real data, and real impact without compromise.",
+    "Our systems are fully operational and production-ready, designed to deliver real-world performance, reliability, and scalability from the very first deployment. Every solution we build undergoes rigorous testing and optimization to ensure seamless integration into live business environments. With enterprise-grade security, robust architecture, and automated monitoring, our technology is built for 24/7 stability and efficiency. We follow industry best practices in DevOps, CI/CD, and cloud infrastructure to guarantee consistent performance and scalability as your needs grow. Being production-ready means our solutions are secure, stable, and optimized â€” ready to handle real users, real data, and real impact without compromise.",
   featureMargin: "lg:ml-[70rem]",
   showSeeAll: true,
 };
@@ -118,26 +118,26 @@ export const featuredWork7 = {
 export const cardsDataByPage = [
   [
     {
-      title: "talkpal",
-      desc: "Description for talk pal ",
+      title: "Talkpal",
+      desc: "AI language tutor and personal coach for speaking, listening, writing, and pronunciation practice across 80+ languages.",
       img: "/images/cards/talkpal.png",
       link: "https://app.talkpal.ai/",
     },
     {
-      title: "bitext",
-      desc: "Description for bitext",
+      title: "Bitext",
+      desc: "Enterprise NLP platform for deterministic multilingual entity, concept, and relationship extraction from unstructured text.",
       img: "/images/cards/bitext.png",
       link: "https://www.bitext.com/",
     },
     {
-      title: "Tutor up",
-      desc: " Online tutoring platform providing live, one-on-one personalized tutoring services with certified teachers for Pre-K through High School students.",
+      title: "TutorUp",
+      desc: "Live, one-on-one online tutoring with certified, classroom-experienced teachers for Pre-K through 12th grade students.",
       img: "/images/cards/card3.jpeg",
       link: "https://www.tutorup.com/",
     },
     {
-      title: "2 play",
-      desc: "Description for 2 play",
+      title: "2Play",
+      desc: "Digital marketplace for PC, PlayStation, Xbox, Nintendo, and gift card keys with instant access to licensed games.",
       img: "/images/cards/card2play.png",
       link: "https://www.2play.com/",
     },
@@ -145,20 +145,20 @@ export const cardsDataByPage = [
 
   [
     {
-      title: "troveo ai",
-      desc: "Description for troveo",
+      title: "Troveo AI",
+      desc: "Rights-cleared, training-ready video and audio datasets built to accelerate real-world AI model development.",
       img: "/images/cards/troveoai.png",
       link: "https://www.troveo.ai/",
     },
     {
-      title: "naturalflow ai",
-      desc: "Transform your business with AI agents.",
+      title: "NaturalFlow.ai",
+      desc: "AI communication platform for 24/7 customer service, intelligent call centers, messaging automation, and chat workflows.",
       img: "/images/cards/card5.jpeg",
       link: "https://www.naturalflow.ai/",
     },
     {
-      title: "Athlead ai",
-      desc: "AI-powered college recruiting platform for student-athletes with intelligent matching technology.",
+      title: "Athlead.ai",
+      desc: "Athlete recruiting platform with live streaming, coach search and messaging, highlight sharing, and an AI recruiting assistant.",
       img: "/images/cards/card3aiprod.jpeg",
       link: "https://www.athlead.ai/",
     },
@@ -166,20 +166,20 @@ export const cardsDataByPage = [
 
   [
     {
-      title: "OptimusAI",
-      desc: "AI/ML solutions provider (website under development - likely enterprise AI solutions",
+      title: "Optimus AI Labs",
+      desc: "AI solutions partner delivering DataOps, LLMOps, data engineering, custom agents, and model fine-tuning for business and government teams.",
       img: "/images/cards/optimusai.png",
       link: "https://optimusai.ai/",
     },
     {
       title: "Atom",
-      desc: "Description for Atom",
+      desc: "Domain platform for discovering, validating, securing, and launching brand-ready domains with AI-assisted naming tools.",
       img: "/images/cards/atom.png",
       link: "https://www.atom.com/",
     },
     {
-      title: "Beam",
-      desc: "the platform automates workflows with an advanced AI agent platform to reduce operational cost and create leverage",
+      title: "Beam AI",
+      desc: "Enterprise AI agent platform for agentic workflows, integrations, and self-learning automation across complex operations.",
       img: "/images/cards/beam.png",
       link: "https://beam.ai/",
     },
@@ -188,40 +188,40 @@ export const cardsDataByPage = [
   [
     {
       title: "Keap",
-      desc: "Keap (formerly Infusionsoft) offers all-in-one CRM, sales, and marketing automation for small businesses—helping entrepreneurs manage leads, send automated campaigns, and close more deals.",
+      desc: "Small-business CRM and automation platform for managing leads, follow-ups, sales pipelines, and customer marketing in one place.",
       img: "/images/cards/keap.png",
       link: "https://keap.com/",
     },
     {
       title: "Rojo Owl Capital",
-      desc: "venture capital firm focused on empowering innovative startups and high-growth businesses across emerging and established markets.",
+      desc: "Real estate investment firm focused on value creation through property investments, strong partnerships, and sustainable growth.",
       img: "/images/cards/card2BA.jpeg",
       link: "https://www.rojoowlcapital.com/",
     },
     {
       title: "Vultron",
-      desc: "Business process automation for federal contractors",
+      desc: "AI-native proposal platform for federal contractors that speeds up compliant proposal development and capture workflows.",
       img: "/images/cards/card1ml.jpeg",
-      link: "http://www.vultron.com",
+      link: "https://www.vultron.ai/",
     },
   ],
 
   [
     {
       title: "EdAI",
-      desc: "Offers workshops and professional development for educators, focusing on generative AI.",
+      desc: "Professional development provider helping educators build practical generative AI skills through modular workshops and training.",
       img: "/images/cards/edai.png",
       link: "https://edai.site/",
     },
     {
-      title: "LATALIER",
-      desc: "Description LATALIER",
+      title: "L'Atelier",
+      desc: "Data intelligence company behind MARIO, an AI-powered analytics platform for countries, corporations, and investors tracking emerging technology.",
       img: "/images/cards/card2AIEduc.jpeg",
       link: "https://atelier.net/",
     },
     {
-      title: "Ed Safe",
-      desc: "Global alliance focusing on creating a safer, more equitable, and trusted AI education ecosystem. Works on research, policy, and practice to ensure AI deployed in learning is ethical, equitable, and transparent.",
+      title: "EDSAFE AI",
+      desc: "Global alliance advancing safe, accountable, fair, and effective AI in education through research, policy, and practice.",
       img: "/images/cards/edsafe.png",
       link: "https://www.edsafeai.org/",
     },
@@ -229,20 +229,20 @@ export const cardsDataByPage = [
 
   [
     {
-      title: "TechLink ",
-      desc: "TechLink appears to be either IT Staffing & Consulting Service",
+      title: "TechLink+",
+      desc: "Workforce solutions partner offering staff augmentation, direct hire, CRPO, payrolling, and project-based delivery support.",
       img: "/images/cards/techlink.png",
       link: "https://www.techlinksystems.com/",
     },
     {
       title: "Athlead.ai",
-      desc: "Description Athlead.ai",
+      desc: "Athlete recruiting platform with live streaming, coach search and messaging, highlight sharing, and an AI recruiting assistant.",
       img: "/images/cards/card2CRM.png",
       link: "https://www.athlead.ai/",
     },
     {
-      title: "OpsF I",
-      desc: " Financial operations platform (website under construction",
+      title: "OpsFi",
+      desc: "Senior-led financial advisory firm covering M&A, transaction services, fractional CFO work, and fund operations.",
       img: "/images/cards/opsfi.png",
       link: "https://opsfi.co/",
     },
@@ -250,22 +250,25 @@ export const cardsDataByPage = [
 
   [
     {
-      title: "TechLink ",
-      desc: "TechLink appears to be either IT Staffing & Consulting Service",
+      title: "TechLink",
+      desc: "Technology staffing partner focused on contract talent, staff augmentation, and project support for specialized teams.",
       img: "/images/cards/card1aiprod.jpeg",
       link: "https://www.techlink.com/",
     },
     {
       title: "Athlead.ai",
-      desc: "Description Athlead.ai",
+      desc: "Athlete recruiting platform with live streaming, coach search and messaging, highlight sharing, and an AI recruiting assistant.",
       img: "/images/cards/card2CRM.png",
       link: "https://www.athlead.ai/",
     },
     {
-      title: "OpsF I",
-      desc: " Financial operations platform (website under construction",
+      title: "OpsFi",
+      desc: "Senior-led financial advisory firm covering M&A, transaction services, fractional CFO work, and fund operations.",
       img: "/images/cards/card4.jpeg",
       link: "https://www.opsfi.com/",
     },
   ],
 ];
+
+
+
