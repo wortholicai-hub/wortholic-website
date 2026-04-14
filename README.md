@@ -2,7 +2,7 @@
 
 **Professional Software Development Services**
 
-Wortholic is a cutting-edge software development company specializing in AI products, web development, mobile applications, and cloud solutions. Our modern website showcases our comprehensive services and expertise.
+Wortholic is a cutting-edge software development company specializing in AI products, web development, mobile applications, and cloud solutions. Our modern website showcases our comprehensive services and expertise
 
 ## 🚀 Features
 
