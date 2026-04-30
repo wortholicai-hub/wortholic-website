@@ -30,3 +30,10 @@ yarn-error.log*
 
 # vercel
 .vercel
+
+# Custom logs and cache
+*.log
+.codex-dev*
+build.*
+.next-stale-*
+tsconfig.tsbuildinfo

@@ -9,7 +9,7 @@ const SingleBlog = ({ blog }: { blog: Blog }) => {
       <Link href="/blog-details" className="relative block">
         <Image
           src={image}
-          alt="image"
+          alt={title}
           width={400} // your custom width
           height={250} // your custom height
           className="object-cover"
@@ -32,7 +32,7 @@ const SingleBlog = ({ blog }: { blog: Blog }) => {
           <div className="border-body-color/10 mr-3 flex items-center border-r pr-3 dark:border-white/10">
             <div className="mr-2">
               <div className="relative h-8 w-8 overflow-hidden rounded-full">
-                <Image src={author.image} alt="author" fill sizes="32px" />
+                <Image src={author.image} alt={author.name} fill sizes="32px" />
               </div>
             </div>
             <div>

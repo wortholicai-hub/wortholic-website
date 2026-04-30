@@ -23,6 +23,7 @@ const InternshipApplicationForm = ({
     internship: internshipTitle,
     level: "",
     skills: "",
+    company: "",
   });
   const [attachment, setAttachment] = useState<File | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -68,6 +69,7 @@ const InternshipApplicationForm = ({
       payload.append("internship", formData.internship);
       payload.append("level", formData.level);
       payload.append("skills", formData.skills);
+      payload.append("company", formData.company);
       payload.append("attachment", attachment);
 
       const response = await fetch("/api/internships", {
@@ -75,8 +77,10 @@ const InternshipApplicationForm = ({
         body: payload,
       });
 
+      const result = await response.json().catch(() => null);
+
       if (!response.ok) {
-        throw new Error("Failed to submit application.");
+        throw new Error(result?.message || "Failed to submit application.");
       }
 
       setStatus({
@@ -91,6 +95,7 @@ const InternshipApplicationForm = ({
         internship: internshipTitle,
         level: "",
         skills: "",
+        company: "",
       });
       setAttachment(null);
 
@@ -100,7 +105,10 @@ const InternshipApplicationForm = ({
     } catch (error) {
       setStatus({
         type: "error",
-        message: "Submission failed. Please try again.",
+        message:
+          error instanceof Error
+            ? error.message
+            : "Submission failed. Please try again.",
       });
     } finally {
       setIsSubmitting(false);
@@ -202,6 +210,16 @@ const InternshipApplicationForm = ({
       )}
 
       <form onSubmit={handleSubmit} className="space-y-4">
+        <input
+          type="text"
+          name="company"
+          value={formData.company}
+          onChange={handleChange}
+          tabIndex={-1}
+          autoComplete="off"
+          className="hidden"
+        />
+
         <div>
           <label className="mb-2 block text-sm font-medium text-gray-700 dark:text-gray-200">
             Full Name *

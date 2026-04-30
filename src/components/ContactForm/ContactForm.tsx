@@ -4,7 +4,6 @@ import {
   FiUser,
   FiMail,
   FiPhone,
-  FiPaperclip,
   FiMessageSquare,
   FiX,
 } from "react-icons/fi";
@@ -15,6 +14,7 @@ const ContactForm = () => {
     email: "",
     phone: "",
     projectDetails: "",
+    company: "",
   });
   const [isLoading, setIsLoading] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
@@ -41,11 +41,19 @@ const ContactForm = () => {
         body: JSON.stringify(formData),
       });
 
+      const result = await response.json().catch(() => null);
+
       if (response.ok) {
         setShowSuccess(true);
-        setFormData({ name: "", email: "", phone: "", projectDetails: "" });
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          projectDetails: "",
+          company: "",
+        });
       } else {
-        setError("Failed to send message. Please try again.");
+        setError(result?.message || "Failed to send message. Please try again.");
       }
     } catch (error) {
       setError("Failed to send message. Please try again.");
@@ -101,6 +109,15 @@ const ContactForm = () => {
               )}
 
               <form onSubmit={handleSubmit} className="space-y-4">
+              <input
+                type="text"
+                name="company"
+                value={formData.company}
+                onChange={handleInputChange}
+                tabIndex={-1}
+                autoComplete="off"
+                className="hidden"
+              />
               {/* Name Input */}
               <div className="relative">
                 <FiUser className="absolute top-1/2 left-3 -translate-y-1/2 text-black dark:text-gray-400" />
@@ -142,18 +159,6 @@ const ContactForm = () => {
                 />
               </div>
 
-              {/* File Upload */}
-              <div className="relative w-full">
-                <FiPaperclip className="absolute top-1/2 left-3 -translate-y-1/2 text-black dark:text-gray-400" />
-                <label
-                  htmlFor="file-upload"
-                  className="flex w-full cursor-pointer items-center rounded-md border border-black bg-transparent p-3 pl-10 text-base text-black focus-within:ring-2 focus-within:ring-black dark:border-gray-500 dark:text-white"
-                >
-                  Choose file
-                </label>
-                <input id="file-upload" type="file" className="hidden" />
-              </div>
-
               {/* Textarea */}
               <textarea
                 name="projectDetails"
@@ -161,6 +166,7 @@ const ContactForm = () => {
                 onChange={handleInputChange}
                 placeholder="Write something about your project in detail."
                 rows={4}
+                required
                 className="w-full resize-none rounded-md border border-black bg-transparent p-3 text-base text-black placeholder-gray-500 focus:ring-2 focus:ring-black focus:outline-none dark:border-gray-500 dark:text-white"
               ></textarea>
 

@@ -134,10 +134,26 @@ const Footer = () => {
                 <ul>
                   <li>
                     <Link
+                      href="/news"
+                      className="mb-3 inline-block text-base duration-300 hover:text-[#4fc3f7] md:mb-4 dark:hover:text-[#80deea]"
+                    >
+                      News
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
                       href="/blog"
                       className="mb-3 inline-block text-base duration-300 hover:text-[#4fc3f7] md:mb-4 dark:hover:text-[#80deea]"
                     >
                       Blog
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/careers"
+                      className="mb-3 inline-block text-base duration-300 hover:text-[#4fc3f7] md:mb-4 dark:hover:text-[#80deea]"
+                    >
+                      Careers
                     </Link>
                   </li>
                   <li>

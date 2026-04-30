@@ -1,9 +1,14 @@
-"use client";
-
 import ProjectsGrid from "@/components/Achievments/ProjectsGrid";
 import ClientsSection from "@/components/Achievments/ClientsSection";
 import ResearchSection from "@/components/Achievments/ResearchSection";
-import { motion } from "framer-motion";
+import { createMetadata } from "@/lib/seo";
+
+export const metadata = createMetadata({
+  title: "Achievements",
+  description:
+    "Review Wortholic's software delivery achievements, client wins, AI projects, and research-led engineering work.",
+  path: "/achievements",
+});
 
 const Achievements = () => {
   return (
@@ -15,11 +20,7 @@ const Achievements = () => {
         </div>
 
         <div className="max-w-7xl mx-auto px-6 relative z-10 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
+          <div>
             <h1 className="mb-3 text-2xl lg:text-5xl leading-tight font-bold text-gray-900 sm:text-4xl md:text-5xl xl:mb-5 dark:text-white tracking-tight">
               Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0E9F9F] to-cyan-500">Achievements</span>
             </h1>
@@ -27,7 +28,7 @@ const Achievements = () => {
               A showcase of our impactful projects, valued partnerships, and
               groundbreaking research in AI and automation.
             </p>
-          </motion.div>
+          </div>
         </div>
       </section>
 

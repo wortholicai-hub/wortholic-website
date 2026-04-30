@@ -16,23 +16,9 @@ import {
 
 export const runtime = "nodejs";
 
-export async function GET() {
-  const ready =
-    Boolean(process.env.GOOGLE_SHEET_ID) &&
-    Boolean(process.env.SUPABASE_URL) &&
-    Boolean(
-      process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.SUPABASE_ANON_KEY
-    );
-
-  return NextResponse.json(
-    { status: ready ? "ready" : "not-configured" },
-    { status: ready ? 200 : 503 }
-  );
-}
-
 export async function POST(request: NextRequest) {
   try {
-    const limit = checkRateLimit(getClientKey(request, "internships"), {
+    const limit = checkRateLimit(getClientKey(request, "careers"), {
       windowMs: 15 * 60 * 1000,
       maxRequests: 5,
     });
@@ -45,13 +31,16 @@ export async function POST(request: NextRequest) {
     }
 
     const formData = await request.formData();
+    const jobTitle = cleanText(formData.get("jobTitle"), 160);
+    const jobLocation = cleanText(formData.get("jobLocation"), 120);
     const fullName = cleanText(formData.get("fullName"), 120);
     const email = cleanText(formData.get("email"), 160).toLowerCase();
     const phone = cleanText(formData.get("phone"), 40);
     const address = cleanText(formData.get("address"), 160);
-    const internship = cleanText(formData.get("internship"), 160);
-    const level = cleanText(formData.get("level"), 40);
-    const skills = cleanTextarea(formData.get("skills"), 2000);
+    const yearsOfExperience = cleanText(formData.get("yearsOfExperience"), 40);
+    const linkedinUrl = cleanText(formData.get("linkedinUrl"), 240);
+    const portfolioUrl = cleanText(formData.get("portfolioUrl"), 240);
+    const summary = cleanTextarea(formData.get("summary"), 2200);
     const company = cleanText(formData.get("company"), 120);
     const attachment = formData.get("attachment");
 
@@ -62,7 +51,14 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    if (!fullName || !email || !address || !internship || !level || !skills) {
+    if (
+      !jobTitle ||
+      !fullName ||
+      !email ||
+      !address ||
+      !yearsOfExperience ||
+      !summary
+    ) {
       return NextResponse.json(
         { message: "Complete all required fields before submitting." },
         { status: 400 }
@@ -99,40 +95,49 @@ export async function POST(request: NextRequest) {
 
     const upload = await uploadHiringAttachment({
       bucket: "internship-applications",
-      folder: "internships",
+      folder: "careers",
       attachment,
       applicantName: fullName,
-      roleSlug: internship,
+      roleSlug: `${jobTitle}-${jobLocation}`,
     });
 
     await appendHiringSheetRow({
-      sheetName: process.env.GOOGLE_SHEET_NAME || "Internships",
+      sheetName:
+        process.env.GOOGLE_CAREERS_SHEET_NAME ||
+        process.env.GOOGLE_SHEET_NAME ||
+        "Careers",
       values: [
         new Date().toISOString(),
-        "Internship",
-        internship,
+        "Career",
+        jobTitle,
+        jobLocation,
         fullName,
         email,
         phone,
         address,
-        level,
-        skills,
+        yearsOfExperience,
+        linkedinUrl,
+        portfolioUrl,
+        summary,
         attachment.name,
         upload.publicUrl,
       ],
     });
 
     await sendHiringNotification({
-      subject: `New Internship Application - ${internship}`,
+      subject: `New Career Application - ${jobTitle}`,
       html: `
-        <h2>New Internship Application</h2>
-        <p><strong>Role:</strong> ${escapeHtml(internship)}</p>
+        <h2>New Career Application</h2>
+        <p><strong>Role:</strong> ${escapeHtml(jobTitle)}</p>
+        <p><strong>Location:</strong> ${escapeHtml(jobLocation || "Not specified")}</p>
         <p><strong>Name:</strong> ${escapeHtml(fullName)}</p>
         <p><strong>Email:</strong> ${escapeHtml(email)}</p>
         <p><strong>Phone:</strong> ${escapeHtml(phone || "Not provided")}</p>
-        <p><strong>Location:</strong> ${escapeHtml(address)}</p>
-        <p><strong>Level:</strong> ${escapeHtml(level)}</p>
-        <p><strong>Summary:</strong><br />${escapeHtml(skills).replace(/\n/g, "<br />")}</p>
+        <p><strong>Current location:</strong> ${escapeHtml(address)}</p>
+        <p><strong>Experience:</strong> ${escapeHtml(yearsOfExperience)}</p>
+        <p><strong>LinkedIn:</strong> ${escapeHtml(linkedinUrl || "Not provided")}</p>
+        <p><strong>Portfolio:</strong> ${escapeHtml(portfolioUrl || "Not provided")}</p>
+        <p><strong>Summary:</strong><br />${escapeHtml(summary).replace(/\n/g, "<br />")}</p>
         <p><strong>Resume:</strong> <a href="${upload.publicUrl}">${escapeHtml(
         attachment.name
       )}</a></p>
@@ -144,7 +149,7 @@ export async function POST(request: NextRequest) {
       { status: 200 }
     );
   } catch (error) {
-    console.error("Internship application error:", error);
+    console.error("Career application error:", error);
     return NextResponse.json(
       { message: "Failed to submit application." },
       { status: 500 }
