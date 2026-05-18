@@ -1,6 +1,15 @@
 "use client";
 
 import type { Job } from "@/data/jobs";
+import {
+  ArrowRight,
+  Briefcase,
+  Layers3,
+  MapPin,
+  RotateCcw,
+  Search,
+  SlidersHorizontal,
+} from "lucide-react";
 import Link from "next/link";
 import { useDeferredValue, useMemo, useState } from "react";
 
@@ -25,6 +34,11 @@ export default function CareersExplorer({
   const [workplace, setWorkplace] = useState("All workplaces");
   const [location, setLocation] = useState("All locations");
   const deferredSearch = useDeferredValue(search);
+
+  const workplaces = useMemo(
+    () => Array.from(new Set(jobs.map((job) => job.workplace))).sort(),
+    [jobs]
+  );
 
   const filteredJobs = useMemo(() => {
     const query = deferredSearch.trim().toLowerCase();
@@ -61,164 +75,202 @@ export default function CareersExplorer({
     });
   }, [deferredSearch, jobs, location, seniority, team, workplace]);
 
+  const filters: Array<{
+    label: string;
+    value: string;
+    setValue: (value: string) => void;
+    options: string[];
+  }> = [
+    {
+      label: "Team",
+      value: team,
+      setValue: setTeam,
+      options: ["All teams", ...teams],
+    },
+    {
+      label: "Level",
+      value: seniority,
+      setValue: setSeniority,
+      options: ["All levels", ...seniorities],
+    },
+    {
+      label: "Workplace",
+      value: workplace,
+      setValue: setWorkplace,
+      options: ["All workplaces", ...workplaces],
+    },
+    {
+      label: "Location",
+      value: location,
+      setValue: setLocation,
+      options: ["All locations", ...locations],
+    },
+  ];
+
+  function resetFilters() {
+    setSearch("");
+    setTeam("All teams");
+    setSeniority("All levels");
+    setWorkplace("All workplaces");
+    setLocation("All locations");
+  }
+
   return (
     <div className="space-y-10">
       <section className="grid gap-4 md:grid-cols-3">
         {[
           {
+            icon: Briefcase,
             label: "Live openings",
             value: jobs.length,
-            text: "Senior-heavy roles across AI, product, cloud, security, design, and data.",
+            text: "Focused roles across AI, product, cloud, security, design, and data.",
           },
           {
-            label: "Remote-first",
-            value: jobs.filter((job) => job.workplace === "Remote").length,
-            text: "Distributed delivery pods with clear ownership and async execution discipline.",
+            icon: MapPin,
+            label: "Pakistan remote",
+            value: jobs.filter((job) => job.location === "Remote - Pakistan").length,
+            text: "A clean board with every active opening scoped to Pakistan.",
           },
           {
-            label: "Hybrid roles",
-            value: jobs.filter((job) => job.workplace === "Hybrid").length,
-            text: "Regional hiring for high-touch client work and planning-intensive engagements.",
+            icon: Layers3,
+            label: "Delivery tracks",
+            value: teams.length,
+            text: "Separate paths for product builders, AI engineers, QA, cloud, and security.",
           },
-        ].map((stat) => (
-          <div
-            key={stat.label}
-            className="rounded-3xl border border-[#d8ecec] bg-white p-6 shadow-[0_24px_80px_rgba(8,42,42,0.08)] dark:border-white/10 dark:bg-[#0f1720]"
-          >
-            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#0E9F9F]">
-              {stat.label}
-            </p>
-            <p className="mt-4 text-4xl font-black text-slate-900 dark:text-white">
-              {stat.value}
-            </p>
-            <p className="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-300">
-              {stat.text}
-            </p>
-          </div>
-        ))}
+        ].map((stat) => {
+          const Icon = stat.icon;
+
+          return (
+            <div
+              key={stat.label}
+              className="group relative overflow-hidden border border-[#0b5c59]/14 bg-white p-6 shadow-[0_24px_80px_rgba(4,47,46,0.08)] transition hover:-translate-y-1 hover:border-[#0b5c59] dark:border-[#13b8a6]/22 dark:bg-[#062826] dark:hover:border-[#13b8a6] dark:hover:bg-[#073b3a]"
+            >
+              <div className="absolute inset-x-0 top-0 h-1 bg-[linear-gradient(90deg,#0b5c59,#13b8a6)] opacity-0 transition group-hover:opacity-100 dark:bg-[linear-gradient(90deg,#13b8a6,#d7bd73)]" />
+              <div className="flex items-start justify-between gap-4">
+                <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[#0b5c59] dark:text-[#9df5e9]">
+                  {stat.label}
+                </p>
+                <span className="grid h-10 w-10 place-items-center bg-[#0b5c59] text-white dark:bg-[#13b8a6] dark:text-[#021211]">
+                  <Icon className="h-5 w-5" aria-hidden="true" />
+                </span>
+              </div>
+              <p className="mt-5 font-serif text-5xl text-[#042f2e] dark:text-[#f9f3df]">
+                {stat.value}
+              </p>
+              <p className="mt-3 text-sm leading-6 text-[#315f5b] dark:text-[#bceee6]">
+                {stat.text}
+              </p>
+            </div>
+          );
+        })}
       </section>
 
-      <section className="rounded-[2rem] border border-[#d8ecec] bg-white p-6 shadow-[0_24px_80px_rgba(8,42,42,0.08)] dark:border-white/10 dark:bg-[#0f1720]">
-        <div className="mb-6 flex flex-col gap-3 lg:flex-row lg:items-end lg:justify-between">
-          <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#0E9F9F]">
-              Featured roles
+      <section className="overflow-hidden border border-[#0b5c59]/14 bg-white text-[#052725] shadow-[0_28px_100px_rgba(4,47,46,0.1)] dark:border-[#13b8a6]/20 dark:bg-[#031817] dark:text-[#eefdf9] dark:shadow-[0_28px_100px_rgba(4,47,46,0.18)]">
+        <div className="grid gap-8 p-6 md:p-8 lg:grid-cols-[0.72fr_1.28fr]">
+          <div className="flex flex-col justify-between gap-8 border-[#0b5c59]/12 lg:border-r lg:pr-8 dark:border-[#13b8a6]/18">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[#0b5c59] dark:text-[#9df5e9]">
+                Signature openings
+              </p>
+              <h2 className="mt-4 font-serif text-4xl leading-tight text-[#042f2e] dark:text-[#f9f3df]">
+                Selected roles with immediate delivery demand.
+              </h2>
+            </div>
+            <p className="max-w-sm text-sm leading-7 text-[#315f5b] dark:text-[#bceee6]">
+              A tighter set of Pakistan-based roles, presented with enough
+              signal to compare quickly and apply with intent.
             </p>
-            <h2 className="mt-2 text-3xl font-black text-slate-900 dark:text-white">
-              Priority senior openings
-            </h2>
           </div>
-          <p className="max-w-2xl text-sm leading-6 text-slate-600 dark:text-slate-300">
-            These roles are tied to active delivery demand across AI product
-            engineering, platform architecture, cloud reliability, and design-heavy
-            product work.
-          </p>
-        </div>
 
-        <div className="grid gap-5 lg:grid-cols-2 xl:grid-cols-4">
-          {featuredJobs.map((job) => (
-            <Link
-              key={job.slug}
-              href={`/careers/${job.slug}`}
-              className="group rounded-3xl border border-[#d8ecec] bg-[#f5fbfb] p-5 transition duration-200 hover:-translate-y-1 hover:border-[#0E9F9F] hover:shadow-[0_20px_60px_rgba(14,159,159,0.16)] dark:border-white/10 dark:bg-[#111b26]"
-            >
-              <div className="flex items-center justify-between gap-3">
-                <span className="rounded-full bg-[#0E9F9F]/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-[#0E9F9F]">
-                  {job.seniority}
-                </span>
-                <span className="text-xs font-medium text-slate-500 dark:text-slate-400">
-                  {job.workplace}
-                </span>
-              </div>
-              <h3 className="mt-4 text-lg font-bold text-slate-900 transition-colors group-hover:text-[#0E9F9F] dark:text-white">
-                {job.title}
-              </h3>
-              <p className="mt-2 text-sm font-medium text-slate-500 dark:text-slate-400">
-                {job.team}
-              </p>
-              <p className="mt-4 text-sm leading-6 text-slate-600 dark:text-slate-300">
-                {job.summary}
-              </p>
-              <div className="mt-5 flex flex-wrap gap-2">
-                {job.technologies.slice(0, 3).map((tech) => (
-                  <span
-                    key={tech}
-                    className="rounded-full border border-[#cfe8e8] px-3 py-1 text-xs font-medium text-slate-600 dark:border-white/10 dark:text-slate-300"
-                  >
-                    {tech}
+          <div className="grid gap-4 xl:grid-cols-2">
+            {featuredJobs.map((job) => (
+              <Link
+                key={job.slug}
+                href={`/careers/${job.slug}`}
+                className="group flex min-h-[260px] flex-col border border-[#0b5c59]/12 bg-[#f7fcfa] p-5 shadow-[0_18px_54px_rgba(4,47,46,0.07)] transition duration-200 hover:-translate-y-1 hover:border-[#0b5c59] hover:bg-white dark:border-[#13b8a6]/22 dark:bg-[#062826] dark:shadow-[0_18px_54px_rgba(0,0,0,0.22)] dark:hover:border-[#d7bd73] dark:hover:bg-[#073b3a]"
+              >
+                <div className="flex items-start justify-between gap-4">
+                  <span className="border border-[#0b5c59]/18 bg-[#0b5c59]/8 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-[#0b5c59] dark:border-[#13b8a6]/35 dark:bg-[#13b8a6]/10 dark:text-[#9df5e9]">
+                    {job.seniority}
                   </span>
-                ))}
-              </div>
-            </Link>
-          ))}
+                  <ArrowRight
+                    className="h-5 w-5 text-[#0b5c59] transition group-hover:translate-x-1 dark:text-[#d7bd73]"
+                    aria-hidden="true"
+                  />
+                </div>
+                <h3 className="mt-5 font-serif text-2xl leading-tight text-[#042f2e] dark:text-[#f9f3df]">
+                  {job.title}
+                </h3>
+                <p className="mt-2 flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-[#0b5c59] dark:text-[#9df5e9]">
+                  <Briefcase className="h-4 w-4" aria-hidden="true" />
+                  {job.team}
+                </p>
+                <p className="mt-5 line-clamp-4 text-sm leading-7 text-[#315f5b] dark:text-[#d8eee7]">
+                  {job.summary}
+                </p>
+                <div className="mt-auto flex flex-wrap gap-2 pt-6">
+                  {job.technologies.slice(0, 3).map((tech) => (
+                    <span
+                      key={tech}
+                      className="border border-[#0b5c59]/12 bg-white px-3 py-1 text-xs text-[#315f5b] dark:border-[#13b8a6]/18 dark:bg-[#13b8a6]/8 dark:text-[#d8eee7]"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
 
       <section
         id="job-search"
-        className="rounded-[2rem] border border-[#d8ecec] bg-white p-6 shadow-[0_24px_80px_rgba(8,42,42,0.08)] dark:border-white/10 dark:bg-[#0f1720]"
+        className="border border-[#0b5c59]/14 bg-white p-5 shadow-[0_24px_80px_rgba(4,47,46,0.08)] dark:border-[#13b8a6]/22 dark:bg-[#062826] dark:shadow-[0_24px_80px_rgba(0,0,0,0.2)]"
       >
-        <div className="mb-6 flex flex-col gap-3 lg:flex-row lg:items-end lg:justify-between">
+        <div className="mb-6 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
           <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#0E9F9F]">
+            <p className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.24em] text-[#0b5c59] dark:text-[#9df5e9]">
+              <SlidersHorizontal className="h-4 w-4" aria-hidden="true" />
               Search openings
             </p>
-            <h2 className="mt-2 text-3xl font-black text-slate-900 dark:text-white">
-              Filter 100+ software roles
+            <h2 className="mt-3 font-serif text-4xl text-[#042f2e] dark:text-[#f9f3df]">
+              Find the right seat.
             </h2>
           </div>
-          <p className="text-sm leading-6 text-slate-600 dark:text-slate-300">
+          <p className="text-sm leading-6 text-[#315f5b] dark:text-[#bceee6]">
             {filteredJobs.length} roles match the current filters.
           </p>
         </div>
 
         <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-5">
           <label className="xl:col-span-2">
-            <span className="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-200">
+            <span className="mb-2 block text-sm font-semibold text-[#063d3b] dark:text-[#d8eee7]">
               Search by title, stack, or location
             </span>
-            <input
-              value={search}
-              onChange={(event) => setSearch(event.target.value)}
-              placeholder="Senior AI, platform, cloud, React, Dubai..."
-              className="w-full rounded-2xl border border-[#cfe8e8] bg-[#f8fdfd] px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-[#0E9F9F] dark:border-white/10 dark:bg-[#111b26] dark:text-white"
-            />
+            <div className="relative">
+              <Search
+                className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-[#0b5c59] dark:text-[#9df5e9]"
+                aria-hidden="true"
+              />
+              <input
+                value={search}
+                onChange={(event) => setSearch(event.target.value)}
+                placeholder="AI, platform, cloud, React, Pakistan..."
+                className="w-full border border-[#0b5c59]/18 bg-[#f7fcfa] px-4 py-3 pl-11 text-sm text-[#041f1e] outline-none transition placeholder:text-[#5a7f7a] focus:border-[#0b5c59] focus:ring-2 focus:ring-[#13b8a6]/20 dark:border-[#13b8a6]/22 dark:bg-[#031817] dark:text-[#eefdf9] dark:placeholder:text-[#8bb9b2]"
+              />
+            </div>
           </label>
 
-          {[
-            {
-              label: "Team",
-              value: team,
-              setValue: setTeam,
-              options: ["All teams", ...teams],
-            },
-            {
-              label: "Level",
-              value: seniority,
-              setValue: setSeniority,
-              options: ["All levels", ...seniorities],
-            },
-            {
-              label: "Workplace",
-              value: workplace,
-              setValue: setWorkplace,
-              options: ["All workplaces", "Remote", "Hybrid"],
-            },
-            {
-              label: "Location",
-              value: location,
-              setValue: setLocation,
-              options: ["All locations", ...locations],
-            },
-          ].map((filter) => (
+          {filters.map((filter) => (
             <label key={filter.label}>
-              <span className="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-200">
+              <span className="mb-2 block text-sm font-semibold text-[#063d3b] dark:text-[#d8eee7]">
                 {filter.label}
               </span>
               <select
                 value={filter.value}
                 onChange={(event) => filter.setValue(event.target.value)}
-                className="w-full rounded-2xl border border-[#cfe8e8] bg-[#f8fdfd] px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-[#0E9F9F] dark:border-white/10 dark:bg-[#111b26] dark:text-white"
+                className="w-full border border-[#0b5c59]/18 bg-[#f7fcfa] px-4 py-3 text-sm text-[#041f1e] outline-none transition focus:border-[#0b5c59] focus:ring-2 focus:ring-[#13b8a6]/20 dark:border-[#13b8a6]/22 dark:bg-[#031817] dark:text-[#eefdf9]"
               >
                 {filter.options.map((option) => (
                   <option key={option} value={option}>
@@ -230,63 +282,63 @@ export default function CareersExplorer({
           ))}
         </div>
 
-        <div className="mt-4 flex flex-wrap gap-3">
+        <div className="mt-5 flex flex-wrap gap-3">
           <button
             type="button"
-            onClick={() => {
-              setSearch("");
-              setTeam("All teams");
-              setSeniority("All levels");
-              setWorkplace("All workplaces");
-              setLocation("All locations");
-            }}
-            className="rounded-full border border-[#0E9F9F] px-4 py-2 text-sm font-semibold text-[#0E9F9F] transition hover:bg-[#0E9F9F] hover:text-white"
+            onClick={resetFilters}
+            className="inline-flex items-center gap-2 border border-[#0b5c59] px-4 py-2 text-sm font-semibold text-[#0b5c59] transition hover:bg-[#0b5c59] hover:text-white dark:border-[#13b8a6] dark:text-[#9df5e9] dark:hover:bg-[#13b8a6] dark:hover:text-[#021211]"
           >
+            <RotateCcw className="h-4 w-4" aria-hidden="true" />
             Reset filters
           </button>
           <a
             href="#job-listings"
-            className="rounded-full bg-slate-900 px-4 py-2 text-sm font-semibold text-white transition hover:bg-[#0E9F9F] dark:bg-white dark:text-slate-900"
+            className="inline-flex items-center gap-2 bg-[#0b5c59] px-4 py-2 text-sm font-semibold text-white transition hover:bg-[#13b8a6] dark:bg-[#13b8a6] dark:text-[#021211] dark:hover:bg-[#9df5e9]"
           >
             Jump to listings
+            <ArrowRight className="h-4 w-4" aria-hidden="true" />
           </a>
         </div>
       </section>
 
-      <section id="job-listings" className="grid gap-5 lg:grid-cols-2">
+      <section id="job-listings" className="grid gap-4 lg:grid-cols-2">
         {filteredJobs.map((job) => (
           <Link
             key={job.slug}
             href={`/careers/${job.slug}`}
-            className="group rounded-3xl border border-[#d8ecec] bg-white p-6 transition duration-200 hover:-translate-y-1 hover:border-[#0E9F9F] hover:shadow-[0_24px_80px_rgba(14,159,159,0.16)] dark:border-white/10 dark:bg-[#0f1720]"
+            className="group relative grid min-h-[300px] overflow-hidden border border-[#0b5c59]/12 bg-white p-6 shadow-[0_24px_80px_rgba(4,47,46,0.08)] transition duration-200 hover:-translate-y-1 hover:border-[#0b5c59] dark:border-[#13b8a6]/22 dark:bg-[#062826] dark:shadow-[0_24px_80px_rgba(0,0,0,0.2)] dark:hover:border-[#13b8a6] dark:hover:bg-[#073b3a]"
           >
-            <div className="flex flex-wrap items-center gap-2">
-              <span className="rounded-full bg-[#0E9F9F]/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-[#0E9F9F]">
-                {job.seniority}
-              </span>
-              <span className="rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-slate-600 dark:bg-white/5 dark:text-slate-300">
-                {job.workplace}
-              </span>
-              <span className="rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-slate-600 dark:bg-white/5 dark:text-slate-300">
-                {job.employmentType}
-              </span>
+            <div className="absolute inset-y-0 left-0 w-1 bg-[#0b5c59] transition group-hover:bg-[#13b8a6] dark:bg-[#13b8a6] dark:group-hover:bg-[#d7bd73]" />
+            <div>
+              <div className="flex flex-wrap items-center gap-2">
+                <span className="border border-[#0b5c59]/18 bg-[#0b5c59]/8 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-[#0b5c59] dark:border-[#13b8a6]/28 dark:bg-[#13b8a6]/10 dark:text-[#9df5e9]">
+                  {job.seniority}
+                </span>
+                <span className="border border-[#0b5c59]/12 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-[#315f5b] dark:border-[#13b8a6]/16 dark:text-[#bceee6]">
+                  {job.workplace}
+                </span>
+                <span className="border border-[#0b5c59]/12 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-[#315f5b] dark:border-[#13b8a6]/16 dark:text-[#bceee6]">
+                  {job.employmentType}
+                </span>
+              </div>
+
+              <h3 className="mt-5 font-serif text-3xl leading-tight text-[#042f2e] transition-colors group-hover:text-[#0b5c59] dark:text-[#f9f3df] dark:group-hover:text-[#9df5e9]">
+                {job.title}
+              </h3>
+              <p className="mt-3 flex items-center gap-2 text-sm font-semibold text-[#315f5b] dark:text-[#bceee6]">
+                <MapPin className="h-4 w-4 text-[#0b5c59] dark:text-[#13b8a6]" aria-hidden="true" />
+                {job.team} / {job.location}
+              </p>
+              <p className="mt-5 text-sm leading-7 text-[#315f5b] dark:text-[#bceee6]">
+                {job.summary}
+              </p>
             </div>
 
-            <h3 className="mt-4 text-2xl font-black text-slate-900 transition-colors group-hover:text-[#0E9F9F] dark:text-white">
-              {job.title}
-            </h3>
-            <p className="mt-2 text-sm font-semibold text-slate-500 dark:text-slate-400">
-              {job.team} • {job.location}
-            </p>
-            <p className="mt-4 text-sm leading-6 text-slate-600 dark:text-slate-300">
-              {job.summary}
-            </p>
-
-            <div className="mt-5 flex flex-wrap gap-2">
+            <div className="mt-6 flex flex-wrap gap-2 self-end">
               {job.technologies.slice(0, 4).map((tech) => (
                 <span
                   key={tech}
-                  className="rounded-full border border-[#cfe8e8] px-3 py-1 text-xs font-medium text-slate-600 dark:border-white/10 dark:text-slate-300"
+                  className="border border-[#0b5c59]/12 px-3 py-1 text-xs font-medium text-[#315f5b] dark:border-[#13b8a6]/16 dark:text-[#bceee6]"
                 >
                   {tech}
                 </span>
@@ -297,13 +349,13 @@ export default function CareersExplorer({
       </section>
 
       {filteredJobs.length === 0 ? (
-        <div className="rounded-3xl border border-dashed border-[#badede] bg-[#f5fbfb] p-8 text-center dark:border-white/10 dark:bg-[#0f1720]">
-          <h3 className="text-xl font-bold text-slate-900 dark:text-white">
+        <div className="border border-dashed border-[#0b5c59]/28 bg-white p-8 text-center dark:border-[#13b8a6]/35 dark:bg-[#062826]">
+          <h3 className="font-serif text-2xl text-[#042f2e] dark:text-[#f9f3df]">
             No roles match those filters
           </h3>
-          <p className="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-300">
-            Widen the search, switch location filters, or review another team.
-            The board is optimized for senior-level software delivery roles.
+          <p className="mx-auto mt-3 max-w-xl text-sm leading-6 text-[#315f5b] dark:text-[#bceee6]">
+            Widen the search, switch location filters, or review another
+            delivery track.
           </p>
         </div>
       ) : null}

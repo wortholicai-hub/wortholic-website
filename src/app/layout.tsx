@@ -109,7 +109,7 @@ export default function RootLayout({
         <JsonLd data={organizationSchema} />
       </head>
 
-      <body suppressHydrationWarning className="bg-white dark:bg-[#0f0f0f]">
+      <body suppressHydrationWarning className="bg-white">
         <SiteShell>{children}</SiteShell>
       </body>
     </html>
