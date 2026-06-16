@@ -174,18 +174,10 @@ const FeaturedWork = ({
                 })}
               </div>
 
-              <div className="mt-auto grid gap-3 border-t border-[#0f4043]/12 pt-6 dark:border-white/10 sm:grid-cols-2 sm:items-center">
-                  <Link
-                    href="/portfolio"
-                    className="inline-flex items-center gap-2 justify-self-start rounded-[8px] border border-[#101828] px-4 py-2 text-sm font-medium text-[#101828] transition-colors hover:bg-[#101828] hover:text-white dark:border-white dark:text-white dark:hover:bg-white dark:hover:text-[#101828]"
-                  >
-                    View portfolio
-                    <ArrowRight className="h-4 w-4" />
-                  </Link>
-
+              <div className="mt-auto grid border-t border-[#0f4043]/12 pt-6 dark:border-white/10 sm:items-center">
                   <Link
                     href="/support"
-                    className="inline-flex items-center gap-2 justify-self-start rounded-[8px] border border-[#0E9F9F] bg-[#0E9F9F] px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-[#0f4043] hover:border-[#0f4043] sm:justify-self-end"
+                    className="inline-flex items-center gap-2 justify-self-start rounded-[8px] border border-[#0E9F9F] bg-[#0E9F9F] px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-[#0f4043] hover:border-[#0f4043]"
                   >
                     Start a project
                     <ArrowRight className="h-4 w-4" />
@@ -194,16 +186,7 @@ const FeaturedWork = ({
             </div>
 
             <div className="flex h-full flex-col">
-              <div className="mb-4 flex justify-end">
-                {cardsData.length > 4 ? (
-                  <Link
-                    href="/portfolio"
-                    className="hidden text-sm font-medium text-[#101828] transition-colors hover:text-[#0E9F9F] dark:text-white dark:hover:text-[#8bd7d1] md:inline-flex"
-                  >
-                    +{cardsData.length - 4} more
-                  </Link>
-                ) : null}
-              </div>
+              <div className="mb-4 flex justify-end" />
 
               <div className="grid flex-1 gap-4 md:grid-cols-2">
                 {showcaseCards.map((card, index) => {

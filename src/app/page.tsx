@@ -5,8 +5,8 @@ import FeaturedWork from "../components/ProvidedService/FeaturedWork";
 import CareersSection from "@/components/CareersSection/CareersSection";
 import ToolsAndTechnologies from "@/components/ToolsAndTechnologies/ToolsAndTechnologies";
 import IndustriesPage from "@/components/IndustriesPage/IndustriesPage";
-import Blog from "@/components/Blog";
-import ContactForm from "@/components/ContactForm/ContactForm";
+
+
 import { cardsDataByPage } from "../components/ProvidedService/featurepage1";
 import {
   featuredWork1,
@@ -17,7 +17,7 @@ import {
   featuredWork6,
 } from "../components/ProvidedService/featurepage1";
 import { createMetadata } from "@/lib/seo";
-import Link from "next/link";
+
 
 export const metadata = createMetadata({
   title: "AI Product Engineering & Custom Software Development",
@@ -92,18 +92,12 @@ export default function Home() {
                 web applications, internal tools, automation systems, and dedicated
                 engineering pods that can move quickly without sacrificing delivery quality.
               </p>
-              <p className="text-base leading-8 text-slate-600 dark:text-slate-300">
-                Explore our <Link href="/portfolio" className="font-semibold text-[#0E9F9F]">portfolio</Link>,
-                review current <Link href="/news" className="font-semibold text-[#0E9F9F]">industry news</Link>,
-                or browse the live <Link href="/careers" className="font-semibold text-[#0E9F9F]">careers board</Link> to
-                see how we structure teams around real delivery demand.
-              </p>
+
             </div>
           </div>
         </div>
       </section>
-      <Blog />
-      <ContactForm />
+
     </>
   );
 }

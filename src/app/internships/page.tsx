@@ -4,7 +4,7 @@ import { internships } from "@/data/internships";
 
 export const metadata: Metadata = {
   title: "Open Positions | Wortholic",
-  description: "Explore career opportunities at Wortholic. Join our team of talented engineers and creators.",
+  description: "Explore internship opportunities at Wortholic. Join our team of talented engineers and creators.",
 };
 
 const cardIcons = [

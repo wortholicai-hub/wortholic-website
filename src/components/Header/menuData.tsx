@@ -45,18 +45,6 @@ const menuData: Menu[] = [
     newTab: false,
   },
   {
-    id: 25,
-    title: "Careers",
-    path: "/careers",
-    newTab: false,
-  },
-  {
-    id: 26,
-    title: "News",
-    path: "/news",
-    newTab: false,
-  },
-  {
     id: 2,
     title: "About",
     path: "/about",
@@ -66,18 +54,6 @@ const menuData: Menu[] = [
         id: 21,
         title: "Support",
         path: "/support",
-        newTab: false,
-      },
-      {
-        id: 22,
-        title: "Blog",
-        path: "/blog",
-        newTab: false,
-      },
-      {
-        id: 23,
-        title: "Portfolio",
-        path: "/portfolio",
         newTab: false,
       },
     ],

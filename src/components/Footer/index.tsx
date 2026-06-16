@@ -12,11 +12,8 @@ const linkGroups = [
   {
     title: "Company",
     links: [
-      { label: "About", href: "/about" },
-      { label: "Portfolio", href: "/portfolio" },
-      { label: "News", href: "/news" },
-      { label: "Blog", href: "/blog" },
-      { label: "Careers", href: "/careers" },
+      { label: "About Us", href: "/about" },
+      { label: "Terms of Service", href: "/terms" },
     ],
   },
   {
@@ -31,12 +28,9 @@ const linkGroups = [
   {
     title: "Support",
     links: [
-      { label: "Support", href: "/support" },
-      { label: "Support Help", href: "/support-help" },
+      { label: "Contact Support", href: "/support" },
+      { label: "Help Center", href: "/support-help" },
       { label: "Open Ticket", href: "/open-support-ticket" },
-      { label: "Terms", href: "/terms" },
-      { label: "Privacy", href: "/privacy-policy" },
-      { label: "Refund Policy", href: "/refund-policy" },
     ],
   },
 ] as const;
@@ -93,13 +87,13 @@ const Footer = () => {
               Start a Project
               <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
             </Link>
-            <a
-              href={`mailto:${siteConfig.email}`}
+            <Link
+              href="/support"
               className="inline-flex h-12 items-center justify-center gap-2 rounded-lg border border-white/[0.14] bg-white/[0.06] px-6 text-sm font-semibold text-white transition duration-300 hover:-translate-y-0.5 hover:border-[#4df2df]/70 hover:bg-[#4df2df]/10 focus:outline-none focus:ring-2 focus:ring-[#4df2df] focus:ring-offset-2 focus:ring-offset-[#031817]"
             >
               Contact Us
               <Mail className="h-4 w-4" aria-hidden="true" />
-            </a>
+            </Link>
           </div>
         </div>
 
@@ -133,15 +127,15 @@ const Footer = () => {
             </p>
 
             <div className="mt-7 grid gap-3 text-sm text-[#d7f4f0]">
-              <a
-                href={`mailto:${siteConfig.email}`}
+              <Link
+                href="/support"
                 className="group inline-flex w-fit items-center gap-3 rounded-lg border border-white/10 bg-white/[0.04] px-4 py-3 transition hover:border-[#4df2df]/60 hover:bg-[#4df2df]/10"
               >
                 <Mail className="h-4 w-4 text-[#63efe0]" aria-hidden="true" />
                 <span className="group-hover:text-white">
                   {siteConfig.email}
                 </span>
-              </a>
+              </Link>
               <div className="inline-flex w-fit items-center gap-3 rounded-lg border border-white/10 bg-white/[0.04] px-4 py-3">
                 <MapPin className="h-4 w-4 text-[#63efe0]" aria-hidden="true" />
                 <span>Serving clients worldwide</span>
@@ -173,35 +167,16 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="flex flex-col gap-6 border-t border-white/10 py-7 md:flex-row md:items-center md:justify-between">
-          <div className="flex flex-wrap items-center gap-3 text-sm text-[#b9d8d4]">
+        <div className="flex flex-col border-t border-white/10 py-7 text-center md:flex-row md:items-center md:justify-between">
+          <div className="flex flex-wrap justify-center items-center gap-3 text-sm text-[#b9d8d4] md:justify-start w-full">
             <span>
               &copy; {year} {siteConfig.legalName}. All rights reserved.
             </span>
-            <span className="hidden h-1 w-1 rounded-full bg-[#4df2df]/70 sm:block" />
+            <span className="hidden h-1 w-1 rounded-full bg-[#4df2df]/70 md:block" />
             <span className="inline-flex items-center gap-2">
               <ShieldCheck className="h-4 w-4 text-[#63efe0]" aria-hidden="true" />
               AI products / Web platforms / Cloud delivery
             </span>
-          </div>
-
-          <div className="flex items-center gap-3">
-            {socials.map((social) => {
-              const Icon = social.icon;
-
-              return (
-                <a
-                  key={social.href}
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={social.label}
-                  className="flex h-10 w-10 items-center justify-center rounded-lg border border-white/[0.12] bg-white/[0.06] text-[#d8fbf7] transition duration-300 hover:-translate-y-0.5 hover:border-[#4df2df]/70 hover:bg-[#4df2df] hover:text-[#021211] focus:outline-none focus:ring-2 focus:ring-[#4df2df] focus:ring-offset-2 focus:ring-offset-[#031817]"
-                >
-                  <Icon className="h-4 w-4" aria-hidden="true" />
-                </a>
-              );
-            })}
           </div>
         </div>
       </div>
