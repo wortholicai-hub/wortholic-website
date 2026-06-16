@@ -5,6 +5,7 @@ import FeaturedWork from "../components/ProvidedService/FeaturedWork";
 import CareersSection from "@/components/CareersSection/CareersSection";
 import ToolsAndTechnologies from "@/components/ToolsAndTechnologies/ToolsAndTechnologies";
 import IndustriesPage from "@/components/IndustriesPage/IndustriesPage";
+import ProgrammaticLinkingBlock from "@/components/SEO/ProgrammaticLinkingBlock";
 
 
 import { cardsDataByPage } from "../components/ProvidedService/featurepage1";
@@ -97,6 +98,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <ProgrammaticLinkingBlock />
 
     </>
   );
