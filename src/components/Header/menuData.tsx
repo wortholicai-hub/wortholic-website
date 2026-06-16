@@ -49,14 +49,12 @@ const menuData: Menu[] = [
     title: "About",
     path: "/about",
     newTab: false,
-    submenu: [
-      {
-        id: 21,
-        title: "Support",
-        path: "/support",
-        newTab: false,
-      },
-    ],
+  },
+  {
+    id: 4,
+    title: "Contact",
+    path: "/contact",
+    newTab: false,
   },
 ];
 

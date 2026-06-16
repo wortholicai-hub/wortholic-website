@@ -10,21 +10,27 @@ import NewsLatterBox from "./NewsLatterBox";
 
 const Contact = () => {
   return (
-    <section id="contact" className="overflow-hidden py-16 md:py-20 lg:py-2">
+    <section id="contact" className="overflow-hidden py-16 md:py-20 lg:py-24 relative">
+      {/* Background decoration */}
+      <div className="absolute top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
+        <div className="absolute -top-[20%] -right-[10%] w-[50%] h-[50%] rounded-full bg-[#0E9F9F]/10 blur-[120px]"></div>
+        <div className="absolute -bottom-[20%] -left-[10%] w-[50%] h-[50%] rounded-full bg-[#086363]/10 blur-[120px]"></div>
+      </div>
+
       <div className="container">
-        <div className="-mx-4 flex flex-wrap items-stretch">
-          {/* Left Transparent Box */}
+        <div className="-mx-4 flex flex-wrap items-stretch gap-y-8">
+          {/* Left Premium Box */}
           <div className="w-full px-4 lg:w-7/12 xl:w-8/12">
             <div
-              className="h-full rounded-lg border border-gray-300 bg-white/30 px-8 py-1 shadow-lg backdrop-blur-md sm:p-[55px] lg:px-8 xl:p-[55px] dark:border-gray-700 dark:bg-black/30"
+              className="h-full rounded-3xl border border-gray-200/50 bg-white/60 px-8 py-10 shadow-[0_8px_30px_rgb(0,0,0,0.04)] backdrop-blur-xl sm:p-[55px] lg:px-8 xl:p-[60px] dark:border-gray-800/50 dark:bg-[#081019]/60"
               data-wow-delay=".15s"
             >
-              <h2 className="mb-3 text-2xl lg:text-5xl leading-tight font-bold text-gray-900 sm:text-4xl md:text-5xl xl:mb-5 dark:text-white">
+              <h2 className="mb-4 text-3xl lg:text-5xl font-black tracking-tight text-slate-900 md:text-4xl dark:text-white">
                 Get A Free Quote
               </h2>
-              <p className="text-body-color mb-12 text-base font-medium dark:text-gray-300">
-                Tell us about your project and we&apos;ll get back to you within
-                24 hours with a detailed proposal.
+              <p className="mb-12 text-lg leading-relaxed text-slate-600 dark:text-slate-400">
+                Tell us about your project and our technical architects will get back to you within
+                24 hours with a detailed, no-obligation proposal.
               </p>
 
               <form
@@ -37,19 +43,19 @@ const Contact = () => {
                   <div className="w-full px-4 md:w-1/2">
                     <label
                       htmlFor="name"
-                      className="text-dark mb-3 block text-sm font-medium dark:text-white"
+                      className="mb-2 block text-sm font-bold text-slate-800 dark:text-slate-200"
                     >
                       Your Name
                     </label>
-                    <div className="relative mb-8">
-                      <span className="absolute inset-y-0 left-3 flex items-center">
-                        <FaUser className="text-black dark:text-white" />
+                    <div className="relative mb-8 group">
+                      <span className="absolute inset-y-0 left-4 flex items-center text-slate-400 group-focus-within:text-[#0E9F9F] transition-colors">
+                        <FaUser />
                       </span>
                       <input
                         type="text"
                         name="name"
-                        placeholder="Enter your name"
-                        className="focus:border-primary w-full rounded-md border border-gray-300 bg-transparent py-3 pr-4 pl-10 text-base text-black outline-none dark:border-gray-600 dark:text-white"
+                        placeholder="John Doe"
+                        className="w-full rounded-xl border border-gray-200 bg-white/80 py-4 pr-4 pl-12 text-base text-slate-800 outline-none transition-all duration-300 focus:border-[#0E9F9F] focus:ring-4 focus:ring-[#0E9F9F]/10 dark:border-gray-700 dark:bg-[#111b26]/80 dark:text-white dark:focus:border-[#0E9F9F]"
                         required
                       />
                     </div>
@@ -59,19 +65,19 @@ const Contact = () => {
                   <div className="w-full px-4 md:w-1/2">
                     <label
                       htmlFor="email"
-                      className="text-dark mb-3 block text-sm font-medium dark:text-white"
+                      className="mb-2 block text-sm font-bold text-slate-800 dark:text-slate-200"
                     >
                       Your Email
                     </label>
-                    <div className="relative mb-8">
-                      <span className="absolute inset-y-0 left-3 flex items-center">
-                        <FaEnvelope className="text-black dark:text-white" />
+                    <div className="relative mb-8 group">
+                      <span className="absolute inset-y-0 left-4 flex items-center text-slate-400 group-focus-within:text-[#0E9F9F] transition-colors">
+                        <FaEnvelope />
                       </span>
                       <input
                         type="email"
                         name="email"
-                        placeholder="Enter your email"
-                        className="focus:border-primary w-full rounded-md border border-gray-300 bg-transparent py-3 pr-4 pl-10 text-base text-black outline-none dark:border-gray-600 dark:text-white"
+                        placeholder="john@company.com"
+                        className="w-full rounded-xl border border-gray-200 bg-white/80 py-4 pr-4 pl-12 text-base text-slate-800 outline-none transition-all duration-300 focus:border-[#0E9F9F] focus:ring-4 focus:ring-[#0E9F9F]/10 dark:border-gray-700 dark:bg-[#111b26]/80 dark:text-white dark:focus:border-[#0E9F9F]"
                         required
                       />
                     </div>
@@ -81,19 +87,19 @@ const Contact = () => {
                   <div className="w-full px-4 md:w-1/2">
                     <label
                       htmlFor="phone"
-                      className="text-dark mb-3 block text-sm font-medium dark:text-white"
+                      className="mb-2 block text-sm font-bold text-slate-800 dark:text-slate-200"
                     >
                       Your Phone
                     </label>
-                    <div className="relative mb-8">
-                      <span className="absolute inset-y-0 left-3 flex items-center">
-                        <FaPhone className="text-black dark:text-white" />
+                    <div className="relative mb-8 group">
+                      <span className="absolute inset-y-0 left-4 flex items-center text-slate-400 group-focus-within:text-[#0E9F9F] transition-colors">
+                        <FaPhone />
                       </span>
                       <input
                         type="tel"
                         name="phone"
-                        placeholder="Enter your phone number"
-                        className="focus:border-primary w-full rounded-md border border-gray-300 bg-transparent py-3 pr-4 pl-10 text-base text-black outline-none dark:border-gray-600 dark:text-white"
+                        placeholder="+1 (555) 000-0000"
+                        className="w-full rounded-xl border border-gray-200 bg-white/80 py-4 pr-4 pl-12 text-base text-slate-800 outline-none transition-all duration-300 focus:border-[#0E9F9F] focus:ring-4 focus:ring-[#0E9F9F]/10 dark:border-gray-700 dark:bg-[#111b26]/80 dark:text-white dark:focus:border-[#0E9F9F]"
                         required
                       />
                     </div>
@@ -103,18 +109,18 @@ const Contact = () => {
                   <div className="w-full px-4 md:w-1/2">
                     <label
                       htmlFor="file"
-                      className="text-dark mb-3 block text-sm font-medium dark:text-white"
+                      className="mb-2 block text-sm font-bold text-slate-800 dark:text-slate-200"
                     >
-                      Attach File
+                      Attach File (Optional)
                     </label>
-                    <div className="relative mb-8">
-                      <span className="absolute inset-y-0 left-3 flex items-center">
-                        <FaFileUpload className="text-black dark:text-white" />
+                    <div className="relative mb-8 group">
+                      <span className="absolute inset-y-0 left-4 flex items-center text-slate-400 group-focus-within:text-[#0E9F9F] transition-colors">
+                        <FaFileUpload />
                       </span>
                       <input
                         type="file"
                         name="file"
-                        className="focus:border-primary w-full rounded-md border border-gray-300 bg-transparent py-2 pr-4 pl-10 text-base text-black outline-none file:mr-4 file:rounded-md file:border file:border-gray-400 file:bg-gray-100 file:px-3 file:py-2 file:text-sm file:font-medium file:text-black hover:file:bg-gray-200 dark:border-gray-600 dark:text-white dark:file:bg-gray-800 dark:file:text-white dark:hover:file:bg-gray-700"
+                        className="w-full rounded-xl border border-gray-200 bg-white/80 py-3 pr-4 pl-12 text-sm text-slate-800 outline-none transition-all duration-300 focus:border-[#0E9F9F] focus:ring-4 focus:ring-[#0E9F9F]/10 file:mr-4 file:rounded-lg file:border-0 file:bg-[#0E9F9F]/10 file:px-4 file:py-2 file:text-sm file:font-semibold file:text-[#0E9F9F] hover:file:bg-[#0E9F9F]/20 dark:border-gray-700 dark:bg-[#111b26]/80 dark:text-white dark:focus:border-[#0E9F9F]"
                       />
                     </div>
                   </div>
@@ -123,37 +129,32 @@ const Contact = () => {
                   <div className="w-full px-4">
                     <label
                       htmlFor="service"
-                      className="text-dark mb-3 block text-sm font-medium dark:text-white"
+                      className="mb-2 block text-sm font-bold text-slate-800 dark:text-slate-200"
                     >
                       Service Required
                     </label>
-                    <div className="relative mb-8">
-                      <span className="absolute inset-y-0 left-3 flex items-center">
-                        <FaList className="text-black dark:text-white" />
+                    <div className="relative mb-8 group">
+                      <span className="absolute inset-y-0 left-4 flex items-center text-slate-400 group-focus-within:text-[#0E9F9F] transition-colors">
+                        <FaList />
                       </span>
                       <select
                         name="service"
-                        className="focus:border-primary w-full rounded-md border border-gray-300 bg-transparent py-3 pr-4 pl-10 text-base text-black outline-none dark:border-gray-600 dark:bg-black dark:text-white"
+                        className="w-full appearance-none rounded-xl border border-gray-200 bg-white/80 py-4 pr-10 pl-12 text-base text-slate-800 outline-none transition-all duration-300 focus:border-[#0E9F9F] focus:ring-4 focus:ring-[#0E9F9F]/10 dark:border-gray-700 dark:bg-[#111b26]/80 dark:text-white dark:focus:border-[#0E9F9F]"
                         required
                       >
                         <option value="">Select a service</option>
-                        <option value="web-development">Web Development</option>
-                        <option value="mobile-app">
-                          Mobile App Development
-                        </option>
-                        <option value="ai-automation">
-                          AI &amp; Automation
-                        </option>
-                        <option value="crm-integration">CRM Integration</option>
-                        <option value="chatbot">AI Chatbot Development</option>
-                        <option value="ui-ux-design">UI/UX Design</option>
-                        <option value="cloud-solutions">Cloud Solutions</option>
-                        <option value="hire-developer">Hire Developer</option>
-                        <option value="consultation">
-                          Technical Consultation
-                        </option>
-                        <option value="other">Other</option>
+                        <option value="ai-automation">AI &amp; Automation Workflows</option>
+                        <option value="custom-software">Custom Software &amp; Web Apps</option>
+                        <option value="enterprise-rag">Enterprise RAG / Custom LLMs</option>
+                        <option value="mobile-app">Mobile App Development</option>
+                        <option value="crm-integration">Custom CRM / ERP Integration</option>
+                        <option value="hire-developer">Hire Dedicated Developer</option>
+                        <option value="other">Other / General Inquiry</option>
                       </select>
+                      {/* Custom dropdown arrow */}
+                      <div className="pointer-events-none absolute inset-y-0 right-4 flex items-center text-slate-400">
+                        <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
+                      </div>
                     </div>
                   </div>
 
@@ -161,29 +162,32 @@ const Contact = () => {
                   <div className="w-full px-4">
                     <label
                       htmlFor="message"
-                      className="text-dark mb-3 block text-sm font-medium dark:text-white"
+                      className="mb-2 block text-sm font-bold text-slate-800 dark:text-slate-200"
                     >
-                      Your Message
+                      Project Details
                     </label>
                     <div className="relative mb-8">
                       <textarea
                         name="message"
                         rows={5}
-                        placeholder="Describe your project requirements in detail..."
-                        className="focus:border-primary w-full resize-none rounded-md border border-gray-300 bg-transparent py-3 pr-4 pl-3 text-base text-black outline-none dark:border-gray-600 dark:text-white"
+                        placeholder="Describe your current bottlenecks, tools you use, and what you want to achieve..."
+                        className="w-full resize-none rounded-xl border border-gray-200 bg-white/80 p-4 text-base text-slate-800 outline-none transition-all duration-300 focus:border-[#0E9F9F] focus:ring-4 focus:ring-[#0E9F9F]/10 dark:border-gray-700 dark:bg-[#111b26]/80 dark:text-white dark:focus:border-[#0E9F9F]"
                         required
                       ></textarea>
                     </div>
                   </div>
 
                   {/* Button */}
-                  <div className="w-full px-4">
+                  <div className="w-full px-4 mt-2">
                     <button
                       type="submit"
-                      className="flex cursor-pointer items-center justify-center rounded-[8px] border-1 border-[#0E9F9F] bg-[#0E9F9F] px-4 py-2 font-medium text-white shadow-md transition duration-300 hover:bg-white hover:text-[#0E9F9F] dark:hover:bg-black"
+                      className="w-full flex items-center justify-center rounded-xl bg-[linear-gradient(135deg,#0E9F9F_0%,#086363_100%)] px-8 py-4 text-lg font-bold text-white shadow-[0_8px_20px_rgba(14,159,159,0.3)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_25px_rgba(14,159,159,0.4)]"
                     >
-                      Get Free Quote
+                      Submit Project Request
                     </button>
+                    <p className="text-center text-sm text-slate-500 mt-4">
+                      100% Secure & Confidential. We never share your data.
+                    </p>
                   </div>
                 </div>
               </form>
@@ -192,7 +196,7 @@ const Contact = () => {
 
           {/* Right Transparent Box */}
           <div className="w-full px-4 lg:w-5/12 xl:w-4/12">
-            <div className="flex h-full items-center justify-center rounded-lg border border-gray-300 bg-white/30 p-6 shadow-lg backdrop-blur-md dark:border-gray-700 dark:bg-black/30">
+            <div className="flex h-full items-center justify-center rounded-3xl border border-gray-200/50 bg-white/60 p-6 shadow-[0_8px_30px_rgb(0,0,0,0.04)] backdrop-blur-xl dark:border-gray-800/50 dark:bg-[#081019]/60">
               <NewsLatterBox />
             </div>
           </div>

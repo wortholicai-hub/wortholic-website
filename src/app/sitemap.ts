@@ -17,7 +17,7 @@ const staticRoutes = [
   "/privacy-policy",
   "/project-based",
   "/refund-policy",
-  "/support",
+  "/contact",
   "/support-help",
   "/terms",
   "/terms-of-use",

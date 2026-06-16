@@ -28,7 +28,7 @@ const linkGroups = [
   {
     title: "Support",
     links: [
-      { label: "Contact Support", href: "/support" },
+      { label: "Contact Us", href: "/contact" },
       { label: "Help Center", href: "/support-help" },
       { label: "Open Ticket", href: "/open-support-ticket" },
     ],
@@ -81,14 +81,14 @@ const Footer = () => {
 
           <div className="flex flex-col gap-4 sm:flex-row lg:justify-end">
             <Link
-              href="/support"
+              href="/contact"
               className="inline-flex h-12 items-center justify-center gap-2 rounded-lg bg-[#4df2df] px-6 text-sm font-semibold text-[#021211] shadow-[0_14px_38px_rgba(77,242,223,0.22)] transition duration-300 hover:-translate-y-0.5 hover:bg-white focus:outline-none focus:ring-2 focus:ring-[#4df2df] focus:ring-offset-2 focus:ring-offset-[#031817]"
             >
               Start a Project
               <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
             </Link>
             <Link
-              href="/support"
+              href="/contact"
               className="inline-flex h-12 items-center justify-center gap-2 rounded-lg border border-white/[0.14] bg-white/[0.06] px-6 text-sm font-semibold text-white transition duration-300 hover:-translate-y-0.5 hover:border-[#4df2df]/70 hover:bg-[#4df2df]/10 focus:outline-none focus:ring-2 focus:ring-[#4df2df] focus:ring-offset-2 focus:ring-offset-[#031817]"
             >
               Contact Us
@@ -128,7 +128,7 @@ const Footer = () => {
 
             <div className="mt-7 grid gap-3 text-sm text-[#d7f4f0]">
               <Link
-                href="/support"
+                href="/contact"
                 className="group inline-flex w-fit items-center gap-3 rounded-lg border border-white/10 bg-white/[0.04] px-4 py-3 transition hover:border-[#4df2df]/60 hover:bg-[#4df2df]/10"
               >
                 <Mail className="h-4 w-4 text-[#63efe0]" aria-hidden="true" />
