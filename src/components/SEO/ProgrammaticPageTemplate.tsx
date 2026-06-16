@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { PageIntelligenceObject } from "@/data/seo/types";
-import { FiCheckCircle, FiArrowRight } from "react-icons/fi";
+import { FiCheckCircle, FiShield, FiLock, FiServer } from "react-icons/fi";
 import ContactForm from "@/components/ContactForm/ContactForm";
 import JsonLd from "@/components/StructuredData/JsonLd";
 import { absoluteUrl } from "@/lib/site";
@@ -35,7 +35,6 @@ export default function ProgrammaticPageTemplate({ pageData }: Props) {
             }
           }))
         };
-      // We will expand ProfessionalService/Service schemas here
       default:
         return null;
     }
@@ -73,6 +72,31 @@ export default function ProgrammaticPageTemplate({ pageData }: Props) {
         </div>
       </section>
 
+      {/* TL;DR Featured Snippet Box (Zero-Click Optimization) */}
+      <section className="py-12 bg-white border-b border-gray-100">
+        <div className="mx-auto w-full max-w-[1200px] px-4 sm:px-6 lg:px-8">
+          <div className="bg-gray-50 rounded-2xl p-8 border border-gray-200">
+            <h2 className="text-xl font-bold text-slate-900 mb-4 flex items-center gap-2">
+              <FiCheckCircle className="text-[#0E9F9F]" /> TL;DR: Executive Summary
+            </h2>
+            <ul className="space-y-3">
+              <li className="flex gap-3 text-slate-700">
+                <span className="font-semibold min-w-[120px]">The Goal:</span>
+                <span>{pageData.meta_description}</span>
+              </li>
+              <li className="flex gap-3 text-slate-700">
+                <span className="font-semibold min-w-[120px]">Timeline:</span>
+                <span>{pageData.realistic_timeline}</span>
+              </li>
+              <li className="flex gap-3 text-slate-700">
+                <span className="font-semibold min-w-[120px]">Tech Stack:</span>
+                <span>{pageData.relevant_tools.join(", ")}</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
       {/* Problem & Solution Section */}
       <section className="py-20 md:py-24 bg-gray-50">
         <div className="mx-auto w-full max-w-[1200px] px-4 sm:px-6 lg:px-8">
@@ -105,7 +129,7 @@ export default function ProgrammaticPageTemplate({ pageData }: Props) {
         </div>
       </section>
 
-      {/* Workflow Comparison */}
+      {/* Workflow Transformation */}
       <section className="py-20 bg-white">
         <div className="mx-auto w-full max-w-[1200px] px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
@@ -124,8 +148,63 @@ export default function ProgrammaticPageTemplate({ pageData }: Props) {
         </div>
       </section>
 
-      {/* Contact Section */}
-      <div id="contact">
+      {/* E-E-A-T & Enterprise Trust Signals */}
+      <section className="py-16 bg-slate-900 text-white">
+        <div className="mx-auto w-full max-w-[1200px] px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-3 gap-8 text-center">
+            <div className="flex flex-col items-center">
+              <div className="h-16 w-16 rounded-full bg-slate-800 flex items-center justify-center mb-4">
+                <FiLock className="text-[#0E9F9F] text-2xl" />
+              </div>
+              <h3 className="text-lg font-bold mb-2">Data Privacy (GDPR/CCPA)</h3>
+              <p className="text-sm text-slate-400">Strict adherence to global data privacy laws. We never train public AI models on your proprietary data.</p>
+            </div>
+            <div className="flex flex-col items-center">
+              <div className="h-16 w-16 rounded-full bg-slate-800 flex items-center justify-center mb-4">
+                <FiShield className="text-[#0E9F9F] text-2xl" />
+              </div>
+              <h3 className="text-lg font-bold mb-2">HIPAA & SOC2 Ready</h3>
+              <p className="text-sm text-slate-400">Architecture designed to meet rigorous healthcare and enterprise security compliance standards natively.</p>
+            </div>
+            <div className="flex flex-col items-center">
+              <div className="h-16 w-16 rounded-full bg-slate-800 flex items-center justify-center mb-4">
+                <FiServer className="text-[#0E9F9F] text-2xl" />
+              </div>
+              <h3 className="text-lg font-bold mb-2">Enterprise Infrastructure</h3>
+              <p className="text-sm text-slate-400">Scalable cloud-native deployments via AWS and Vercel Edge networks ensuring 99.99% uptime.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQs (Featured Snippet Optimized) */}
+      <section className="py-20 bg-gray-50 border-t border-gray-200">
+        <div className="mx-auto w-full max-w-[800px] px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-black tracking-tight text-slate-950">Frequently Asked Questions</h2>
+            <p className="text-slate-600 mt-4">Everything you need to know about our {pageData.intent_summary} process.</p>
+          </div>
+          <div className="space-y-8">
+            {pageData.faqs.map((faq, index) => (
+              <div key={index} className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+                <h3 className="text-xl font-bold text-slate-900 mb-4">{faq.question}</h3>
+                <p className="text-slate-600 leading-relaxed">{faq.answer}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Dynamic CTA / Contact Section */}
+      <div id="contact" className="bg-white py-20 border-t border-gray-200">
+        <div className="mx-auto w-full max-w-[1200px] px-4 sm:px-6 lg:px-8 text-center mb-12">
+          <h2 className="text-4xl font-black tracking-tight text-slate-950 mb-4">
+            {pageData.cta_angle.headline}
+          </h2>
+          <p className="text-xl text-slate-600 max-w-2xl mx-auto">
+            {pageData.cta_angle.subheadline}
+          </p>
+        </div>
         <ContactForm />
       </div>
     </>
